@@ -1,0 +1,16 @@
+{
+  "name": "C_le_tallec/creaCarinette",
+  "description": "site web de présentation de créations",
+  "authors": [
+    {
+      "name": "Cedric Le Tallec",
+      "email": "ced533@msn.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4" :{
+      "Src\\" : "./app/"
+    }
+  }
+}
