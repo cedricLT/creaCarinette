@@ -19,8 +19,8 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Creations
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="index.php?action=crochet">Crochets</a></li>
-                            <li class="tricot"><a href="#">Tricots</a></li>
+                            <li class="'crochet"><a href="index.php?action=crochet">Crochets</a></li>
+                            <li class="tricot"><a href="index.php?action=tricot">Tricots</a></li>
                         </ul>
                     </li>
                     <li class="hoverMenu"><a href="#">Livre d'or</a></li>
