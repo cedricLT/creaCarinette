@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -11,21 +11,151 @@ ul {
     list-style: none;
 }
 
-/******************************* homeView.php*************************************************/
-.mainMenu{
-    text-align: center;
+.homePage{
+    background-color: #f9d4e6;
 }
 
-/**********************************************************************************/
-/*******************slider homeView.php***************/
+@font-face {
+    font-family: arisona;
+    src: url("../polices/arisona.ttf");
+}
 
+@font-face {
+    font-family: echei;
+    src: url("../polices/echei.ttf");
+}
+
+@media all and (min-width: 1500px) {
+    .container {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
+
+h1{
+    text-align: center;
+    font-family: arisona;
+}
+
+
+/*================================ homeView.php ==================================================*/
+/*******************************************************/
+/*============== templateMenu.php =====================*/
+/*******************************************************/
+.indexcity {
+    z-index: 9999;
+}
+
+.right {
+    right: 0 !important;
+    left: 0 !important;
+}
+
+.navbar-collapse li a {
+}
+
+.navbar-inverse {
+    background-color: hotpink !important;
+    border-color: hotpink !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: mediumvioletred !important;
+
+}
+
+.nav .navbar-nav:hover li {
+    color: deeppink !important;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+     color: #777 !important;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: white !important;
+}
+
+.dropdown-menu{
+    background-color: hotpink  !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: mediumvioletred !important;
+    color: white !important;
+}
+
+.dropdown:hover{
+    background-color: mediumvioletred  !important;
+}
+
+.hoverMenu:hover{
+    background-color: mediumvioletred  !important;
+}
+
+.tricot {
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+    /*menu beurger*/
+    .navbar-collapse {
+        background-color: #f9d4e6;
+        position: fixed;
+        top: 0;
+        transition: all 0.8s ease-out;
+        height: 100%;
+        width: 100%;
+        left: 700px;
+        z-index: 1000;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #000;
+    }
+
+    .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+        background-color: deeppink !important;
+    }
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: #333 !important;
+    }
+
+    .caret {
+        margin-left: 6px;
+
+    }
+
+    .dropdown-menu > li > a:hover {
+        background-color: hotpink !important;
+    }
+
+    .dropdown-menu {
+        padding: 20px 0 !important;
+    }
+
+    .tricot {
+        margin-top: 20px;
+    }
+}
+
+/*****************************************************/
+.h1Title {
+    text-align: center;
+    font-family: arisona;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+/*******************slider homeView.php***************/
 #slideshow {
     margin: 50px auto;
     position: relative;
     width: 240px;
     height: 240px;
     padding: 10px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
 
 #slideshow > div {
@@ -36,9 +166,105 @@ ul {
     bottom: 10px;
 }
 
+#slideshow img {
+
+}
+
+.container2 {
+    display: none;
+}
+
+/***********************************************************************************/
+/*************************** container 3 *******************************/
+/***********************************************************************************/
+/************************************* photo img**********************************************/
+.profileImg {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/******************************** texte de présentation ***************************************************/
+.presentation p {
+    margin: 25px 5% 20px 5% ;
+    width: 90%;
+    text-align: center;
+    font-family: echei;
+    font-size: 28px;
+    font-weight: bold;
+}
+
 /***************************************************************************************/
 /*****************************template templateFooter.php*******************************/
-
-footer{
+footer {
     background-color: black;
+}
+
+.liensMenu {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.copyright{
+    margin-top: 15px;
+    text-align: center;
+}
+
+.copyright p{
+    color: white;
+}
+
+/*=====================================================================================================*/
+/***************************************media queries *************************************************/
+@media (min-width: 768px) {
+    .container {
+        width: auto !important;
+    }
+
+    /*********** title *********/
+    .titleH1 h1{
+        font-size: 100px;
+        margin-bottom: 36px;
+    }
+    /************* footer ******/
+
+    .footer{
+        margin-top: 30px;
+    }
+
+    .accueil{
+        font-size: 20px;
+    }
+
+    .contactFooter{
+        font-size: 20px;
+    }
+
+    .copyright p{
+    font-size: 16px
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: auto !important;
+    }
+}
+
+
+
+@media all and (min-width: 1200px) {
+    .container {
+        width: auto !important;
+    }
+}
+
+
+
+/*===============================================================================================================*/
+/************************************** PAGE CrochetView.PHP******************************************************/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.blockCrochet{
+    border: 2px solid black;
+    margin-top: 40px;
 }

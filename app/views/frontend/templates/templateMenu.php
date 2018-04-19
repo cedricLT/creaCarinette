@@ -1,17 +1,33 @@
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Accueil</a></li>
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Creations
-                    <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Crochets</a></li>
-                    <li><a href="#">Tricots</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Livre d'or</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+<div class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
     </div>
-</nav>
+
+    <div class="navbar-collapse">
+        <nav>
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.php">Accueil</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Creations
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.php?action=crochet">Crochets</a></li>
+                            <li class="tricot"><a href="#">Tricots</a></li>
+                        </ul>
+                    </li>
+                    <li class="hoverMenu"><a href="#">Livre d'or</a></li>
+                    <li class="hoverMenu"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</div>
