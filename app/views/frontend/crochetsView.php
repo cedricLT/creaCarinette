@@ -8,15 +8,15 @@
 <div class="homePage">
     <div class="container">
         <?php require 'templates/templateMenu.php' ?>
-        <h1 class="h1Title">Créations Crochet</h1>
+        <?php require 'templates/templatetitleCrochet.php' ?>
 
-        <?php while ($donner = $recCrochet->fetch()) { ?>
+        <?php while ($donner = $recCrochets->fetch()) { ?>
 
                 <div class="blockCrochet">
                 <?= $donner['dates_fr'] ?>
                 <h3><?= $donner['title'] ?></h3>
                 <div class="creationIMG">
-                    <img src="<?= $donner['img'] ?>" alt="">
+                    <a href="index.php?action=itemCrochet&idCrochet=<?= $donner['idCrochet'] ?>"><img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot"></a>
                 </div>
                 <div class="creationText">
                     <P><?= $donner['content'] ?></P>
@@ -25,8 +25,9 @@
 
             <?php
         }
-        $recCrochet->closeCursor();
+        $recCrochets->closeCursor();
         ?>
+
 
  <?php require 'templates/templateFooter.php' ?>
 

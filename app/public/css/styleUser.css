@@ -195,9 +195,11 @@ h1{
 
 /***************************************************************************************/
 /*****************************template templateFooter.php*******************************/
-footer {
+.footer {
     background-color: black;
 }
+
+
 
 .liensMenu {
     margin-top: 12px;
@@ -267,4 +269,5 @@ footer {
 .blockCrochet{
     border: 2px solid black;
     margin-top: 40px;
+    margin-bottom: 25px;
 }
