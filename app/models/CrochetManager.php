@@ -3,17 +3,19 @@ require_once('app/models/model.php');
 
 class CrochetManager extends Manager
 {
-    public function getCrochets(){
+    public function getCrochets()
+    {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idCrochet, title, content, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr FROM crochet ORDER BY idCrochet');
+        $req = $bdd->prepare('SELECT idItem, title, content, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr, categorie FROM item  WHERE categorie = "crochet" ORDER BY postDates');
         $req->execute(array());
         return $req;
     }
 
-    public function getCrochet ($idCrochet){
+    public function itemCrochet($idItem)
+    {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idCrochet, title, content, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr FROM crochet WHERE idCrochet = ?');
-        $req->execute(array($idCrochet));
+        $req = $bdd->prepare('SELECT idItem, title, content, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr FROM item WHERE idItem = ?');
+        $req->execute(array($idItem));
         return $req->fetch();
     }
 }

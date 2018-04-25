@@ -5,15 +5,15 @@ class TricotManager extends Manager
 {
     public function getTricots(){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idTricot, title, content, img,  DATE_FORMAT(postDate, \'%d/%m/%Y\') AS dates_fr FROM tricot ORDER BY idTricot');
+        $req = $bdd->prepare('SELECT idItem, title, content, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr, categorie FROM item WHERE categorie = "tricot" ORDER BY postDates');
         $req->execute(array());
         return $req;
     }
 
-    public function getTricot($idTricot){
+    public function itemTricot($id){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idTricot, title, content, img,  DATE_FORMAT(postDate, \'%d/%m/%Y\') AS dates_fr FROM tricot WHERE idTricot = ?');
-        $req->execute(array($idTricot));
+        $req = $bdd->prepare('SELECT idItem, title, content, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr FROM item WHERE idItem = ?');
+        $req->execute(array($id));
         return $req->fetch();
     }
 

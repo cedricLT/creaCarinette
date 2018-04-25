@@ -16,7 +16,7 @@
                 <?= $donner['dates_fr'] ?>
                 <h3><?= $donner['title'] ?></h3>
                 <div class="creationIMG">
-                    <a href="index.php?action=itemCrochet&idCrochet=<?= $donner['idCrochet'] ?>"><img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot"></a>
+                    <a href="index.php?action=itemCrochet&idItem=<?= $donner['idItem'] ?>"><img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot"></a>
                 </div>
                 <div class="creationText">
                     <P><?= $donner['content'] ?></P>

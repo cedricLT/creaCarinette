@@ -19,7 +19,7 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Creations
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li class="'crochet"><a href="index.php?action=crochet">Crochets</a></li>
+                            <li class="crochet"><a href="index.php?action=crochet">Crochets</a></li>
                             <li class="tricot"><a href="index.php?action=tricots">Tricots</a></li>
                         </ul>
                     </li>

@@ -1,7 +1,8 @@
 <?php
 
-require_once'app/models/CrochetManager.php';
+require_once 'app/models/CrochetManager.php';
 require_once 'app/models/TricotManager.php';
+require_once 'app/models/UserManager.php';
 
 function crochets() //recuperation des items et textes
 {
@@ -11,12 +12,16 @@ function crochets() //recuperation des items et textes
     require 'app/views/frontend/crochetsView.php';
 }
 
-function crochet($idCrochet)
+function crochet($idItem)
 {
-    $postCrochet = new CrochetManager();
-    $recCrochet = $postCrochet->getCrochet($idCrochet);
+    $getItemCrochet = new CrochetManager();
+    $getCrochet = $getItemCrochet->itemCrochet($idItem);
+
+    $commentUser = new UserManager();
+    $commentUserCrochet = $commentUser->commentItem($idItem);
 
     require 'app/views/frontend/itemCrochetView.php';
+
 }
 
 function tricots()
@@ -27,11 +32,27 @@ function tricots()
     require 'app/views/frontend/tricotView.php';
 }
 
-function tricot($idTricot)
+function tricot($idItem)
 {
     $postviewTrico = new TricotManager();
-    $lookItem = $postviewTrico->getTricot($idTricot);
+    $lookItem = $postviewTrico->itemTricot($idItem);
     require 'app/views/frontend/itemTricotView.php';
 
 
+}
+
+
+function addcommentCrochet($idItem, $firstname, $content){
+
+
+    $userManager = new UserManager();
+    $commentCrochet = $userManager->addCrochetUser($firstname);
+
+    $getId = $userManager-> getId();
+    $getId2 = $getId->fetch();
+    $idMember = $getId2[0];
+
+    $commentUser = $userManager->comUser($content, $idMember, $idItem);
+
+    header('Location: index.php?action=itemCrochet&idItem='.$idItem);
 }
