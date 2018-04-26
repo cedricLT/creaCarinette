@@ -27,7 +27,7 @@ class UserManager extends Manager
         return $req;
     }
 
-    public function commentItem($idItem)
+    public function commentItemC($idItem)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT content,dates,firstname FROM post INNER JOIN users ON users.idUsers = post.idUsers WHERE idItem = ?');
@@ -35,4 +35,21 @@ class UserManager extends Manager
         return $req;
 
     }
-}//SELECT * FROM post INNER JOIN users on post.idUsers = users.firstname
+
+    public function addTricotUser ($firstname)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO users(firstname) VALUE(?)');
+        $req->execute(array($firstname));
+        return $req;
+    }
+
+    public function commentItemT($idItem)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT content,dates,firstname FROM post INNER JOIN users ON users.idUsers = post.idUsers WHERE idItem = ?');
+        $req->execute(array($idItem));
+        return $req;
+
+    }
+}

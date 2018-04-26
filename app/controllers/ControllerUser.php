@@ -1,6 +1,6 @@
 <?php
-namespace Projet\Controllers;
 
+namespace Projet\Controllers;
 
 
 class ControllerUser
@@ -19,8 +19,8 @@ class ControllerUser
         $getItemCrochet = new \Projet\Models\CrochetManager();
         $getCrochet = $getItemCrochet->itemCrochet($idItem);
 
-        $commentUser = new \Projet\Models\UserManager();
-        $commentUserCrochet = $commentUser->commentItem($idItem);
+        $commentUserC = new \Projet\Models\UserManager();
+        $commentUserCrochet = $commentUserC->commentItemC($idItem);
 
         require 'app/views/frontend/itemCrochetView.php';
 
@@ -38,6 +38,10 @@ class ControllerUser
     {
         $postviewTrico = new \Projet\Models\TricotManager();
         $lookItem = $postviewTrico->itemTricot($idItem);
+
+        $commentUserT = new \Projet\Models\UserManager();
+        $commentUserTricot = $commentUserT->commentItemT($idItem);
+
         require 'app/views/frontend/itemTricotView.php';
 
 
@@ -46,8 +50,6 @@ class ControllerUser
 
     function addcommentCrochet($idItem, $firstname, $content)
     {
-
-
         $userManager = new \Projet\Models\UserManager();
         $commentCrochet = $userManager->addCrochetUser($firstname);
 
@@ -58,6 +60,20 @@ class ControllerUser
         $commentUser = $userManager->comUser($content, $idMember, $idItem);
 
         header('Location: index.php?action=itemCrochet&idItem=' . $idItem);
+    }
+
+    function addcommentTricot($idItem, $firstname, $content)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $commentCrochet = $userManager->addTricotUser($firstname);
+
+        $getId = $userManager->getId();
+        $getId2 = $getId->fetch();
+        $idMember = $getId2[0];
+
+        $commentUser = $userManager->comUser($content, $idMember, $idItem);
+
+        header('Location: index.php?action=itemTricot&idItem=' . $idItem);
     }
 
 }

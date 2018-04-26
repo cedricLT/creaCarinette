@@ -25,7 +25,7 @@ $controleurUser = new \Projet\Controllers\ControllerUser(); //objet controler
             } else {
                 echo 'Erreur de chargement!';
             }
-        }elseif ($_GET['action'] == 'commentCrochet'){
+        }elseif ($_GET['action'] == 'commentCrochet'){ // injection des commentaire par item crochet dans la bdd et recup sur ItemCrochetView
             $idItem = htmlspecialchars($_GET['idItem']);
             $firstname = htmlspecialchars($_POST['firstname']);
             $content = htmlspecialchars($_POST['content']);
@@ -35,6 +35,15 @@ $controleurUser = new \Projet\Controllers\ControllerUser(); //objet controler
                 throw new Exception('tous les champs ne sont pas remplis');
             }
 
+        }elseif ($_GET['action'] == 'commentTricot'){
+            $idItem = htmlspecialchars($_GET['idItem']);
+            $firstname = htmlspecialchars($_POST['firstname']);
+            $content = htmlspecialchars($_POST['content']);
+            if (!empty($firstname) && (!empty($content))){
+                $controleurUser->addcommentTricot($idItem, $firstname, $content);
+            }else{
+                throw new Exception('tous les champs ne sont pas remplis');
+            }
         }
 
 
