@@ -35,12 +35,25 @@ $controleurUser = new \Projet\Controllers\ControllerUser(); //objet controler
                 throw new Exception('tous les champs ne sont pas remplis');
             }
 
-        }elseif ($_GET['action'] == 'commentTricot'){
+        }elseif ($_GET['action'] == 'commentTricot'){// injection des commentaire par item tricot dans la bdd et recup sur ItemtricotView
             $idItem = htmlspecialchars($_GET['idItem']);
             $firstname = htmlspecialchars($_POST['firstname']);
             $content = htmlspecialchars($_POST['content']);
             if (!empty($firstname) && (!empty($content))){
                 $controleurUser->addcommentTricot($idItem, $firstname, $content);
+            }else{
+                throw new Exception('tous les champs ne sont pas remplis');
+            }
+        }
+        elseif ($_GET['action'] == 'book'){
+            $controleurUser->commentUsersBook();
+        }
+        elseif ($_GET['action'] == 'commentBook'){ // injecte les commentaire du livre d'or dans la bdd
+            $firstname = htmlspecialchars($_POST['firstnameBook']);
+            $lastname = htmlspecialchars($_POST['lastnameBook']);
+            $content = htmlspecialchars($_POST['contentBook']);
+            if (!empty($firstname) && (!empty($lastname) && (!empty($content)))){
+                $controleurUser->commentBook($firstname, $lastname, $content);
             }else{
                 throw new Exception('tous les champs ne sont pas remplis');
             }

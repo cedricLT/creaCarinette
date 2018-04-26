@@ -51,7 +51,7 @@
                                 <li class="tricot"><a href="index.php?action=tricots">Tricots</a></li>
                             </ul>
                         </li>
-                        <li class="hoverMenu"><a href="#">Livre d'or</a></li>
+                        <li class="hoverMenu"><a href="index.php?action=book">Livre d'or</a></li>
                         <li class="hoverMenu"><a href="#">Contact</a></li>
                     </ul>
                 </div>

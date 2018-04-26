@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php ob_start(); ?>
 
 <h1 class="h1Title">Créations Tricot</h1>

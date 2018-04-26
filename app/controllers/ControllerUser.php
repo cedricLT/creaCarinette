@@ -76,4 +76,32 @@ class ControllerUser
         header('Location: index.php?action=itemTricot&idItem=' . $idItem);
     }
 
+    function commentBook($firstname, $lastname, $content)
+    {
+        $userManager = new \Projet\Models\UserManager();
+
+        $contentVisitorBook = $userManager->addContent($firstname, $lastname);
+
+        $getVisitor = $userManager->getVisitor();
+        $getVisitor2 = $getVisitor->fetch();
+        $idMember = $getVisitor2[0];
+
+        $userBook = $userManager->addVisitorBook($content, $idMember);
+
+        $commentUser = $userManager->addCommentBook();
+
+        header('Location: index.php?action=book');
+    }
+
+    function commentUsersBook()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $commentUser = $userManager->addCommentBook();
+
+
+        require 'app/views/frontend/visitorBookViews.php';
+
+    }
+
+
 }

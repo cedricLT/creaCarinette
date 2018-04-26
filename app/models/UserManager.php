@@ -1,4 +1,5 @@
 <?php
+
 namespace Projet\Models;
 
 
@@ -12,7 +13,7 @@ class UserManager extends Manager
         return $req;
     }
 
-    public function comUser($content,$idMember, $idItem)
+    public function comUser($content, $idMember, $idItem)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('INSERT INTO post(content, dates, report, idItem, idUsers) VALUE(?, NOW(),0, ?, ?)');
@@ -36,7 +37,7 @@ class UserManager extends Manager
 
     }
 
-    public function addTricotUser ($firstname)
+    public function addTricotUser($firstname)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('INSERT INTO users(firstname) VALUE(?)');
@@ -52,4 +53,38 @@ class UserManager extends Manager
         return $req;
 
     }
+
+    /*=================================visitorBook==================================================================*/
+    public function addContent($firstname, $lastname)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO users(firstname, lastname) VALUE(?, ?)');
+        $req->execute(array($firstname, $lastname));
+        return $req;
+    }
+
+    public function getVisitor()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->query('SELECT MAX(idUsers) FROM users');
+        return $req;
+    }
+
+    public function addVisitorBook($content, $idMember)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO visitorbook(content, postDate, idUsers) VALUE(?, NOW(), ?)');
+        $req->execute(array($content, $idMember));
+        return $req;
+    }
+
+    public function addCommentBook()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT content, DATE_FORMAT(postDate,  \'%d/%m/%Y\') AS date_fr,firstname,lastname FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers');
+        $req->execute(array());
+        return $req;
+    }
 }
+
+//SELECT content,postDate,firstname,lastname FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers

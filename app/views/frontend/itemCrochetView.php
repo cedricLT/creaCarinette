@@ -33,7 +33,7 @@
                 <tr>
                     <td>
                         <div class="message"><label for="message">Commentaire :</label>
-                            <textarea name="content" class="comment"></textarea>
+                            <textarea required name="content" class="comment"></textarea>
                         </div>
                     </td>
                 </tr>
