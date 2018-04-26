@@ -1,37 +1,27 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <?php require 'templates/templateHead.php' ?>
-    <title>Créa-carinette Crochets</title>
-</head>
-<body>
-<div class="homePage">
-    <div class="container">
-        <?php require 'templates/templateMenu.php' ?>
-        <?php require 'templates/templateTitleTricot.php'?>
+<?php ob_start(); ?>
 
-        <?php while ($donner = $recTricot->fetch()) { ?>
+<h1 class="h1Title">Créations Tricot</h1>
 
-            <div class="blockCrochet">
-               <p class="DateAdd">Ajouté le :<?= $donner['dates_fr'] ?></p>
-                <h3><?= $donner['title'] ?></h3>
-                <div class="creationIMG">
-                    <a href="index.php?action=itemTricot&idItem=<?= $donner['idItem'] ?>"><img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot"></a>
-                </div>
-                <div class="creationText">
-                    <P><?= $donner['content'] ?></P>
-                </div>
-            </div>
+<?php while ($donner = $recTricot->fetch()) { ?>
 
-            <?php
-        }
-        $recTricot->closeCursor();
-        ?>
-
-        <?php require 'templates/templateFooter.php' ?>
-
+    <div class="blockCrochet">
+        <p class="DateAdd">Ajouté le :<?= $donner['dates_fr'] ?></p>
+        <h3><?= $donner['title'] ?></h3>
+        <div class="creationIMG">
+            <a href="index.php?action=itemTricot&idItem=<?= $donner['idItem'] ?>"><img src="<?= $donner['img'] ?>"
+                                                                                       alt="Créa-carinette crochet tricot"></a>
+        </div>
+        <div class="creationText">
+            <P><?= $donner['content'] ?></P>
+        </div>
     </div>
-</div>
-<?php require 'templates/templateScript.php' ?>
-</body>
-</html>
+
+    <?php
+}
+$recTricot->closeCursor();
+?>
+
+
+<?php $content = ob_get_clean(); ?>
+<?php require 'templates/template.php'; ?>
+

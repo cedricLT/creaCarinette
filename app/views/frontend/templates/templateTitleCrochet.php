@@ -1,1 +1,0 @@
-<h1 class="h1Title">Créations Crochet</h1>
