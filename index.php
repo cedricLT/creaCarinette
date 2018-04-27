@@ -78,7 +78,7 @@ try {
             }
 
         }*/
-        elseif ($_GET['action'] == 'contactMail') {
+        elseif ($_GET['action'] == 'contactMail') { // envois de mail dans la bdd
             $lastname = htmlspecialchars($_POST['name']);
             $firstname = htmlspecialchars($_POST['prenom']);
             $mail = htmlspecialchars($_POST['email']);
@@ -88,11 +88,22 @@ try {
             } else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
-        } elseif ($_GET['action'] == 'reportComment') {
+        }
+        elseif ($_GET['action'] == 'reportCommentCrochet') { // signaler un commentaire dans item Crochet
             $idItem = htmlspecialchars($_GET['idItem']);
             $idPost = htmlspecialchars($_GET['idPost']);
-            $controleurUser->reportComment($idItem, $idPost);
+            $controleurUser->reportCommentCrochet($idItem, $idPost);
 
+        }
+        elseif ($_GET['action'] == 'reportCommentTricot'){
+            $idItem = htmlspecialchars($_GET['idItem']);
+            $idPost = htmlspecialchars($_GET['idPost']);
+            $controleurUser->reportCommentTricot($idItem, $idPost);
+
+        }elseif ($_GET['action'] == 'reportCommentBook'){
+            $idVisitorBook = htmlspecialchars($_GET['idVisitorBook']);
+
+            $controleurUser->reportBook($idVisitorBook);
         }
 
 

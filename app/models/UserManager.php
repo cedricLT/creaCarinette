@@ -48,7 +48,7 @@ class UserManager extends Manager
     public function commentItemT($idItem)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT content,dates,firstname FROM post INNER JOIN users ON users.idUsers = post.idUsers WHERE idItem = ?');
+        $req = $bdd->prepare('SELECT idPost,content,dates, post.idItem, firstname FROM post INNER JOIN users ON users.idUsers = post.idUsers WHERE idItem = ?');
         $req->execute(array($idItem));
         return $req;
 
@@ -73,7 +73,7 @@ class UserManager extends Manager
     public function addVisitorBook($content, $idMember)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO visitorbook(content, postDate, idUsers) VALUE(?, NOW(), ?)');
+        $req = $bdd->prepare('INSERT INTO visitorbook(content, postDate, report, idUsers) VALUE(?, NOW(), 0, ?)');
         $req->execute(array($content, $idMember));
         return $req;
     }
@@ -81,7 +81,7 @@ class UserManager extends Manager
     public function addCommentBook()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT content, DATE_FORMAT(postDate,  \'%d/%m/%Y\') AS date_fr,firstname,lastname FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers');
+        $req = $bdd->prepare('SELECT idVisitorBook, content, DATE_FORMAT(postDate,  \'%d/%m/%Y\') AS date_fr,firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers');
         $req->execute(array());
         return $req;
     }
@@ -103,6 +103,17 @@ class UserManager extends Manager
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('UPDATE post SET report = (report + 1) WHERE idPost = ?');
         $req->execute(array($idPost));
+
+        return $req;
+    }
+
+    /*=======================commentaire signalé livre d'or =====================================================*/
+
+    public function reportUserBook($idVisitorBook)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE visitorbook SET report = (report + 1) WHERE idVisitorBook = ?');
+        $req->execute(array($idVisitorBook));
 
         return $req;
     }

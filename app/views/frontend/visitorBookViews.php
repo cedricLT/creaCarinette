@@ -11,19 +11,19 @@
             <table>
                 <tr>
                     <td>
+                        <div class="name">
+                            <label for="name">Nom :</label>
+                            <input required type="text" name="lastnameBook" class="lastnameBook">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         <div class="pseudo">
                             <label for="pseudo">Prénom :</label>
                             <input required type="text" name="firstnameBook" class="firstnameBook"/>
                         </div>
-
-
                     </td>
-                </tr>
-                <tr>
-                    <div class="name">
-                        <label for="name">Nom :</label>
-                        <input required type="text" name="lastnameBook" class="lastnameBook">
-                    </div>
                 </tr>
                 <tr>
                     <td>
@@ -43,20 +43,53 @@
 
         <div class="contentVisitorBook">
             <?php
-            if(!(empty($commentUser))) {
-            $newComment = $commentUser->fetchAll();
+            if (!(empty($commentUser))) {
+                $newComment = $commentUser->fetchAll();
 
 
-             foreach ($newComment as $commentBook){?>
+                foreach ($newComment as $commentBook) {
+                    ?>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="dates">
+                                    <p>Le :<?= $commentBook['date_fr'] ?></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="nom">
+                                    <p>nom : <?= $commentBook['lastname'] ?></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="prenom">
+                                    <p>Prénom : <?= $commentBook['firstname'] ?></p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="message">
+                                    <p>Commentaire : <?= $commentBook['content'] ?></p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
 
-                <p>Le :<?= $commentBook['date_fr'] ?></p>
-                <p>nom : <?= $commentBook['lastname'] ?></p>
-                <p>Prénom : <?= $commentBook['firstname'] ?></p>
-                <p>Commentaire : <?= $commentBook['content'] ?></p>
+                    <div class="report">
+                        <button>
+                            <a href="index.php?action=reportCommentBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>">Signaler
+                                le commentaire</a>
+                        </button>
+                    </div>
+                <?php }
+            }
 
-            <?php }}
-
-             ?>
+            ?>
 
 
         </div>

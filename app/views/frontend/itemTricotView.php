@@ -48,9 +48,33 @@
         <?php
         while ($comment = $commentUserTricot->fetch()) {
             ?>
-            <p>le : <?= $comment['dates'] ?></p>
-            <p>de : <?= $comment['firstname'] ?></p>
-            <p>commentaire : <?= $comment['content'] ?></p>
+            <table>
+                <tr>
+                    <td>
+                        <div class="commentDates">
+                            <p>le : <?= $comment['dates'] ?></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="commentPseudo">
+                            <p>de : <?= $comment['firstname'] ?></p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="commentText">
+                            <p>commentaire : <?= $comment['content'] ?></p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="report">
+
+                <button><a href= "index.php?action=reportCommentTricot&idItem=<?= $comment['idItem'] ?>&idPost=<?= $comment['idPost'] ?>">Signaler le commentaire</a></button>
+            </div>
             <?php
         }
         $commentUserTricot->closeCursor();

@@ -127,13 +127,31 @@ class ControllerUser
     }
     /*====================== commentaires signaler ==========================================================*/
 
-    function reportComment($idItem, $idPost)
+    function reportCommentCrochet($idItem, $idPost)
     {
         $userManager = new \Projet\Models\UserManager();
         $report = $userManager->reportUser($idPost);
-        var_dump($idItem);
 
-        //header('Location: index.php?action=itemCrochet&idItem='.$idItem);
+        header('Location: index.php?action=itemCrochet&idItem='.$idItem);
+
+    }
+
+    function reportCommentTricot($idItem, $idPost)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $report = $userManager->reportUser($idPost);
+
+        header('Location: index.php?action=itemTricot&idItem='.$idItem);
+    }
+
+    /*======================= commentaire signalé livre d'or ====================================================*/
+
+    function reportBook($idVisitorBook)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $reportBook = $userManager->reportUserBook($idVisitorBook);
+
+        header('Location: index.php?action=book');
 
     }
 }

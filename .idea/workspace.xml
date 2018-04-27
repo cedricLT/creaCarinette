@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bf48d5-6e5c-40d7-8d50-ba5648190cb3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/frontend/contactView.php" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ControllerUser.php" afterPath="$PROJECT_DIR$/app/controllers/ControllerUser.php" />
-      <change beforePath="$PROJECT_DIR$/app/models/UserManager.php" afterPath="$PROJECT_DIR$/app/models/UserManager.php" />
+      <change beforePath="$PROJECT_DIR$/app/Models/UserManager.php" afterPath="$PROJECT_DIR$/app/Models/UserManager.php" />
       <change beforePath="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" afterPath="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/frontend/templates/template.php" afterPath="$PROJECT_DIR$/app/views/frontend/templates/template.php" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" afterPath="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontend/visitorBookViews.php" afterPath="$PROJECT_DIR$/app/views/frontend/visitorBookViews.php" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="itemCrochetView.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/frontend/itemCrochetView.php">
+      <file leaf-file-name="visitorBookViews.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/frontend/visitorBookViews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="86" column="10" lean-forward="true" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+            <state relative-caret-position="357">
+              <caret line="84" column="156" lean-forward="false" selection-start-line="84" selection-start-column="156" selection-end-line="84" selection-end-column="156" />
               <folding />
             </state>
           </provider>
@@ -36,8 +34,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="779">
+              <caret line="109" column="12" lean-forward="true" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -46,34 +44,36 @@
       <file leaf-file-name="ControllerUser.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controllers/ControllerUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="148" column="38" lean-forward="false" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserManager.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserManager.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Models/UserManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+            <state relative-caret-position="470">
+              <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding>
-                <marker date="1524838301147" expanded="true" signature="188:225" ph="INSERT INTO users... " />
-                <marker date="1524838301147" expanded="true" signature="428:500" ph="INSERT INTO post... " />
-                <marker date="1524838301147" expanded="true" signature="428:505" ph="INSERT INTO post... " />
-                <marker date="1524838301147" expanded="true" signature="428:509" ph="INSERT INTO post... " />
-                <marker date="1524838301147" expanded="true" signature="698:728" ph="SELECT MAX(i... users" />
-                <marker date="1524838301147" expanded="true" signature="873:1003" ph="SELECT conte... post" />
-                <marker date="1524838301147" expanded="true" signature="1192:1229" ph="INSERT INTO users... " />
-                <marker date="1524838301147" expanded="true" signature="1416:1522" ph="SELECT conte... post" />
-                <marker date="1524838301147" expanded="true" signature="1838:1888" ph="INSERT INTO users... " />
-                <marker date="1524838301147" expanded="true" signature="1971:2137" ph="INSERT INTO visitorbook... " />
-                <marker date="1524838301147" expanded="true" signature="2075:2105" ph="SELECT MAX(i... users" />
-                <marker date="1524838301147" expanded="true" signature="2264:2334" ph="INSERT INTO visitorbook... " />
-                <marker date="1524838301147" expanded="true" signature="2525:2680" ph="SELECT conte... visitorbook" />
-                <marker date="1524838301147" expanded="true" signature="2991:3077" ph="INSERT INTO users... " />
-                <marker date="1524838301147" expanded="true" signature="3402:3456" ph="UPDATE post... " />
+                <marker date="1524844125558" expanded="true" signature="188:225" ph="INSERT INTO users... " />
+                <marker date="1524844125558" expanded="true" signature="428:500" ph="INSERT INTO post... " />
+                <marker date="1524844125558" expanded="true" signature="428:505" ph="INSERT INTO post... " />
+                <marker date="1524844125558" expanded="true" signature="428:509" ph="INSERT INTO post... " />
+                <marker date="1524844125558" expanded="true" signature="698:728" ph="SELECT MAX(i... users" />
+                <marker date="1524844125558" expanded="true" signature="873:1002" ph="SELECT conte... post" />
+                <marker date="1524844125558" expanded="true" signature="873:1003" ph="SELECT idPos... post" />
+                <marker date="1524844125558" expanded="true" signature="1192:1229" ph="INSERT INTO users... " />
+                <marker date="1524844125558" expanded="true" signature="1416:1543" ph="SELECT conte... post" />
+                <marker date="1524844125558" expanded="true" signature="1859:1909" ph="INSERT INTO users... " />
+                <marker date="1524844125558" expanded="true" signature="1992:2158" ph="INSERT INTO visitorbook... " />
+                <marker date="1524844125558" expanded="true" signature="2096:2126" ph="SELECT MAX(i... users" />
+                <marker date="1524844125558" expanded="true" signature="2285:2366" ph="INSERT INTO visitorbook... " />
+                <marker date="1524844125558" expanded="true" signature="2557:2749" ph="SELECT conte... visitorbook" />
+                <marker date="1524844125558" expanded="true" signature="3060:3146" ph="INSERT INTO users... " />
+                <marker date="1524844125558" expanded="true" signature="3471:3525" ph="UPDATE post... " />
+                <marker date="1524844125558" expanded="true" signature="3836:3904" ph="UPDATE visitorbook... " />
               </folding>
             </state>
           </provider>
@@ -134,15 +134,16 @@
         <option value="$PROJECT_DIR$/app/views/frontend/crochetsView.php" />
         <option value="$PROJECT_DIR$/app/public/css/styleUser.css" />
         <option value="$PROJECT_DIR$/app/views/frontend/TricotView.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/visitorBook.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/templates/template.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/contactView.php" />
         <option value="$PROJECT_DIR$/app/Models/Manager.php" />
-        <option value="$PROJECT_DIR$/app/Models/UserManager.php" />
+        <option value="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" />
+        <option value="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" />
+        <option value="$PROJECT_DIR$/app/views/frontend/visitorBookViews.php" />
         <option value="$PROJECT_DIR$/app/Controllers/ControllerUser.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" />
+        <option value="$PROJECT_DIR$/app/Models/UserManager.php" />
       </list>
     </option>
   </component>
@@ -319,12 +320,12 @@
       <workItem from="1524661370694" duration="7096000" />
       <workItem from="1524727877655" duration="28109000" />
       <workItem from="1524813935336" duration="18325000" />
-      <workItem from="1524837591264" duration="1251000" />
+      <workItem from="1524837591264" duration="6063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185866000" />
+    <option name="totallyTimeSpent" value="190678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -547,6 +548,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
           <caret line="281" column="1" lean-forward="true" selection-start-line="281" selection-start-column="1" selection-end-line="281" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -561,20 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-263">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/itemTricotView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/visitorBookViews.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -614,51 +602,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/UserManager.php">
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/itemCrochetView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding>
-            <marker date="1524838301147" expanded="true" signature="188:225" ph="INSERT INTO users... " />
-            <marker date="1524838301147" expanded="true" signature="428:500" ph="INSERT INTO post... " />
-            <marker date="1524838301147" expanded="true" signature="428:505" ph="INSERT INTO post... " />
-            <marker date="1524838301147" expanded="true" signature="428:509" ph="INSERT INTO post... " />
-            <marker date="1524838301147" expanded="true" signature="698:728" ph="SELECT MAX(i... users" />
-            <marker date="1524838301147" expanded="true" signature="873:1003" ph="SELECT conte... post" />
-            <marker date="1524838301147" expanded="true" signature="1192:1229" ph="INSERT INTO users... " />
-            <marker date="1524838301147" expanded="true" signature="1416:1522" ph="SELECT conte... post" />
-            <marker date="1524838301147" expanded="true" signature="1838:1888" ph="INSERT INTO users... " />
-            <marker date="1524838301147" expanded="true" signature="1971:2137" ph="INSERT INTO visitorbook... " />
-            <marker date="1524838301147" expanded="true" signature="2075:2105" ph="SELECT MAX(i... users" />
-            <marker date="1524838301147" expanded="true" signature="2264:2334" ph="INSERT INTO visitorbook... " />
-            <marker date="1524838301147" expanded="true" signature="2525:2680" ph="SELECT conte... visitorbook" />
-            <marker date="1524838301147" expanded="true" signature="2991:3077" ph="INSERT INTO users... " />
-            <marker date="1524838301147" expanded="true" signature="3402:3456" ph="UPDATE post... " />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="78" column="0" lean-forward="true" selection-start-line="77" selection-start-column="12" selection-end-line="80" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/itemTricotView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="83" column="6" lean-forward="true" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/visitorBookViews.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="84" column="156" lean-forward="false" selection-start-line="84" selection-start-column="156" selection-end-line="84" selection-end-column="156" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controllers/ControllerUser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="148" column="38" lean-forward="false" selection-start-line="148" selection-start-column="38" selection-end-line="148" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+        <state relative-caret-position="779">
+          <caret line="109" column="12" lean-forward="true" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/itemCrochetView.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/UserManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="86" column="10" lean-forward="true" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="470">
+          <caret line="79" column="0" lean-forward="true" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding>
+            <marker date="1524844125558" expanded="true" signature="188:225" ph="INSERT INTO users... " />
+            <marker date="1524844125558" expanded="true" signature="428:500" ph="INSERT INTO post... " />
+            <marker date="1524844125558" expanded="true" signature="428:505" ph="INSERT INTO post... " />
+            <marker date="1524844125558" expanded="true" signature="428:509" ph="INSERT INTO post... " />
+            <marker date="1524844125558" expanded="true" signature="698:728" ph="SELECT MAX(i... users" />
+            <marker date="1524844125558" expanded="true" signature="873:1002" ph="SELECT conte... post" />
+            <marker date="1524844125558" expanded="true" signature="873:1003" ph="SELECT idPos... post" />
+            <marker date="1524844125558" expanded="true" signature="1192:1229" ph="INSERT INTO users... " />
+            <marker date="1524844125558" expanded="true" signature="1416:1543" ph="SELECT conte... post" />
+            <marker date="1524844125558" expanded="true" signature="1859:1909" ph="INSERT INTO users... " />
+            <marker date="1524844125558" expanded="true" signature="1992:2158" ph="INSERT INTO visitorbook... " />
+            <marker date="1524844125558" expanded="true" signature="2096:2126" ph="SELECT MAX(i... users" />
+            <marker date="1524844125558" expanded="true" signature="2285:2366" ph="INSERT INTO visitorbook... " />
+            <marker date="1524844125558" expanded="true" signature="2557:2749" ph="SELECT conte... visitorbook" />
+            <marker date="1524844125558" expanded="true" signature="3060:3146" ph="INSERT INTO users... " />
+            <marker date="1524844125558" expanded="true" signature="3471:3525" ph="UPDATE post... " />
+            <marker date="1524844125558" expanded="true" signature="3836:3904" ph="UPDATE visitorbook... " />
+          </folding>
         </state>
       </provider>
     </entry>

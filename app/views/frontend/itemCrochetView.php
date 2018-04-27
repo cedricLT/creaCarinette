@@ -76,10 +76,8 @@
                 </tr>
             </table>
             <div class="report">
-                <!--<form action="index.php?action=reportComment&IdUsers=">
-                    <input type="button" class="submit_btn" value="Signaler le commentaire"/>
-                </form>-->
-                <a href= "index.php?action=reportComment&IdItem=<?= $comment['idItem'] ?>&idPost=<?= $comment['idPost'] ?>">Signaler le commentaire</a>
+
+                <button><a href= "index.php?action=reportCommentCrochet&idItem=<?= $comment['idItem'] ?>&idPost=<?= $comment['idPost'] ?>">Signaler le commentaire</a></button>
             </div>
             <?php
         }
