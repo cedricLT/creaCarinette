@@ -76,6 +76,8 @@ class ControllerUser
         header('Location: index.php?action=itemTricot&idItem=' . $idItem);
     }
 
+    /*=============================== visitorbook =======================================================================*/
+
     function commentBook($firstname, $lastname, $content)
     {
         $userManager = new \Projet\Models\UserManager();
@@ -103,5 +105,35 @@ class ControllerUser
 
     }
 
+    function contactUsers()
+    {
+        require 'app/views/frontend/contactView.php';
+    }
 
+    /*===================== mail formulaire de contact==================================*/
+
+    function contactMail($lastname, $firstname, $mail, $content)
+    {
+        $userManager = new \Projet\Models\UserManager();
+
+
+        if(filter_var($mail, FILTER_VALIDATE_EMAIL) ){
+            $contactUserMail = $userManager->addMail($lastname, $firstname, $mail, $content);
+            header('Location: index.php?action=contact');
+        }
+        else {
+            header('Location: app/views/frontend/error.php');
+        }
+    }
+    /*====================== commentaires signaler ==========================================================*/
+
+    function reportComment($idItem, $idPost)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $report = $userManager->reportUser($idPost);
+        var_dump($idItem);
+
+        //header('Location: index.php?action=itemCrochet&idItem='.$idItem);
+
+    }
 }

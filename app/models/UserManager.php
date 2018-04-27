@@ -31,7 +31,7 @@ class UserManager extends Manager
     public function commentItemC($idItem)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT content,dates,firstname FROM post INNER JOIN users ON users.idUsers = post.idUsers WHERE idItem = ?');
+        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ?');
         $req->execute(array($idItem));
         return $req;
 
@@ -85,6 +85,33 @@ class UserManager extends Manager
         $req->execute(array());
         return $req;
     }
+
+    /*======================================== mail ====================================================*/
+
+    public function addMail($lastname, $firstname, $mail, $content)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO mail(dates, lastname, firstname,  mail, content ) VALUE(NOW(), ?, ?, ?, ?)');
+        $req->execute(array($lastname, $firstname, $mail, $content));
+        return $req;
+    }
+
+    /*====================== commentaires signalé ==========================================================*/
+
+    public function reportUser($idPost)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE post SET report = (report + 1) WHERE idPost = ?');
+        $req->execute(array($idPost));
+
+        return $req;
+    }
+
+
+
+
+
+
 }
 
 //SELECT content,postDate,firstname,lastname FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers
