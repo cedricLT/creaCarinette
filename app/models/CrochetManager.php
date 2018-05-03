@@ -1,6 +1,6 @@
 <?php
-namespace Projet\Models;
 
+namespace Projet\Models;
 
 
 class CrochetManager extends Manager
@@ -21,4 +21,13 @@ class CrochetManager extends Manager
         $req->execute(array($idItem));
         return $req->fetch();
     }
+
+    public function newCreatCrochet($title, $content, $target_file)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO item (title, content, img, postDates, categorie) VALUES(?,?,?, NOW(), "crochet")');
+        $req->execute(array($title, $content, $target_file));
+        return $req;
+    }
+
 }
