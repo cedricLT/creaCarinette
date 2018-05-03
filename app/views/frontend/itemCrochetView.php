@@ -15,76 +15,108 @@
     </div>
 </div>
 
-<div class="commentCrochet">
-    <div class="commentDropUsers">
-        <h4>Ecrire un commentaire :</h4>
-        <form action="index.php?action=commentCrochet&idItem=<?= htmlspecialchars($donner['idItem']) ?>"
-              method="post">
-            <table>
-                <tr>
-                    <td>
-                        <div class="pseudo">
-                            <label for="pseudo">Pseudo :</label>
-                            <input required type="text" name="firstname" class="membrePseudo"/>
-                        </div>
+
+<div class="commentDropUsers">
+    <h4>Ecrire un commentaire :</h4>
+    <form action="index.php?action=commentCrochet&idItem=<?= htmlspecialchars($donner['idItem']) ?>"
+          method="post">
+        <table>
+            <tr>
+                <td>
+                    <div class="pseudo">
+                        <label for="pseudo">Pseudo :</label>
+                        <input required type="text" name="firstname" class="membrePseudo"/>
+                    </div>
 
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="message">
-                            <label for="message">Commentaire :</label>
-                            <textarea required name="content" class="comment"></textarea>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <input type="submit" class="submit_btn" value="Envoyer"/>
-                    </td>
-                </tr>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="message">
+                        <label for="message">Commentaire :</label>
+                        <textarea required name="content" class="comment"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" class="submit_btn" value="Envoyer"/>
+                </td>
+            </tr>
 
-            </table>
-        </form>
-    </div>
-    <div class="commentItemCrochet">
-        <?php
-        while ($comment = $commentUserCrochet->fetch()) {
-            ?>
-            <table>
-                <tr>
-                    <td>
-                        <div class="commentDates">
-                            <p>le : <?= $comment['dates'] ?></p>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="commentPseudo">
-                            <p>de : <?= $comment['firstname'] ?></p>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="commentText">
-                            <p>commentaire : <?= $comment['content'] ?></p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-            <div class="report">
+        </table>
+    </form>
+</div>
 
-                <button><a href= "index.php?action=reportCommentCrochet&idItem=<?= $comment['idItem'] ?>&idPost=<?= $comment['idPost'] ?>">Signaler le commentaire</a></button>
+<!-- affichage des commentaire -->
+
+<div class="commentReponse">
+
+    <?php
+    while ($comment = $commentUserCrochet->fetch()) {
+    ?>
+    <div class="commentCrochet">
+        <div class="commentItemCrochet">
+            <div class="commentDates">
+                <p>le : <?= $comment['dates'] ?></p>
             </div>
-            <?php
-        }
-        $commentUserCrochet->closeCursor();
-        ?>
+
+            <div class="commentPseudo">
+                <p>de : <?= $comment['firstname'] ?></p>
+            </div>
+
+            <div class="commentText">
+                <p>commentaire : <?= $comment['content'] ?></p>
+            </div>
+
+            <?= $comment['idParent'] ?>
+        </div>
+        <div class="report">
+
+            <button>
+                <a href="index.php?action=reportCommentCrochet&idItem=<?= $comment['idItem'] ?>&idPost=<?= $comment['idPost'] ?>">Signaler
+                    le commentaire</a>
+            </button>
+
+        </div>
+
+
+        <div class="formComment">
+
+            <input type="submit" class="submit_btn" value="Répondre"/>
+
+            <div class="reponseUser">
+                <h2>Réponse</h2>
+
+                <form action="index.php?action=repCommentCrochet&idItem=<?= $comment['idItem'] ?>&idPostParent=<?= $comment['idPost'] ?>" method="post">
+
+                    <label for="pseudo">Pseudo :</label>
+                    <input required type="text" name="repPrenom" class="repPseudo"/>
+
+                    <label for="message">Commentaire :</label>
+                    <textarea required name="content" class="comment"></textarea>
+
+                    <div class="btnRep">
+                        <input type="submit" class="submit_btn" value="Envoyer"/>
+                </form>
+
+                <input type="submit" class="submit_cancel" value="Annuler"/>
+
+
+            </div>
+
+        </div>
+
 
     </div>
+
+</div>
+<?php
+}
+$commentUserCrochet->closeCursor();
+?>
+
 </div>
 
 

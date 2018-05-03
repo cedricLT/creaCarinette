@@ -8,19 +8,43 @@ class ControllerUser
 
     function crochets() //recuperation des items et textes
     {
-        $postCrochets = new \Projet\Models\CrochetManager();
-        $recCrochets = $postCrochets->getCrochets();
+        $CrochetManager = new \Projet\Models\CrochetManager();
+        $recCrochets = $CrochetManager->getCrochets();
+
+
+
 
         require 'app/views/frontend/crochetsView.php';
     }
 
     function crochet($idItem)
     {
-        $getItemCrochet = new \Projet\Models\CrochetManager();
-        $getCrochet = $getItemCrochet->itemCrochet($idItem);
+        $CrochetManager = new \Projet\Models\CrochetManager();
+        $getCrochet = $CrochetManager->itemCrochet($idItem);
 
-        $commentUserC = new \Projet\Models\UserManager();
-        $commentUserCrochet = $commentUserC->commentItemC($idItem);
+        $UserManager = new \Projet\Models\UserManager();
+        $commentUserCrochet = $UserManager->commentItemC($idItem);
+
+        /*============= reponse des commentaires =================*/
+
+       /* $commentCrochet = $commentUserCrochet->fetchAll();
+        $orderedComment = array();
+
+        $idRoot = [0];
+        while (count($commentCrochet)>0){
+            foreach($commentCrochet as $index=>$comUserCrochet) {
+                $idParent = $comUserCrochet['idParent'];
+                $idPost = $comUserCrochet['idPost'];
+                if(in_array($comUserCrochet['idParent'],$idRoot)){
+                    $idRoot [] = $comUserCrochet['idPost'];
+                    $orderedComment [$idParent]['children'][$idPost] = ['idPost'=>$comUserCrochet['idPost'],'idParent'=>$comUserCrochet['idParent'],'content'=>$comUserCrochet['content']];
+                    unset($commentCrochet[$index]);
+                }
+            }
+        }
+        var_dump(($orderedComment));*/
+
+
 
         require 'app/views/frontend/itemCrochetView.php';
 
@@ -36,16 +60,18 @@ class ControllerUser
 
     function tricot($idItem)
     {
-        $postviewTrico = new \Projet\Models\TricotManager();
-        $lookItem = $postviewTrico->itemTricot($idItem);
+        $TricotManager = new \Projet\Models\TricotManager();
+        $lookItem = $TricotManager->itemTricot($idItem);
 
-        $commentUserT = new \Projet\Models\UserManager();
-        $commentUserTricot = $commentUserT->commentItemT($idItem);
+        $UserManager = new \Projet\Models\UserManager();
+        $commentUserTricot = $UserManager->commentItemT($idItem);
 
         require 'app/views/frontend/itemTricotView.php';
 
 
     }
+
+    /*======================== commentaires par items ========================================================*/
 
 
     function addcommentCrochet($idItem, $firstname, $content)
@@ -152,6 +178,24 @@ class ControllerUser
         $reportBook = $userManager->reportUserBook($idVisitorBook);
 
         header('Location: index.php?action=book');
+
+    }
+
+    /*============================ reponse a un commentaire ====================================================*/
+
+    function repCommentCrochet($idParent, $idItem, $firstname, $content)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $commentCrochet = $userManager->addCrochetUser($firstname);
+
+        $getId = $userManager->getId();
+        $getId2 = $getId->fetch();
+        $idMember = $getId2[0];
+
+        $repCommentUser = $userManager->repComUser($idParent, $content, $idMember, $idItem);
+
+        header('Location: index.php?action=itemCrochet&idItem='. $idItem );
+
 
     }
 }

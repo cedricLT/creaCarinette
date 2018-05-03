@@ -57,7 +57,7 @@ try {
             }
         } elseif ($_GET['action'] == 'contact') {
             $controleurUser->contactUsers();
-        } /*elseif ($_GET['action'] == 'contactMail'){
+        } /*elseif ($_GET['action'] == 'contactMail'){ //formulaire contact mail
             $lastname = $_POST['name'];
             $firstname = $_POST['prenom'];
             $mail = $_POST['email'];
@@ -92,6 +92,7 @@ try {
         elseif ($_GET['action'] == 'reportCommentCrochet') { // signaler un commentaire dans item Crochet
             $idItem = htmlspecialchars($_GET['idItem']);
             $idPost = htmlspecialchars($_GET['idPost']);
+
             $controleurUser->reportCommentCrochet($idItem, $idPost);
 
         }
@@ -100,10 +101,23 @@ try {
             $idPost = htmlspecialchars($_GET['idPost']);
             $controleurUser->reportCommentTricot($idItem, $idPost);
 
-        }elseif ($_GET['action'] == 'reportCommentBook'){
+        }
+        elseif ($_GET['action'] == 'reportCommentBook'){
             $idVisitorBook = htmlspecialchars($_GET['idVisitorBook']);
 
             $controleurUser->reportBook($idVisitorBook);
+        }
+        elseif ($_GET['action'] == 'repCommentCrochet'){
+            $idParent= htmlspecialchars($_GET['idPostParent']);
+            $idItem = htmlspecialchars($_GET['idItem']);
+            $firstname = htmlspecialchars($_POST['repPrenom']);
+            $content = htmlspecialchars($_POST['content']);
+            if (!empty($firstname) && (!empty($content))){
+                $controleurUser->repCommentCrochet($idParent, $idItem, $firstname, $content);
+            }else {
+                throw new Exception('tous les champs ne sont pas remplis');
+            }
+
         }
 
 

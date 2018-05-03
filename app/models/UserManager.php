@@ -13,7 +13,7 @@ class UserManager extends Manager
         return $req;
     }
 
-    public function comUser($content, $idMember, $idItem)
+    public function comUser( $content, $idMember, $idItem)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('INSERT INTO post(content, dates, report, idItem, idUsers) VALUE(?, NOW(),0, ?, ?)');
@@ -31,12 +31,19 @@ class UserManager extends Manager
     public function commentItemC($idItem)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ?');
+        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ?');
         $req->execute(array($idItem));
         return $req;
 
     }
+    public function repCommentItemC($idItem,$idParent)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ? AND idParent = ? ');
+        $req->execute(array($idItem,$idParent));
+        return $req;
 
+    }
     public function addTricotUser($firstname)
     {
         $bdd = $this->dbConnect();
@@ -91,7 +98,7 @@ class UserManager extends Manager
     public function addMail($lastname, $firstname, $mail, $content)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('INSERT INTO mail(dates, lastname, firstname,  mail, content ) VALUE(NOW(), ?, ?, ?, ?)');
+        $req = $bdd->prepare('INSERT INTO contact( dates, lastname, firstname,  mail, content ) VALUE(NOW(), ?, ?, ?, ?)');
         $req->execute(array($lastname, $firstname, $mail, $content));
         return $req;
     }
@@ -118,11 +125,17 @@ class UserManager extends Manager
         return $req;
     }
 
+    /*=========================== repondre a un commentaire ==================================================*/
 
+    public function repComUser($idParent, $content, $idMember, $idItem)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO post(content, dates, report, idUsers, idItem, idParent) VALUE(?, NOW(),0, ?, ?,?)');
+        $req->execute(array($content, $idMember, $idItem, $idParent));
+        return $req;
+    }
 
 
 
 
 }
-
-//SELECT content,postDate,firstname,lastname FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers

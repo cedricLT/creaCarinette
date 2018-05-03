@@ -13,6 +13,7 @@ class CrochetManager extends Manager
         return $req;
     }
 
+
     public function itemCrochet($idItem)
     {
         $bdd = $this->dbConnect();

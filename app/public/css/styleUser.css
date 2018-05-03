@@ -280,3 +280,13 @@ textarea{
 .membrePseudo{
     width: -webkit-fill-available !important;;
 }
+
+.reponseUser{
+    display: none;
+
+}
+
+.commentCrochet{
+    border: 2px solid black;
+    margin-bottom: 15px;
+}

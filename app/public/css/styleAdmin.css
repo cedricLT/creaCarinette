@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.blockCrochet{
+    border: 1px solid;
+    margin-top: 30px;
+}
