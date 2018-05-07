@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97bf48d5-6e5c-40d7-8d50-ba5648190cb3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/public/js/img.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/public/js/uploadImg.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/backend/modifTricotView.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/Controllers/ControllerAdmin.php" afterPath="$PROJECT_DIR$/app/Controllers/ControllerAdmin.php" />
+      <change beforePath="$PROJECT_DIR$/app/models/CrochetManager.php" afterPath="$PROJECT_DIR$/app/models/CrochetManager.php" />
       <change beforePath="$PROJECT_DIR$/app/public/css/styleAdmin.css" afterPath="$PROJECT_DIR$/app/public/css/styleAdmin.css" />
+      <change beforePath="$PROJECT_DIR$/app/public/js/img.js" afterPath="$PROJECT_DIR$/app/public/js/img.js" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/crochetAdminView.php" afterPath="$PROJECT_DIR$/app/views/backend/crochetAdminView.php" />
       <change beforePath="$PROJECT_DIR$/app/views/backend/modifCrochetView.php" afterPath="$PROJECT_DIR$/app/views/backend/modifCrochetView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/backend/nouveauCrochetView.php" afterPath="$PROJECT_DIR$/app/views/backend/nouveauCrochetView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/backend/nouveauTricotView.php" afterPath="$PROJECT_DIR$/app/views/backend/nouveauTricotView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/backend/template/template.php" afterPath="$PROJECT_DIR$/app/views/backend/template/template.php" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/tricotAdminView.php" afterPath="$PROJECT_DIR$/app/views/backend/tricotAdminView.php" />
+      <change beforePath="$PROJECT_DIR$/indexAdmin.php" afterPath="$PROJECT_DIR$/indexAdmin.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,42 +27,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="modifCrochetView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/modifCrochetView.php">
+      <file leaf-file-name="crochetAdminView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/backend/crochetAdminView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="114">
+              <caret line="110" column="26" lean-forward="true" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+              <folding>
+                <element signature="e#2724#2731#1#HTML" expanded="true" />
+                <element signature="e#4419#4426#1#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexAdmin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/indexAdmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nouveauCrochetView.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/backend/nouveauCrochetView.php">
+      <file leaf-file-name="ControllerAdmin.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Controllers/ControllerAdmin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="340">
+              <caret line="225" column="33" lean-forward="true" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="55" />
+              <folding>
+                <element signature="e#38#71#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styleAdmin.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/public/css/styleAdmin.css">
+      <file leaf-file-name="UserManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/UserManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="417">
+              <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+              <folding>
+                <marker date="1525731341240" expanded="true" signature="188:225" ph="INSERT INTO users... " />
+                <marker date="1525731341240" expanded="true" signature="429:501" ph="INSERT INTO post... " />
+                <marker date="1525731341240" expanded="true" signature="429:506" ph="INSERT INTO post... " />
+                <marker date="1525731341240" expanded="true" signature="429:510" ph="INSERT INTO post... " />
+                <marker date="1525731341240" expanded="true" signature="699:729" ph="SELECT MAX(i... users" />
+                <marker date="1525731341240" expanded="true" signature="874:1013" ph="SELECT conte... post" />
+                <marker date="1525731341240" expanded="true" signature="874:1014" ph="SELECT idPos... post" />
+                <marker date="1525731341240" expanded="true" signature="1203:1240" ph="INSERT INTO users... " />
+                <marker date="1525731341240" expanded="true" signature="1427:1566" ph="SELECT conte... post" />
+                <marker date="1525731341240" expanded="true" signature="1882:1932" ph="INSERT INTO users... " />
+                <marker date="1525731341240" expanded="true" signature="2015:2181" ph="INSERT INTO visitorbook... " />
+                <marker date="1525731341240" expanded="true" signature="2119:2149" ph="SELECT MAX(i... users" />
+                <marker date="1525731341240" expanded="true" signature="2308:2389" ph="INSERT INTO visitorbook... " />
+                <marker date="1525731341240" expanded="true" signature="2580:2772" ph="SELECT conte... visitorbook" />
+                <marker date="1525731341240" expanded="true" signature="3083:3173" ph="INSERT INTO users... " />
+                <marker date="1525731341240" expanded="true" signature="3498:3552" ph="UPDATE post... " />
+                <marker date="1525731341240" expanded="true" signature="3863:3931" ph="UPDATE visitorbook... " />
+                <marker date="1525731341240" expanded="true" signature="4267:4360" ph="INSERT INTO post... " />
+                <marker date="1525731341240" expanded="true" signature="4692:4726" ph="DELETE FROM post... " />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="img.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/public/js/img.js">
+      <file leaf-file-name="CrochetManager.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/CrochetManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="349">
+              <caret line="49" column="5" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="54" selection-end-column="5" />
+              <folding>
+                <marker date="1525730548594" expanded="true" signature="178:332" ph="SELECT idIte... item" />
+                <marker date="1525730548594" expanded="true" signature="509:621" ph="SELECT idIte... item" />
+                <marker date="1525730548594" expanded="true" signature="840:932" ph="INSERT INTO item... " />
+                <marker date="1525730548594" expanded="true" signature="1157:1212" ph="UPDATE item... " />
+                <marker date="1525730548594" expanded="true" signature="1431:1471" ph="UPDATE item... " />
+                <marker date="1525730548594" expanded="true" signature="1670:1704" ph="DELETE FROM item... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,6 +130,7 @@
       <find>comUser</find>
       <find>$commentUserCrochet</find>
       <find>commentItemC</find>
+      <find>creatItemCrochet</find>
       <find>modifItemCrochet</find>
     </findStrings>
   </component>
@@ -93,8 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/frontend/templates/templateHead.php" />
-        <option value="$PROJECT_DIR$/app/views/frontend/templates/templateFooter.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/templates/templateH1.php" />
         <option value="$PROJECT_DIR$/app/models/PostCrochet.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/itemTricot.php" />
@@ -125,25 +170,27 @@
         <option value="$PROJECT_DIR$/app/views/frontend/visitorBookViews.php" />
         <option value="$PROJECT_DIR$/app/public/js/reponseComment.js" />
         <option value="$PROJECT_DIR$/app/views/backend/CrochetAdminView.php" />
-        <option value="$PROJECT_DIR$/app/Models/CrochetManager.php" />
         <option value="$PROJECT_DIR$/app/public/css/styleUser.css" />
         <option value="$PROJECT_DIR$/app/views/backend/tableauDeBordAdminView.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" />
         <option value="$PROJECT_DIR$/app/Models/TricotManager.php" />
-        <option value="$PROJECT_DIR$/app/Models/UserManager.php" />
         <option value="$PROJECT_DIR$/app/Controllers/ControllerUser.php" />
         <option value="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" />
-        <option value="$PROJECT_DIR$/app/Controllers/ControllerAdmin.php" />
-        <option value="$PROJECT_DIR$/app/views/backend/tricotAdminView.php" />
-        <option value="$PROJECT_DIR$/indexAdmin.php" />
-        <option value="$PROJECT_DIR$/app/views/backend/crochetAdminView.php" />
         <option value="$PROJECT_DIR$/app/views/backend/template/template.php" />
         <option value="$PROJECT_DIR$/app/views/backend/nouveauTricotView.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/nouveauCrochetView.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/modifTricotView.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/tricotAdminView.php" />
+        <option value="$PROJECT_DIR$/app/public/js/uploadImg.js" />
         <option value="$PROJECT_DIR$/app/views/backend/modifCrochetView.php" />
         <option value="$PROJECT_DIR$/app/public/css/styleAdmin.css" />
-        <option value="$PROJECT_DIR$/app/views/backend/nouveauCrochetView.php" />
         <option value="$PROJECT_DIR$/app/public/js/img.js" />
+        <option value="$PROJECT_DIR$/indexAdmin.php" />
+        <option value="$PROJECT_DIR$/app/Models/CrochetManager.php" />
+        <option value="$PROJECT_DIR$/app/Controllers/ControllerAdmin.php" />
+        <option value="$PROJECT_DIR$/app/Models/UserManager.php" />
+        <option value="$PROJECT_DIR$/app/views/backend/crochetAdminView.php" />
       </list>
     </option>
   </component>
@@ -200,6 +247,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -284,7 +332,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -350,18 +397,19 @@
       <workItem from="1525264893114" duration="10512000" />
       <workItem from="1525332434581" duration="27344000" />
       <workItem from="1525418569010" duration="9432000" />
-      <workItem from="1525683403218" duration="16370000" />
+      <workItem from="1525683403218" duration="22030000" />
+      <workItem from="1525713289380" duration="17623000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298453000" />
+    <option name="totallyTimeSpent" value="321736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16792738" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22314675" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -412,15 +460,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/homeView.html" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/session/session.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="178" column="9" lean-forward="false" selection-start-line="178" selection-start-column="9" selection-end-line="178" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/frontend/templates/menu.php" />
     <entry file="file://$PROJECT_DIR$/app/public/js/sliderHome.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -461,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="72" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -479,13 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/public/js/reponseComment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -529,31 +560,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/TricotManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <marker date="1525691939176" expanded="true" signature="170:322" ph="SELECT idIte... item" />
-            <marker date="1525691939176" expanded="true" signature="492:604" ph="SELECT idIte... item" />
-            <marker date="1525691939176" expanded="true" signature="822:913" ph="INSERT INTO item... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/frontend/crochetsView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/frontend/itemCrochetView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1082">
           <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -561,7 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="99" lean-forward="true" selection-start-line="20" selection-start-column="99" selection-end-line="20" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -569,7 +578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="114" column="47" lean-forward="false" selection-start-line="114" selection-start-column="36" selection-end-line="114" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -583,50 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/UserManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <marker date="1525692437490" expanded="true" signature="188:225" ph="INSERT INTO users... " />
-            <marker date="1525692437490" expanded="true" signature="429:501" ph="INSERT INTO post... " />
-            <marker date="1525692437490" expanded="true" signature="429:506" ph="INSERT INTO post... " />
-            <marker date="1525692437490" expanded="true" signature="429:510" ph="INSERT INTO post... " />
-            <marker date="1525692437490" expanded="true" signature="699:729" ph="SELECT MAX(i... users" />
-            <marker date="1525692437490" expanded="true" signature="874:1013" ph="SELECT conte... post" />
-            <marker date="1525692437490" expanded="true" signature="874:1014" ph="SELECT idPos... post" />
-            <marker date="1525692437490" expanded="true" signature="1203:1240" ph="INSERT INTO users... " />
-            <marker date="1525692437490" expanded="true" signature="1427:1566" ph="SELECT conte... post" />
-            <marker date="1525692437490" expanded="true" signature="1882:1932" ph="INSERT INTO users... " />
-            <marker date="1525692437490" expanded="true" signature="2015:2181" ph="INSERT INTO visitorbook... " />
-            <marker date="1525692437490" expanded="true" signature="2119:2149" ph="SELECT MAX(i... users" />
-            <marker date="1525692437490" expanded="true" signature="2308:2389" ph="INSERT INTO visitorbook... " />
-            <marker date="1525692437490" expanded="true" signature="2580:2772" ph="SELECT conte... visitorbook" />
-            <marker date="1525692437490" expanded="true" signature="3083:3173" ph="INSERT INTO users... " />
-            <marker date="1525692437490" expanded="true" signature="3498:3552" ph="UPDATE post... " />
-            <marker date="1525692437490" expanded="true" signature="3863:3931" ph="UPDATE visitorbook... " />
-            <marker date="1525692437490" expanded="true" signature="4267:4360" ph="INSERT INTO post... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/CrochetManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="31" />
-          <folding>
-            <marker date="1525361650992" expanded="true" signature="178:332" ph="SELECT idIte... item" />
-            <marker date="1525361650992" expanded="true" signature="509:621" ph="SELECT idIte... item" />
-            <marker date="1525361650992" expanded="true" signature="840:932" ph="INSERT INTO item... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/frontend/visitorBookViews.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -634,7 +602,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,31 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/tricotAdminView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="33" column="29" lean-forward="false" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/crochetAdminView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="33" column="75" lean-forward="false" selection-start-line="33" selection-start-column="75" selection-end-line="33" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/indexAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="59" column="10" lean-forward="true" selection-start-line="59" selection-start-column="10" selection-end-line="59" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,48 +616,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/nouveauTricotView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="66" column="3" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/TricotManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <marker date="1525691939176" expanded="true" signature="170:322" ph="SELECT idIte... item" />
+            <marker date="1525691939176" expanded="true" signature="492:604" ph="SELECT idIte... item" />
+            <marker date="1525691939176" expanded="true" signature="822:913" ph="INSERT INTO item... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/frontend/crochetsView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/modifTricotView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="40" column="53" lean-forward="true" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/tricotAdminView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="37" column="22" lean-forward="true" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/modifCrochetView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/frontend/templates/template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="88" column="14" lean-forward="true" selection-start-line="88" selection-start-column="14" selection-end-line="88" selection-end-column="14" />
+        <state relative-caret-position="232">
+          <caret line="22" column="12" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="23" selection-end-column="118" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controllers/ControllerAdmin.php">
+    <entry file="file://$PROJECT_DIR$/app/public/js/reponseComment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="118" column="68" lean-forward="true" selection-start-line="118" selection-start-column="68" selection-end-line="118" selection-end-column="68" />
-          <folding>
-            <element signature="e#38#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/nouveauTricotView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="57" column="16" lean-forward="true" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+        <state relative-caret-position="289">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/backend/modifCrochetView.php">
+    <entry file="file://$PROJECT_DIR$/app/public/js/uploadImg.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/nouveauCrochetView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="57" column="16" lean-forward="true" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -723,16 +702,88 @@
     <entry file="file://$PROJECT_DIR$/app/public/css/styleAdmin.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/public/js/img.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indexAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/CrochetManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="49" column="5" lean-forward="true" selection-start-line="48" selection-start-column="3" selection-end-line="54" selection-end-column="5" />
+          <folding>
+            <marker date="1525730548594" expanded="true" signature="178:332" ph="SELECT idIte... item" />
+            <marker date="1525730548594" expanded="true" signature="509:621" ph="SELECT idIte... item" />
+            <marker date="1525730548594" expanded="true" signature="840:932" ph="INSERT INTO item... " />
+            <marker date="1525730548594" expanded="true" signature="1157:1212" ph="UPDATE item... " />
+            <marker date="1525730548594" expanded="true" signature="1431:1471" ph="UPDATE item... " />
+            <marker date="1525730548594" expanded="true" signature="1670:1704" ph="DELETE FROM item... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/backend/crochetAdminView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="110" column="26" lean-forward="true" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+          <folding>
+            <element signature="e#2724#2731#1#HTML" expanded="true" />
+            <element signature="e#4419#4426#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/UserManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="140" column="0" lean-forward="true" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
+          <folding>
+            <marker date="1525731341240" expanded="true" signature="188:225" ph="INSERT INTO users... " />
+            <marker date="1525731341240" expanded="true" signature="429:501" ph="INSERT INTO post... " />
+            <marker date="1525731341240" expanded="true" signature="429:506" ph="INSERT INTO post... " />
+            <marker date="1525731341240" expanded="true" signature="429:510" ph="INSERT INTO post... " />
+            <marker date="1525731341240" expanded="true" signature="699:729" ph="SELECT MAX(i... users" />
+            <marker date="1525731341240" expanded="true" signature="874:1013" ph="SELECT conte... post" />
+            <marker date="1525731341240" expanded="true" signature="874:1014" ph="SELECT idPos... post" />
+            <marker date="1525731341240" expanded="true" signature="1203:1240" ph="INSERT INTO users... " />
+            <marker date="1525731341240" expanded="true" signature="1427:1566" ph="SELECT conte... post" />
+            <marker date="1525731341240" expanded="true" signature="1882:1932" ph="INSERT INTO users... " />
+            <marker date="1525731341240" expanded="true" signature="2015:2181" ph="INSERT INTO visitorbook... " />
+            <marker date="1525731341240" expanded="true" signature="2119:2149" ph="SELECT MAX(i... users" />
+            <marker date="1525731341240" expanded="true" signature="2308:2389" ph="INSERT INTO visitorbook... " />
+            <marker date="1525731341240" expanded="true" signature="2580:2772" ph="SELECT conte... visitorbook" />
+            <marker date="1525731341240" expanded="true" signature="3083:3173" ph="INSERT INTO users... " />
+            <marker date="1525731341240" expanded="true" signature="3498:3552" ph="UPDATE post... " />
+            <marker date="1525731341240" expanded="true" signature="3863:3931" ph="UPDATE visitorbook... " />
+            <marker date="1525731341240" expanded="true" signature="4267:4360" ph="INSERT INTO post... " />
+            <marker date="1525731341240" expanded="true" signature="4692:4726" ph="DELETE FROM post... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controllers/ControllerAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="225" column="33" lean-forward="true" selection-start-line="225" selection-start-column="33" selection-end-line="225" selection-end-column="55" />
+          <folding>
+            <element signature="e#38#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

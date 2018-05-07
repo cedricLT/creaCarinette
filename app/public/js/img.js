@@ -18,4 +18,3 @@ $("#fileToUpload").change(function() {
     readURL(this);
 });
 
-

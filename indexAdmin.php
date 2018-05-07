@@ -51,10 +51,41 @@ try{
             }
 
         }
-        /*======================= page modification d'un article ===================================================*/
+        /*======================= page modification d'un article crochet =====================================*/
+        elseif ($_GET['action'] == 'viewItemCrochet'){
+            $idItem = $_GET['idItem'];
+            $controleurAdmin->viewItemCrochet($idItem);
+        }
+        /*========================= modifier le texte d'un article crochet =====================================*/
         elseif ($_GET['action'] == 'modifItemCrochet'){
             $idItem = $_GET['idItem'];
-            $controleurAdmin->modifItemCrochet($idItem);
+            $title = htmlspecialchars($_POST['title']);
+            $content = $_POST['area'];
+
+            if (!empty($title) && !empty($content)){
+                $controleurAdmin->modifItemCrochet($idItem, $title, $content);
+            }
+            else {
+
+                throw new Exception('Tous les champs ne sont pas remplis');
+            }
+        }
+        /*======================= modifier une image item crochet ===========================================*/
+        elseif ($_GET['action'] == 'modifImg'){
+            $idItem = $_GET['idItem'];
+
+            $controleurAdmin->modifImg($idItem);
+        }
+
+        /*======================== page modification d'un article tricot ======================================*/
+        elseif ($_GET['action'] == 'viewItemTricot'){
+            $idItem = $_GET['idItem'];
+            $controleurAdmin->viewItemTricot($idItem);
+        }
+        /*========================== supprimer un article crochet ======================================*/
+        elseif ($_GET['action'] == 'deleteItemCrochet'){
+            $idItem = $_GET['idItem'];
+            $controleurAdmin->deleteItemCrochet($idItem);
         }
 
     }else{

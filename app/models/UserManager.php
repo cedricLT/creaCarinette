@@ -128,7 +128,15 @@ class UserManager extends Manager
         return $req;
     }
 
+    /*=============================== supprimer les commentaire a la suppression d'un item ====================*/
 
+    public function deleteComItem($idItem)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM post  WHERE idItem = ?');
+        $req->execute(array($idItem));
+        return $req;
+    }
 
 
 }

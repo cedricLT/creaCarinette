@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>Gérer vos articles Crochets</h1>
+<h1>Gérer vos articles Tricots</h1>
 
 <a href="indexAdmin.php?action=nouveauTricot"><h3>Créer un nouvel Article Tricot</h3></a>
 
@@ -31,7 +31,7 @@
                     <a href="">Voir cette Article sur la page</a>
                 </div>
                 <div class="modif">
-                    <a href="">Modifier cet Article</a>
+                    <a href="indexAdmin.php?action=viewItemTricot&idItem=<?= $donner['idItem'] ?>">Modifier cet Article</a>
                 </div>
                 <div class="suppre">
                     <a href="">Supprimer cet Article</a>
