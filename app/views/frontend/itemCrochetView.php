@@ -54,28 +54,35 @@
 <div class="commentReponse">
 
     <?php
-    while ($comment = $commentUserCrochet->fetch()) {
+
+
+    function displayChildren($idparent, $orderedComment){
+    if (array_key_exists($idparent, $orderedComment)){
+    foreach ($orderedComment [$idparent]['children'] as $child) {
+
+
+    //foreach ($post['children'] as $child){
     ?>
     <div class="commentCrochet">
         <div class="commentItemCrochet">
             <div class="commentDates">
-                <p>le : <?= $comment['dates'] ?></p>
+                <p>le : <?= $child['dates'] ?></p>
             </div>
 
             <div class="commentPseudo">
-                <p>de : <?= $comment['firstname'] ?></p>
+                <p>de : <?= $child['firstname'] ?></p>
             </div>
 
             <div class="commentText">
-                <p>commentaire : <?= $comment['content'] ?></p>
+                <p>commentaire : <?= $child['content'] ?></p>
             </div>
 
-            <?= $comment['idParent'] ?>
+            <?= $child['idParent'] ?>
         </div>
         <div class="report">
 
             <button>
-                <a href="index.php?action=reportCommentCrochet&idItem=<?= $comment['idItem'] ?>&idPost=<?= $comment['idPost'] ?>">Signaler
+                <a href="index.php?action=reportCommentCrochet&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
                     le commentaire</a>
             </button>
 
@@ -89,7 +96,8 @@
             <div class="reponseUser">
                 <h2>Réponse</h2>
 
-                <form action="index.php?action=repCommentCrochet&idItem=<?= $comment['idItem'] ?>&idPostParent=<?= $comment['idPost'] ?>" method="post">
+                <form action="index.php?action=repCommentCrochet&idItem=<?= $child['idItem'] ?>&idPostParent=<?= $child['idPost'] ?>"
+                      method="post">
 
                     <label for="pseudo">Pseudo :</label>
                     <input required type="text" name="repPrenom" class="repPseudo"/>
@@ -113,8 +121,13 @@
 
 </div>
 <?php
+displayChildren($child['idPost'], $orderedComment);
 }
-$commentUserCrochet->closeCursor();
+
+}
+}
+$root = 0;
+displayChildren($root, $orderedComment);
 ?>
 
 </div>

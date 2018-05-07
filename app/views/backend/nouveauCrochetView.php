@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-    <script>tinymce.init({selector: 'textarea'});</script>-->
+
     <script src="app/public/tinymce/js/tinymce/tinymce.min.js"></script>
 
     <script> tinymce.init({
@@ -28,8 +27,11 @@
                 inline: 'span',
                 classes: 'example2'
             }, {title: 'Table styles'}, {title: 'Table row 1', selector: 'tr', classes: 'tablerow1'}]
-        }); </script>
+        });
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="app/public/css/styleAdmin.css">
 
 </head>

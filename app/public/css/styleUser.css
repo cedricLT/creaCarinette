@@ -290,3 +290,7 @@ textarea{
     border: 2px solid black;
     margin-bottom: 15px;
 }
+
+.creationIMG a img{
+    height: 150px;
+}

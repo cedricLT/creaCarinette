@@ -9,6 +9,8 @@ class ControllerAdmin
         require 'app/views/backend/tableauDeBordAdminView.php';
     }
 
+    /*==================== page de tous les items crochet =========================================================*/
+
     function crochetsAdmin()
     {
         $CrochetManager = new \Projet\Models\CrochetManager();
@@ -17,10 +19,14 @@ class ControllerAdmin
         require 'app/views/backend/crochetAdminView.php';
     }
 
+    /*======================== page création d un nouvel item crochet ==============================================================================*/
+
     function nouveauCrochet()
     {
         require 'app/views/backend/nouveauCrochetView.php';
     }
+
+    /*======================= upload titre text et image crochet =======================================================*/
 
     function creatItemCrochet($title, $content)
     {

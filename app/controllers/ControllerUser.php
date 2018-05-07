@@ -27,7 +27,7 @@ class ControllerUser
 
         /*============= reponse des commentaires =================*/
 
-       /* $commentCrochet = $commentUserCrochet->fetchAll();
+        $commentCrochet = $commentUserCrochet->fetchAll();
         $orderedComment = array();
 
         $idRoot = [0];
@@ -37,12 +37,16 @@ class ControllerUser
                 $idPost = $comUserCrochet['idPost'];
                 if(in_array($comUserCrochet['idParent'],$idRoot)){
                     $idRoot [] = $comUserCrochet['idPost'];
-                    $orderedComment [$idParent]['children'][$idPost] = ['idPost'=>$comUserCrochet['idPost'],'idParent'=>$comUserCrochet['idParent'],'content'=>$comUserCrochet['content']];
+                    $orderedComment [$idParent]['children'][$idPost] = ['idPost'=>$comUserCrochet['idPost'],'idParent'=>$comUserCrochet['idParent'],'content'=>$comUserCrochet['content'],
+                    'dates'=>$comUserCrochet['dates'], 'firstname'=>$comUserCrochet['firstname'], 'idItem'=>$comUserCrochet['idItem']];
                     unset($commentCrochet[$index]);
                 }
             }
         }
-        var_dump(($orderedComment));*/
+         echo '<pre>';
+        print_r($orderedComment);
+        echo '</pre>';
+
 
 
 
