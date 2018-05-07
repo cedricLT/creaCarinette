@@ -38,7 +38,7 @@
 <body>
 <?php $modif = $modifItemC ?>
 <div class="creationItemCrochet">
-    <h1>Création d'un nouvel Article Crochet</h1>
+    <h1>Modification d'un nouvel Article Crochet</h1>
 
 
     <form action="indexAdmin.php?action=creatItemCrochet" method="post" enctype="multipart/form-data" >
@@ -50,7 +50,10 @@
         Selectionner une image :
         <input type="file" name="fileToUpload" id="fileToUpload">
         <br><br>
-        <img src="<?= $modif['img'] ?>" alt="">
+
+            <img src="<?= $modif['img'] ?>" id="blah" src="#" alt="image" />
+
+
         <br><br>
         <textarea id="elm1" name="area" value"<?= $modif['content'] ?>"></textarea>
 
@@ -59,6 +62,6 @@
         </div>
     </form>
 </div>
-
+<script src="app/public/js/img.js"></script>
 </body>
 </html>

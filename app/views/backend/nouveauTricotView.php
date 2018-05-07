@@ -48,7 +48,14 @@
         </div>
         <br><br>
         Selectionner une image :
-        <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <br><br>
+
+        <div class="img">
+            <img id="blah" src="#" alt="image" />
+        </div>
+
+        <br><br>
 
         <textarea id="elm1" name="area"></textarea>
 
@@ -57,6 +64,6 @@
         </div>
     </form>
 </div>
-
+<script src="app/public/js/img.js"></script>
 </body>
 </html>
