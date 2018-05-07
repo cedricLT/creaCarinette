@@ -70,6 +70,25 @@ class ControllerUser
         $UserManager = new \Projet\Models\UserManager();
         $commentUserTricot = $UserManager->commentItemT($idItem);
 
+        /*============= reponse des commentaires itemTricot =================*/
+
+        $commentTricot = $commentUserTricot->fetchAll();
+        $orderedComment = array();
+
+        $idRoot = [0];
+        while (count($commentTricot)>0){
+            foreach($commentTricot as $index=>$comUserTricot) {
+                $idParent = $comUserTricot['idParent'];
+                $idPost = $comUserTricot['idPost'];
+                if(in_array($comUserTricot['idParent'],$idRoot)){
+                    $idRoot [] = $comUserTricot['idPost'];
+                    $orderedComment [$idParent]['children'][$idPost] = ['idPost'=>$comUserTricot['idPost'],'idParent'=>$comUserTricot['idParent'],'content'=>$comUserTricot['content'],
+                        'dates'=>$comUserTricot['dates'], 'firstname'=>$comUserTricot['firstname'], 'idItem'=>$comUserTricot['idItem']];
+                    unset($commentTricot[$index]);
+                }
+            }
+        }
+
         require 'app/views/frontend/itemTricotView.php';
 
 
@@ -201,5 +220,19 @@ class ControllerUser
         header('Location: index.php?action=itemCrochet&idItem='. $idItem );
 
 
+    }
+
+    function repCommentTricot($idParent, $idItem, $firstname, $content)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $commentTricot = $userManager->addTricotUser($firstname);
+
+        $getId = $userManager->getId();
+        $getId2 = $getId->fetch();
+        $idMember = $getId2[0];
+
+        $repCommentUser = $userManager->repComUser($idParent, $content, $idMember, $idItem);
+
+        header('Location: index.php?action=itemTricot&idItem='. $idItem );
     }
 }

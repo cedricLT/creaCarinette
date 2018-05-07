@@ -11,10 +11,10 @@ class TricotManager extends Manager
         return $req;
     }
 
-    public function itemTricot($id){
+    public function itemTricot($idItem){
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT idItem, title, content, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr FROM item WHERE idItem = ?');
-        $req->execute(array($id));
+        $req->execute(array($idItem));
         return $req->fetch();
     }
 

@@ -56,9 +56,9 @@
     <?php
 
 
-    function displayChildren($idparent, $orderedComment){
-    if (array_key_exists($idparent, $orderedComment)){
-    foreach ($orderedComment [$idparent]['children'] as $child) {
+    function displayChildren($idParent, $orderedComment){
+    if (array_key_exists($idParent, $orderedComment)){
+    foreach ($orderedComment [$idParent]['children'] as $child) {
 
     ?>
     <div class="commentCrochet">
