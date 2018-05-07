@@ -31,7 +31,7 @@
                     <a href="">Voir cette Article sur la page</a>
                 </div>
                 <div class="modif">
-                    <a href="">Modifier cet Article</a>
+                    <a href="indexAdmin.php?action=modifItemCrochet&idItem=<?= $donner['idItem'] ?>">Modifier cet Article</a>
                 </div>
                 <div class="suppre">
                     <a href="">Supprimer cet Article</a>

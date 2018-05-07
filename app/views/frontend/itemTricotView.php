@@ -75,8 +75,8 @@
             <div class="report">
 
                 <button>
-                    <!--<a href="index.php?action=reportCommentCrochet&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
-                        le commentaire</a>-->
+                    <a href="index.php?action=reportCommentTricot&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
+                        le commentaire</a>
                 </button>
 
             </div>

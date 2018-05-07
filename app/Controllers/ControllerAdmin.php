@@ -2,6 +2,7 @@
 
 namespace Projet\Controllers;
 
+use Projet\Models\CrochetManager;
 use Projet\Models\TricotManager;
 
 class ControllerAdmin
@@ -134,5 +135,14 @@ class ControllerAdmin
                 $uploadOk = 0;
             }
         }
+    }
+
+    /*======================= modification d'un article crochet ==============================*/
+    function modifItemCrochet($idItem)
+    {
+        $CrochetManager = new \Projet\Models\CrochetManager();
+        $modifItemC = $CrochetManager->itemCrochet($idItem);
+
+        require 'app/views/backend/modifCrochetView.php';
     }
 }

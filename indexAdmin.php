@@ -51,6 +51,11 @@ try{
             }
 
         }
+        /*======================= page modification d'un article ===================================================*/
+        elseif ($_GET['action'] == 'modifItemCrochet'){
+            $idItem = $_GET['idItem'];
+            $controleurAdmin->modifItemCrochet($idItem);
+        }
 
     }else{
         $controleurAdmin->tableauDeBord();
