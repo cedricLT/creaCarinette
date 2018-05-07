@@ -25,7 +25,7 @@ class ControllerUser
         $UserManager = new \Projet\Models\UserManager();
         $commentUserCrochet = $UserManager->commentItemC($idItem);
 
-        /*============= reponse des commentaires =================*/
+        /*============= reponse des commentaires itemCrochet =================*/
 
         $commentCrochet = $commentUserCrochet->fetchAll();
         $orderedComment = array();
@@ -43,9 +43,9 @@ class ControllerUser
                 }
             }
         }
-         echo '<pre>';
-        print_r($orderedComment);
-        echo '</pre>';
+         //echo '<pre>';
+        //print_r($orderedComment);
+        //echo '</pre>';
 
 
 

@@ -60,8 +60,6 @@
     if (array_key_exists($idparent, $orderedComment)){
     foreach ($orderedComment [$idparent]['children'] as $child) {
 
-
-    //foreach ($post['children'] as $child){
     ?>
     <div class="commentCrochet">
         <div class="commentItemCrochet">
