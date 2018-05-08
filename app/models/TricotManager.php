@@ -26,5 +26,27 @@ class TricotManager extends Manager
         return $req;
     }
 
+    public function deleteTricot($idItem)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM item  WHERE idItem = ?');
+        $req->execute(array($idItem));
+        return $req;
+    }
 
+    public function modifTricot($idItem, $title, $content)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE item SET title = ?, content = ? WHERE idItem = ?');
+        $req->execute(array($title, $content, $idItem));
+        return $req;
+    }
+
+    public function modifImgTricot($idItem, $target_file)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE item SET img = ? WHERE idItem = ?');
+        $req->execute(array($target_file, $idItem));
+        return $req;
+    }
 }

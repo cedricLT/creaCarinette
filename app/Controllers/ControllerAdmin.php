@@ -161,11 +161,20 @@ class ControllerAdmin
     function modifItemCrochet($idItem, $title, $content)
     {
         $CrochetManager = new \Projet\Models\CrochetManager;
-        $newItemTricot = $CrochetManager->modifCrochet($idItem, $title, $content);
+        $newItemCrochet = $CrochetManager->modifCrochet($idItem, $title, $content);
 
 
         header('Location: indexAdmin.php?action=crochetAdmin');
 
+    }
+    /*=========================== modification du texte article tricot==============================*/
+
+    function modifItemTricot($idItem, $title, $content)
+    {
+        $TricotManager = new \Projet\Models\TricotManager;
+        $newItemTricot = $TricotManager->modifTricot($idItem, $title, $content);
+
+        header('Location: indexAdmin.php?action=tricotAdmin');
     }
 
     /*========================== modification dd'une image crochet==========================================*/
@@ -228,4 +237,66 @@ class ControllerAdmin
         header('Location: indexAdmin.php?action=crochetAdmin');
 
     }
+    /*========================== suppression d'un article tricot et de ses commentaire attenant ======================*/
+
+    function deleteItemTricot($idItem)
+    {
+        $TricotManager = new \Projet\Models\TricotManager;
+        $deleteItem = $TricotManager->deleteTricot($idItem);
+
+        $Usermager = new \Projet\Models\UserManager;
+        $deleteCom = $Usermager->deleteComItem($idItem);
+
+        header('Location: indexAdmin.php?action=tricotAdmin');
+    }
+
+    /*========================== modification d'une image tricot ====================================================*/
+
+    function modifImgTricot($idItem)
+    {
+        $target_dir = "app/public/img/"; //spécifie le répertoire où le fichier va être placé
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);// spécifie le chemin du fichier à télécharger
+        $uploadOk = 1; // n'est pas encore utilisé (sera utilisé plus tard)
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); //contient l'extension du fichier (en minuscules)
+        // on vérifie que le fichier image est une image réelle
+        if (!empty($_POST["submit"])) {
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if ($check !== false) {
+                // Check file size
+                if ($_FILES["fileToUpload"]["size"] > 500000) {
+                    echo "Désolé, votre fichier est trop volumineux. ";
+                    $uploadOk = 0;
+                }
+                // Allow certain file formats
+                if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                    && $imageFileType != "gif") {
+                    echo "Seuls les formats JPG, JPEG, PNG & GIF files sont authorisés. ";
+                    $uploadOk = 0;
+                }
+                // Check if $uploadOk is set to 0 by an error
+                if ($uploadOk == 0) {
+                    echo "Désolé, votre avatar n'a pu être envoyé.";
+                    // if everything is ok, try to upload file
+                } else {
+                    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+                        $TricotManager = new \Projet\Models\TricotManager;
+                        $newImgTricot = $TricotManager->modifImgTricot($idItem, $target_file);
+
+                        header('Location: indexAdmin.php?action=tricotAdmin');
+
+                    } else {
+                        echo "Désolé, une erreur est survenue dans l'envoi de votre fichier. ";
+                    }
+                }
+            } else {
+                header('Location: indexAdmin.php');
+                $uploadOk = 0;
+            }
+        }
+
+
+
+
+    }
+
 }

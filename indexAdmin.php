@@ -70,6 +70,21 @@ try{
                 throw new Exception('Tous les champs ne sont pas remplis');
             }
         }
+        /*========================= modifier le texte d'un article tricot =====================================*/
+        elseif ($_GET['action'] == 'modifItemTricot'){
+            $idItem = $_GET['idItem'];
+            $title = htmlspecialchars($_POST['title']);
+            $content = $_POST['area'];
+
+            if (!empty($title) && !empty($content)){
+                $controleurAdmin->modifItemTricot($idItem, $title, $content);
+            }
+            else {
+
+                throw new Exception('Tous les champs ne sont pas remplis');
+            }
+        }
+
         /*======================= modifier une image item crochet ===========================================*/
         elseif ($_GET['action'] == 'modifImg'){
             $idItem = $_GET['idItem'];
@@ -86,6 +101,17 @@ try{
         elseif ($_GET['action'] == 'deleteItemCrochet'){
             $idItem = $_GET['idItem'];
             $controleurAdmin->deleteItemCrochet($idItem);
+        }
+        /*========================== supprimer un article tricot ======================================*/
+        elseif ($_GET['action'] == 'deleteItemTricot'){
+            $idItem = $_GET['idItem'];
+            $controleurAdmin->deleteItemTricot($idItem);
+        }
+        /*=========================== modifier une image tricot======================================*/
+        elseif ($_GET['action'] == 'modifImgTricot'){
+            $idItem = $_GET['idItem'];
+
+            $controleurAdmin->modifImgTricot($idItem);
         }
 
     }else{

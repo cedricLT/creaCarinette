@@ -38,18 +38,18 @@
 <body>
 <?php $modif = $modifItemT ?>
 <div class="creationItemCrochet">
-    <h1>Modification d'un nouvel Article Crochet</h1>
+    <h1>Modification d'un Article Crochet</h1>
 
 
-    <form action="indexAdmin.php?action=creatItemCrochet" method="post" enctype="multipart/form-data" >
+    <form action="indexAdmin.php?action=modifItemTricot&idItem=<?= $modif['idItem'] ?>" method="post" enctype="multipart/form-data" >
         <div class="creationTitre">
             <label for="titre">Titre :</label> <br/>
             <input required type="text" name="title" value="<?= $modif['title'] ?>"/>
         </div>
         <br><br>
-        Selectionner une image :
+       <!-- Selectionner une image :
         <input type="file" name="fileToUpload" id="fileToUpload">
-        <br><br>
+        <br><br>-->
 
         <img src="<?= $modif['img'] ?>" id="blah" src="#" alt="image" />
 
