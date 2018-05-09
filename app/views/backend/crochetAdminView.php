@@ -111,11 +111,6 @@
                     </div>
                 </div>
 
-                <div class="suppre">
-                    <a href="indexAdmin.php?action=deleteItemCrochet&idItem=<?= $donner['idItem'] ?>">Supprimer cet Article</a>
-                </div>
-
-
             </div>
         </div>
 

@@ -13,7 +13,7 @@ class UserManager extends Manager
         return $req;
     }
 
-    public function comUser( $content, $idMember, $idItem)
+    public function comUser($content, $idMember, $idItem)
     {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('INSERT INTO post(content, dates, report, idItem, idUsers) VALUE(?, NOW(),0, ?, ?)');
@@ -135,6 +135,16 @@ class UserManager extends Manager
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('DELETE FROM post  WHERE idItem = ?');
         $req->execute(array($idItem));
+        return $req;
+    }
+
+    /*============================= supprimer commentaire livre d'or ===================================*/
+
+    public function deleteComm($idVisitorBook)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM visitorbook  WHERE idVisitorBook = ?');
+        $req->execute(array($idVisitorBook));
         return $req;
     }
 

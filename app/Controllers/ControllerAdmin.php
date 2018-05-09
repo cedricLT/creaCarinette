@@ -298,5 +298,34 @@ class ControllerAdmin
 
 
     }
+    /*======================================== livre d'or ====================================================*/
+
+    function visitorBook()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $commentUser = $userManager->addCommentBook();
+
+        require 'app/views/backend/visitorBookAdminView.php';
+    }
+
+    /*======================================= suppression commentaire livre d'or ============================*/
+
+    function deleteCommBook($idVisitorBook)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $deleteCommVisitorBook = $userManager->deleteComm($idVisitorBook);
+
+        header('Location: indexAdmin.php?action=visitorBook');
+    }
+
+    /*============================== commentaire signalés ===================================*/
+
+    function reportComment()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $reportCom = $userManager->reportCommentUser();
+
+
+    }
 
 }

@@ -113,6 +113,19 @@ try{
 
             $controleurAdmin->modifImgTricot($idItem);
         }
+        /*=========================== affichage des commentaires du livre d'or ==================*/
+        elseif ($_GET['action'] == 'visitorBook'){
+            $controleurAdmin->visitorBook();
+        }
+        /*========================== supprimer un commentaire du livre d'or ====================*/
+        elseif ($_GET['action'] == 'deleteCommBook'){
+            $idVisitorBook = $_GET['idVisitorBook'];
+            $controleurAdmin->deleteCommBook($idVisitorBook);
+        }
+        /*=========================== page des commentaires signalé ===================================*/
+        elseif ($_GET['action'] == 'reportComment'){
+            $controleurAdmin->reportComment();
+        }
 
     }else{
         $controleurAdmin->tableauDeBord();
