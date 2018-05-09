@@ -181,7 +181,7 @@ class UserManager extends Manager
     public function reportComment()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idVisitorBook, content, postDate, firstname, lastname FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  WHERE report>2');
+        $req = $bdd->prepare('SELECT idVisitorBook, content, postDate, firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  WHERE report>2');
         $req->execute(array());
         return $req;
     }

@@ -35,7 +35,7 @@
 
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            supprimer ce commentaire
+            supprimer ce mesage
         </button>
 
         <!-- Modal -->
@@ -52,8 +52,8 @@
                     <div class="modal-body">
                         <div class="report">
                             <button>
-                                <a href="indexAdmin.php?action=deleteCommBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>">Supprimer
-                                    le commentaire</a>
+                                <a href="indexAdmin.php?action=deleteCommBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>">Supprimer
+                                    ce message</a>
 
                             </button>
                         </div>
@@ -66,7 +66,7 @@
         </div>
         <?php
     }
-
+    $commentUser->closeCursor();
     ?>
 
 

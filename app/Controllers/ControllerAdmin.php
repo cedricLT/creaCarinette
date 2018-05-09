@@ -310,10 +310,12 @@ class ControllerAdmin
 
     /*======================================= suppression commentaire livre d'or ============================*/
 
-    function deleteCommBook($idVisitorBook)
+    function deleteCommBook($idVisitorBook, $idUsers)
     {
         $userManager = new \Projet\Models\UserManager();
         $deleteCommVisitorBook = $userManager->deleteComm($idVisitorBook);
+
+        $deleteUser = $userManager->deleteUser($idUsers);
 
         header('Location: indexAdmin.php?action=visitorBook');
     }
@@ -346,9 +348,21 @@ class ControllerAdmin
     function reportVisitorBook()
     {
         $userManager = new \Projet\Models\UserManager();
-        $reportCoomentBook = $userManager->reportComment();
+        $reportCommentBook = $userManager->reportComment();
 
         require 'app/views/backend/reportVisitorBook.php';
+    }
+
+    /*============================== spprimer un message signalé du livre d'or ================================*/
+
+    function deleteReportVisitBook($idVisitorBook, $idUsers)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $deleteCommVisitorBook = $userManager->deleteComm($idVisitorBook);
+
+        $deleteUser = $userManager->deleteUser($idUsers);
+
+        header('Location: indexAdmin.php?action=reportVisitorBook');
     }
 
 

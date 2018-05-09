@@ -120,7 +120,8 @@ try{
         /*========================== supprimer un commentaire du livre d'or ====================*/
         elseif ($_GET['action'] == 'deleteCommBook'){
             $idVisitorBook = $_GET['idVisitorBook'];
-            $controleurAdmin->deleteCommBook($idVisitorBook);
+            $idUsers = $_GET['idUsers'];
+            $controleurAdmin->deleteCommBook($idVisitorBook, $idUsers);
         }
         /*=========================== page des commentaires signalé ===================================*/
         elseif ($_GET['action'] == 'reportComment'){
@@ -136,6 +137,14 @@ try{
         elseif ($_GET['action'] == 'reportVisitorBook'){
             $controleurAdmin->reportVisitorBook();
         }
+        /*============================ supprimeer un message signalé dans le livre d'or =====================*/
+        elseif ($_GET['action'] == 'deleteReportVisitBook'){
+            $idVisitorBook = $_GET['idVisitorBook'];
+            $idUsers = $_GET['idUsers'];
+            $controleurAdmin->deleteReportVisitBook($idVisitorBook, $idUsers);
+        }
+
+
 
     }else{
         $controleurAdmin->tableauDeBord();
