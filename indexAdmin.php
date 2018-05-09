@@ -126,6 +126,12 @@ try{
         elseif ($_GET['action'] == 'reportComment'){
             $controleurAdmin->reportComment();
         }
+        /*============================ supprimer un commentaire signalé ===============================*/
+        elseif ($_GET['action'] == 'deleteReportComment'){
+            $idPost = $_GET['idPost'];
+            $idUsers = $_GET["idUsers"];
+            $controleurAdmin->deleteReportComment($idPost, $idUsers);
+        }
 
     }else{
         $controleurAdmin->tableauDeBord();

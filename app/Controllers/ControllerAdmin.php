@@ -325,7 +325,20 @@ class ControllerAdmin
         $userManager = new \Projet\Models\UserManager();
         $reportCom = $userManager->reportCommentUser();
 
+        require 'app/views/backend/reportCommentView.php';
+    }
 
+    /*============================ suppréssion d'un commentaire signaler  ========================*/
+
+    function deleteReportComment($idPost, $idUsers)
+    {
+        $userManager = new \Projet\Models\UserManager();
+
+        $deleteCommentUser = $userManager->deleteUserComment($idPost);
+
+        $deleteUser = $userManager->deleteUser($idUsers);
+
+        header('Location: indexAdmin.php?action=reportComment');
     }
 
 }

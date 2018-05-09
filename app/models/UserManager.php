@@ -148,5 +148,31 @@ class UserManager extends Manager
         return $req;
     }
 
+    /*=============================== commentaire signalé pour l admin =============================*/
 
+    public function reportCommentUser()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE report>2');
+        $req->execute(array());
+
+        return $req;
+    }
+    /*============================ supprimer un commentaire signalé =========================*/
+
+    public function deleteUserComment($idPost)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM post  WHERE idPost = ?');
+        $req->execute(array($idPost));
+        return $req;
+    }
+
+    public function deleteUser($idUsers)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM users  WHERE idUsers = ?');
+        $req->execute(array($idUsers));
+        return $req;
+    }
 }
