@@ -132,6 +132,10 @@ try{
             $idUsers = $_GET["idUsers"];
             $controleurAdmin->deleteReportComment($idPost, $idUsers);
         }
+        /*============================= page livre d'or messages signalés ==============================*/
+        elseif ($_GET['action'] == 'reportVisitorBook'){
+            $controleurAdmin->reportVisitorBook();
+        }
 
     }else{
         $controleurAdmin->tableauDeBord();

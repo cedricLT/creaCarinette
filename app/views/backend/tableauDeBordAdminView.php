@@ -23,6 +23,7 @@
     <h2>Livre d'or</h2>
     <ul>
         <li><a href="indexAdmin.php?action=visitorBook">Nouveau(x) message(s)</a></li>
+        <li><a href="indexAdmin.php?action=reportVisitorBook">Message(s) signalé(s)</a></li>
     </ul>
 
 </div>

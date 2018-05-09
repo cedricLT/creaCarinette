@@ -175,4 +175,14 @@ class UserManager extends Manager
         $req->execute(array($idUsers));
         return $req;
     }
+
+    /*============================ message signalé sur livre d'or =======================================*/
+
+    public function reportComment()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idVisitorBook, content, postDate, firstname, lastname FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  WHERE report>2');
+        $req->execute(array());
+        return $req;
+    }
 }

@@ -341,4 +341,15 @@ class ControllerAdmin
         header('Location: indexAdmin.php?action=reportComment');
     }
 
+    /*================================= message signalé livre d'or ===========================================*/
+
+    function reportVisitorBook()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $reportCoomentBook = $userManager->reportComment();
+
+        require 'app/views/backend/reportVisitorBook.php';
+    }
+
+
 }
