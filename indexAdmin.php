@@ -159,7 +159,16 @@ try{
     }
         /*============================= page livre d'or messages signalés ==============================*/
         elseif ($_GET['action'] == 'reportVisitorBook'){
-            $controleurAdmin->reportVisitorBook();
+
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+
+            $controleurAdmin->reportVisitorBook($cPage);
         }
         /*============================ supprimeer un message signalé dans le livre d'or =====================*/
         elseif ($_GET['action'] == 'deleteReportVisitBook'){

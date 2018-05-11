@@ -45,7 +45,14 @@ while ($report = $reportCommentBook->fetch()) {
     </div>
     <?php
 }
-$reportCommentBook->closeCursor();
 ?>
+<p id="numberPages">Pages : <?php
+    for ($i = 1; $i <= $numPage; $i++) {
+        echo "<a href=\"indexAdmin.php?action=reportVisitorBook&p=$i\">$i </a>";
+    }
+    $reportCommentBook->closeCursor();
+    ?>
+</p>
+
 </body>
 </html>

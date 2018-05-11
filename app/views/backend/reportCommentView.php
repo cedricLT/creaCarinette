@@ -46,6 +46,7 @@
 
      <?php
  }
+$reportCom->closeCursor();
 ?>
 </body>
 </html>

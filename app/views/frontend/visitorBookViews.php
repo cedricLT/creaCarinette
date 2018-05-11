@@ -67,7 +67,7 @@
             <div class="report">
                 <button>
                     <a href="index.php?action=reportCommentBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>">Signaler
-                        le commentaire</a>
+                        ce commentaire</a>
                 </button>
             </div>
             <?php

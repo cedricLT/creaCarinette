@@ -6,7 +6,8 @@ namespace Projet\Models;
 class UserManager extends Manager
 {
 
-
+    private $perPage = 6;
+    private $cPage = 1;
 
     public function addCrochetUser($firstname)
     {
@@ -105,15 +106,13 @@ class UserManager extends Manager
         $req->execute(array($content, $idMember));
         return $req;
     }
-    private $perPage = 6;
-    private $cPage = 1;
+
 
     public function addCommentBook($cPage)
     {
         $this->cPage = $cPage;
         $bdd = $this->dbConnect();
         $req = $bdd->query("SELECT idVisitorBook, content, DATE_FORMAT(postDate,  '%d/%m/%Y') AS date_fr,firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  ORDER BY idVisitorBook DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
-        //$req->execute(array());
         return $req;
     }
 
@@ -209,11 +208,24 @@ class UserManager extends Manager
 
     /*============================ message signalé sur livre d'or =======================================*/
 
-    public function reportComment()
+    public function nbPageReportBook()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idVisitorBook, content, postDate, firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  WHERE report>2');
-        $req->execute(array());
+        $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM visitorbook WHERE report > 2');
+        $result = $reqPage->fetch();
+        $total = $result['total'];
+        $nbPage = ceil($total / $this->perPage);
+
+        return $nbPage;
+    }
+
+
+    public function reportComment($cPage)
+    {
+        $this->cPage = $cPage;
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT idVisitorBook, content, postDate, firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  WHERE report > 2 ORDER BY idVisitorBook DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
+
         return $req;
     }
 

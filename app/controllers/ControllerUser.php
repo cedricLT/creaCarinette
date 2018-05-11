@@ -137,7 +137,7 @@ class ControllerUser
 
     /*=============================== visitorbook =======================================================================*/
 
-    function commentBook($firstname, $lastname, $content)
+    function commentBook($firstname, $lastname, $content, $cPage)
     {
         $userManager = new \Projet\Models\UserManager();
 
@@ -149,7 +149,12 @@ class ControllerUser
 
         $userBook = $userManager->addVisitorBook($content, $idMember);
 
-        $commentUser = $userManager->addCommentBook();
+        $numPage = $userManager->nbPagebook();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
+
+        $commentUser = $userManager->addCommentBook($cPage);
 
         header('Location: index.php?action=book');
     }

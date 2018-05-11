@@ -85,7 +85,14 @@ try {
             $lastname = htmlspecialchars($_POST['lastnameBook']);
             $content = htmlspecialchars($_POST['contentBook']);
             if (!empty($firstname) && (!empty($lastname) && (!empty($content)))) {
-                $controleurUser->commentBook($firstname, $lastname, $content);
+                if (isset($_GET['p']))
+                {
+                    $cPage = $_GET['p'];
+                }
+                else {
+                    $cPage = 1;
+                }
+                $controleurUser->commentBook($firstname, $lastname, $content, $cPage);
             } else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
@@ -137,11 +144,13 @@ try {
             $idPost = htmlspecialchars($_GET['idPost']);
             $controleurUser->reportCommentTricot($idItem, $idPost);
 
-        } elseif ($_GET['action'] == 'reportCommentBook') {
+        }
+        elseif ($_GET['action'] == 'reportCommentBook') {
             $idVisitorBook = htmlspecialchars($_GET['idVisitorBook']);
 
             $controleurUser->reportBook($idVisitorBook);
-        } //repondre a un commentaire  item crochet
+        }
+        //repondre a un commentaire  item crochet
         elseif ($_GET['action'] == 'repCommentCrochet') {
             $idParent = htmlspecialchars($_GET['idPostParent']);
             $idItem = htmlspecialchars($_GET['idItem']);

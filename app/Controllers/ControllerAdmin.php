@@ -364,10 +364,16 @@ class ControllerAdmin
 
     /*================================= message signalé livre d'or ===========================================*/
 
-    function reportVisitorBook()
+    function reportVisitorBook($cPage)
     {
         $userManager = new \Projet\Models\UserManager();
-        $reportCommentBook = $userManager->reportComment();
+
+        $numPage = $userManager->nbPageReportBook();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
+
+        $reportCommentBook = $userManager->reportComment($cPage);
 
         require 'app/views/backend/reportVisitorBook.php';
     }
