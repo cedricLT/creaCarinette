@@ -54,7 +54,7 @@ try {
             $content = htmlspecialchars($_POST['content']);
             if (!empty($firstname) && (!empty($content))) {
                 $controleurUser->addcommentCrochet($idItem, $firstname, $content);
-            } else {
+            }else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
 
@@ -68,9 +68,18 @@ try {
             } else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
-        } elseif ($_GET['action'] == 'book') {
-            $controleurUser->commentUsersBook();
-        } // injecte les commentaire du livre d'or dans la bdd
+        }
+        elseif ($_GET['action'] == 'book') {
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+            $controleurUser->commentUsersBook($cPage);
+        }
+        // injecte les commentaire du livre d'or dans la bdd
         elseif ($_GET['action'] == 'commentBook') {
             $firstname = htmlspecialchars($_POST['firstnameBook']);
             $lastname = htmlspecialchars($_POST['lastnameBook']);
@@ -80,7 +89,8 @@ try {
             } else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
-        } elseif ($_GET['action'] == 'contact') {
+        }
+        elseif ($_GET['action'] == 'contact') {
             $controleurUser->contactUsers();
         } /*elseif ($_GET['action'] == 'contactMail'){ //formulaire contact mail
             $lastname = $_POST['name'];

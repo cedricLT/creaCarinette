@@ -5,6 +5,9 @@ namespace Projet\Models;
 
 class UserManager extends Manager
 {
+
+
+
     public function addCrochetUser($firstname)
     {
         $bdd = $this->dbConnect();
@@ -65,6 +68,21 @@ class UserManager extends Manager
     }
 
     /*=================================visitorBook==================================================================*/
+
+
+
+    public function nbPagebook()
+    {
+        $bdd = $this->dbConnect();
+        $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM visitorbook');
+        $result = $reqPage->fetch();
+        $total = $result['total'];
+        $nbPage = ceil($total / $this->perPage);
+
+        return $nbPage;
+    }
+
+
     public function addContent($firstname, $lastname)
     {
         $bdd = $this->dbConnect();
@@ -87,12 +105,15 @@ class UserManager extends Manager
         $req->execute(array($content, $idMember));
         return $req;
     }
+    private $perPage = 6;
+    private $cPage = 1;
 
-    public function addCommentBook()
+    public function addCommentBook($cPage)
     {
+        $this->cPage = $cPage;
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idVisitorBook, content, DATE_FORMAT(postDate,  \'%d/%m/%Y\') AS date_fr,firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers');
-        $req->execute(array());
+        $req = $bdd->query("SELECT idVisitorBook, content, DATE_FORMAT(postDate,  '%d/%m/%Y') AS date_fr,firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  ORDER BY idVisitorBook DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
+        //$req->execute(array());
         return $req;
     }
 
@@ -195,4 +216,5 @@ class UserManager extends Manager
         $req->execute(array());
         return $req;
     }
+
 }

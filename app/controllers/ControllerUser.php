@@ -111,6 +111,7 @@ class ControllerUser
         $userManager = new \Projet\Models\UserManager();
         $commentCrochet = $userManager->addCrochetUser($firstname);
 
+
         $getId = $userManager->getId();
         $getId2 = $getId->fetch();
         $idMember = $getId2[0];
@@ -153,11 +154,15 @@ class ControllerUser
         header('Location: index.php?action=book');
     }
 
-    function commentUsersBook()
+    function commentUsersBook($cPage)
     {
         $userManager = new \Projet\Models\UserManager();
-        $commentUser = $userManager->addCommentBook();
 
+        $numPage = $userManager->nbPagebook();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
+        $commentUser = $userManager->addCommentBook($cPage);
 
         require 'app/views/frontend/visitorBookViews.php';
 

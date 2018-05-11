@@ -66,8 +66,15 @@
         </div>
         <?php
     }
-    $commentUser->closeCursor();
     ?>
+    <p id="numberPages">Pages : <?php
+        for ($i = 1; $i <= $numPage; $i++) {
+            echo "<a href=\"indexAdmin.php?action=visitorBook&p=$i\">$i </a>";
+        }
+        $commentUser->closeCursor();
+        ?>
+    </p>
+
 
 
 </div>

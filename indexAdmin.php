@@ -131,7 +131,15 @@ try{
         }
         /*=========================== affichage des commentaires du livre d'or ==================*/
         elseif ($_GET['action'] == 'visitorBook'){
-            $controleurAdmin->visitorBook();
+
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+            $controleurAdmin->visitorBook($cPage);
         }
         /*========================== supprimer un commentaire du livre d'or ====================*/
         elseif ($_GET['action'] == 'deleteCommBook'){

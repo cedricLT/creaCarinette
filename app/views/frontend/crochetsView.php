@@ -11,10 +11,10 @@
 
 
         <div class="blockCrochet">
-            <?= $donner['dates_fr'] ?>
-            <h3><?= $donner['title'] ?></h3>
+            <?= htmlspecialchars($donner['dates_fr']) ?>
+            <h3><?= htmlspecialchars($donner['title']) ?></h3>
             <div class="creationIMG">
-                <a href="index.php?action=itemCrochet&idItem=<?= $donner['idItem'] ?>"><img src="<?= $donner['img'] ?>"
+                <a href="index.php?action=itemCrochet&idItem=<?= $donner['idItem'] ?>"><img src="<?= htmlspecialchars($donner['img']) ?>"
                                                                                             alt="Créa-carinette crochet tricot"></a>
             </div>
             <div class="creationText">

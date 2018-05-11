@@ -313,10 +313,16 @@ class ControllerAdmin
     }
     /*======================================== livre d'or ====================================================*/
 
-    function visitorBook()
+    function visitorBook($cPage)
     {
         $userManager = new \Projet\Models\UserManager();
-        $commentUser = $userManager->addCommentBook();
+
+        $numPage = $userManager->nbPagebook();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
+
+        $commentUser = $userManager->addCommentBook($cPage);
 
         require 'app/views/backend/visitorBookAdminView.php';
     }

@@ -43,40 +43,43 @@
 
     <div class="contentVisitorBook">
         <?php
-        if (!(empty($commentUser))) {
-            $newComment = $commentUser->fetchAll();
+        while ($commentBook = $commentUser->fetch()) {
+
+            ?>
+
+            <div class="dates">
+                <p>Le :<?= $commentBook['date_fr'] ?></p>
+            </div>
+
+            <div class="nom">
+                <p>nom : <?= $commentBook['lastname'] ?></p>
+            </div>
+
+            <div class="prenom">
+                <p>Prénom : <?= $commentBook['firstname'] ?></p>
+            </div>
+
+            <div class="message">
+                <p>Commentaire : <?= $commentBook['content'] ?></p>
+            </div>
 
 
-            foreach ($newComment as $commentBook) {
-                ?>
-
-                <div class="dates">
-                    <p>Le :<?= $commentBook['date_fr'] ?></p>
-                </div>
-
-                <div class="nom">
-                    <p>nom : <?= $commentBook['lastname'] ?></p>
-                </div>
-
-                <div class="prenom">
-                    <p>Prénom : <?= $commentBook['firstname'] ?></p>
-                </div>
-
-                <div class="message">
-                    <p>Commentaire : <?= $commentBook['content'] ?></p>
-                </div>
-
-
-                <div class="report">
-                    <button>
-                        <a href="index.php?action=reportCommentBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>">Signaler
-                            le commentaire</a>
-                    </button>
-                </div>
-            <?php }
+            <div class="report">
+                <button>
+                    <a href="index.php?action=reportCommentBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>">Signaler
+                        le commentaire</a>
+                </button>
+            </div>
+            <?php
         }
-
         ?>
+        <p id="numberPages">Pages : <?php
+            for ($i = 1; $i <= $numPage; $i++) {
+                echo "<a href=\"index.php?action=book&p=$i\">$i </a>";
+            }
+            $commentUser->closeCursor();
+            ?>
+        </p>
 
 
     </div>
