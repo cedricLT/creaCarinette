@@ -127,7 +127,7 @@
     ?>
     <p id="numberPages">Pages : <?php
         for ($i = 1; $i <= $numPage; $i++) {
-            echo "<a href=\"index.php?action=crochet&p=$i\">$i </a>";
+            echo "<a href=\"indexAdmin.php?action=crochetAdmin&p=$i\">$i </a>";
         }
         $recCrochets->closeCursor();
         ?>

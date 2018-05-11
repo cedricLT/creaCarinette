@@ -25,7 +25,7 @@ class CrochetManager extends Manager
         $this->cPage = $cPage;
         $bdd = $this->dbConnect();
         $req = $bdd->query("SELECT idItem, title, contents, categorie, img,  DATE_FORMAT(postDates, '%d/%m/%Y') AS dates_fr FROM item   WHERE categorie = 'crochet'  ORDER BY idItem DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
-        //$req->execute(array());
+
         return $req;
     }
 

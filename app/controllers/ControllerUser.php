@@ -17,7 +17,6 @@ class ControllerUser
         }
 
         $recCrochets = $CrochetManager->getCrochets($cPage);// Appel d'une fonction de cet objet
-        var_dump($recCrochets);
 
         require 'app/views/frontend/crochetsView.php';
 
@@ -58,10 +57,16 @@ class ControllerUser
 
     }
 
-    function tricots()
+    function tricots($cPage)
     {
-        $postTricot = new \Projet\Models\TricotManager();
-        $recTricot = $postTricot->getTricots();
+        $TricotManager = new \Projet\Models\TricotManager();
+
+        $numPage = $TricotManager->nbPage();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
+
+        $recTricot = $TricotManager->getTricots($cPage);
 
         require 'app/views/frontend/tricotView.php';
     }

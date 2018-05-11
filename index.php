@@ -20,11 +20,18 @@ try {
             $controleurUser->crochets($cPage);
 
         }
-
         // recuperation des items tricot page tricot
         elseif ($_GET['action'] == 'tricots') {
-            $controleurUser->tricots();
-        } // recuperation d un item tricot
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+            $controleurUser->tricots($cPage);
+        }
+        // recuperation d un item tricot
         elseif ($_GET['action'] == 'itemTricot') {
             $idItem = htmlspecialchars($_GET['idItem']);
             if (isset($idItem) && $idItem > 0) {

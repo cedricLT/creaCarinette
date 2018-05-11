@@ -4,10 +4,26 @@ namespace Projet\Models;
 
 class TricotManager extends Manager
 {
-    public function getTricots(){
+
+    private $perPage = 5;
+    private $cPage = 1;
+
+    public function nbPage()
+    {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idItem, title, contents, img,  DATE_FORMAT(postDates, \'%d/%m/%Y\') AS dates_fr, categorie FROM item WHERE categorie = "tricot" ORDER BY idItem DESC ');
-        $req->execute(array());
+        $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM item WHERE categorie = "tricot"');
+        $result = $reqPage->fetch();
+        $total = $result['total'];
+        $nbPage = ceil($total / $this->perPage);
+
+        return $nbPage;
+    }
+
+    public function getTricots($cPage){
+        $this->cPage = $cPage;
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT idItem, title, contents, categorie, img,  DATE_FORMAT(postDates, '%d/%m/%Y') AS dates_fr FROM item   WHERE categorie = 'tricot'  ORDER BY idItem DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
+
         return $req;
     }
 

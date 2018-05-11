@@ -39,7 +39,15 @@ try{
         }
         /*====================== affichage de tous les items tricot===========================*/
         elseif ($_GET['action'] == 'tricotAdmin'){
-            $controleurAdmin->tricotAdmin();
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+
+            $controleurAdmin->tricotAdmin($cPage);
         }
         /*======================= page item tricot ================================================*/
         elseif ($_GET['action'] == 'nouveauTricot'){

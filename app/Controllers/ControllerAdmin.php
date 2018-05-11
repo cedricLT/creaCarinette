@@ -22,10 +22,12 @@ class ControllerAdmin
         if (!($cPage>0 && $cPage<=$numPage)) {
             $cPage = 1;
         }
-        
+
         $recCrochets = $CrochetManager->getCrochets($cPage);
 
         require 'app/views/backend/crochetAdminView.php';
+
+
     }
 
     /*======================== page création d un nouvel item crochet ==============================================================================*/
@@ -82,10 +84,16 @@ class ControllerAdmin
 
     /*============================ page de tous les items tricots ==============================*/
 
-    function tricotAdmin()
+    function tricotAdmin($cPage)
     {
         $TricotManager = new \Projet\Models\TricotManager;
-        $recTricots = $TricotManager->getTricots();
+
+        $numPage = $TricotManager->nbPage();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
+
+        $recTricots = $TricotManager->getTricots($cPage);
         require 'app/views/backend/tricotAdminView.php';
     }
 

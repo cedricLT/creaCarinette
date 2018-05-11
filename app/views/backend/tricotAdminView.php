@@ -98,6 +98,11 @@
 
         <?php
     }
+    ?>
+    <p id="numberPages">Pages : <?php
+        for ($i = 1; $i <= $numPage; $i++) {
+            echo "<a href=\"indexAdmin.php?action=tricotAdmin&p=$i\">$i </a>";
+        }
     $recTricots->closeCursor();
     ?>
 </div>
