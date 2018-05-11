@@ -54,6 +54,16 @@ class UserManager extends Manager
 
     }
 
+    /*=========================== tous les commentaires pour l admin ===============================================*/
+
+    public function commentpostUsers()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem');//SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers');
+        $req->execute(array());
+        return $req;
+    }
+
     /*=================================visitorBook==================================================================*/
     public function addContent($firstname, $lastname)
     {

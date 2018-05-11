@@ -8,14 +8,23 @@ try {
 
     if (isset($_GET['action'])) {
         // recuperation des items crochet page crochet
-        if ($_GET['action'] == 'crochet') {
-            $controleurUser->crochets();
+        if ($_GET['action'] == 'crochet')
+        {
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+            $controleurUser->crochets($cPage);
+
         }
+
         // recuperation des items tricot page tricot
         elseif ($_GET['action'] == 'tricots') {
             $controleurUser->tricots();
-        }
-        // recuperation d un item tricot
+        } // recuperation d un item tricot
         elseif ($_GET['action'] == 'itemTricot') {
             $idItem = htmlspecialchars($_GET['idItem']);
             if (isset($idItem) && $idItem > 0) {
@@ -23,8 +32,7 @@ try {
             } else {
                 echo 'Erreur : aucun identifiant de billet envoyé';
             }
-        }
-        // recuperation d un item crochet
+        } // recuperation d un item crochet
         elseif ($_GET['action'] == 'itemCrochet') {
             $idItem = htmlspecialchars($_GET['idItem']);
             if (isset($idItem) && $idItem > 0) {
@@ -32,8 +40,7 @@ try {
             } else {
                 echo 'Erreur de chargement!';
             }
-        }
-        // injection des commentaire par item crochet dans la bdd et recup sur ItemCrochetView
+        } // injection des commentaire par item crochet dans la bdd et recup sur ItemCrochetView
         elseif ($_GET['action'] == 'commentCrochet') {
             $idItem = htmlspecialchars($_GET['idItem']);
             $firstname = htmlspecialchars($_POST['firstname']);
@@ -44,8 +51,7 @@ try {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
 
-        }
-        // injection des commentaire par item tricot dans la bdd et recup sur ItemtricotView
+        } // injection des commentaire par item tricot dans la bdd et recup sur ItemtricotView
         elseif ($_GET['action'] == 'commentTricot') {
             $idItem = htmlspecialchars($_GET['idItem']);
             $firstname = htmlspecialchars($_POST['firstname']);
@@ -57,8 +63,7 @@ try {
             }
         } elseif ($_GET['action'] == 'book') {
             $controleurUser->commentUsersBook();
-        }
-        // injecte les commentaire du livre d'or dans la bdd
+        } // injecte les commentaire du livre d'or dans la bdd
         elseif ($_GET['action'] == 'commentBook') {
             $firstname = htmlspecialchars($_POST['firstnameBook']);
             $lastname = htmlspecialchars($_POST['lastnameBook']);
@@ -102,50 +107,44 @@ try {
             } else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
-        }
-        // signaler un commentaire dans item Crochet
+        } // signaler un commentaire dans item Crochet
         elseif ($_GET['action'] == 'reportCommentCrochet') {
             $idItem = htmlspecialchars($_GET['idItem']);
             $idPost = htmlspecialchars($_GET['idPost']);
 
             $controleurUser->reportCommentCrochet($idItem, $idPost);
 
-        }
-        // signaler un commentaire dans item tricot
-        elseif ($_GET['action'] == 'reportCommentTricot'){
+        } // signaler un commentaire dans item tricot
+        elseif ($_GET['action'] == 'reportCommentTricot') {
             $idItem = htmlspecialchars($_GET['idItem']);
             $idPost = htmlspecialchars($_GET['idPost']);
             $controleurUser->reportCommentTricot($idItem, $idPost);
 
-        }
-        elseif ($_GET['action'] == 'reportCommentBook'){
+        } elseif ($_GET['action'] == 'reportCommentBook') {
             $idVisitorBook = htmlspecialchars($_GET['idVisitorBook']);
 
             $controleurUser->reportBook($idVisitorBook);
-        }
-
-        //repondre a un commentaire  item crochet
-        elseif ($_GET['action'] == 'repCommentCrochet'){
-            $idParent= htmlspecialchars($_GET['idPostParent']);
+        } //repondre a un commentaire  item crochet
+        elseif ($_GET['action'] == 'repCommentCrochet') {
+            $idParent = htmlspecialchars($_GET['idPostParent']);
             $idItem = htmlspecialchars($_GET['idItem']);
             $firstname = htmlspecialchars($_POST['repPrenom']);
             $content = htmlspecialchars($_POST['content']);
-            if (!empty($firstname) && (!empty($content))){
+            if (!empty($firstname) && (!empty($content))) {
                 $controleurUser->repCommentCrochet($idParent, $idItem, $firstname, $content);
-            }else {
+            } else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
 
-        }
-        //repondre a un commentaire item Tricot
-        elseif ($_GET['action'] == 'repCommentTricot'){
-            $idParent= htmlspecialchars($_GET['idPostParent']);
+        } //repondre a un commentaire item Tricot
+        elseif ($_GET['action'] == 'repCommentTricot') {
+            $idParent = htmlspecialchars($_GET['idPostParent']);
             $idItem = htmlspecialchars($_GET['idItem']);
             $firstname = htmlspecialchars($_POST['repPrenom']);
             $content = htmlspecialchars($_POST['content']);
-            if (!empty($firstname) && (!empty($content))){
+            if (!empty($firstname) && (!empty($content))) {
                 $controleurUser->repCommentTricot($idParent, $idItem, $firstname, $content);
-            }else {
+            } else {
                 throw new Exception('tous les champs ne sont pas remplis');
             }
 

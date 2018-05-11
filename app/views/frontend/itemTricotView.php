@@ -12,7 +12,7 @@
         <img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot">
     </div>
     <div class="creationText">
-        <P><?= $donner['content'] ?></P>
+        <P><?= $donner['contents'] ?></P>
     </div>
 </div>
 <!--====================== commentaires ============================================-->

@@ -6,15 +6,21 @@ namespace Projet\Controllers;
 class ControllerUser
 {
 
-    function crochets() //recuperation des items et textes
+
+    function crochets($cPage) //recuperation des items et textes
     {
-        $CrochetManager = new \Projet\Models\CrochetManager();
-        $recCrochets = $CrochetManager->getCrochets();
+        $CrochetManager = new \Projet\Models\CrochetManager(); // Création d'un objet
 
+        $numPage = $CrochetManager->nbPage();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
 
-
+        $recCrochets = $CrochetManager->getCrochets($cPage);// Appel d'une fonction de cet objet
+        var_dump($recCrochets);
 
         require 'app/views/frontend/crochetsView.php';
+
     }
 
     function crochet($idItem)
@@ -31,23 +37,21 @@ class ControllerUser
         $orderedComment = array();
 
         $idRoot = [0];
-        while (count($commentCrochet)>0){
-            foreach($commentCrochet as $index=>$comUserCrochet) {
+        while (count($commentCrochet) > 0) {
+            foreach ($commentCrochet as $index => $comUserCrochet) {
                 $idParent = $comUserCrochet['idParent'];
                 $idPost = $comUserCrochet['idPost'];
-                if(in_array($comUserCrochet['idParent'],$idRoot)){
+                if (in_array($comUserCrochet['idParent'], $idRoot)) {
                     $idRoot [] = $comUserCrochet['idPost'];
-                    $orderedComment [$idParent]['children'][$idPost] = ['idPost'=>$comUserCrochet['idPost'],'idParent'=>$comUserCrochet['idParent'],'content'=>$comUserCrochet['content'],
-                    'dates'=>$comUserCrochet['dates'], 'firstname'=>$comUserCrochet['firstname'], 'idItem'=>$comUserCrochet['idItem']];
+                    $orderedComment [$idParent]['children'][$idPost] = ['idPost' => $comUserCrochet['idPost'], 'idParent' => $comUserCrochet['idParent'], 'content' => $comUserCrochet['content'],
+                        'dates' => $comUserCrochet['dates'], 'firstname' => $comUserCrochet['firstname'], 'idItem' => $comUserCrochet['idItem']];
                     unset($commentCrochet[$index]);
                 }
             }
         }
-         //echo '<pre>';
+        //echo '<pre>';
         //print_r($orderedComment);
         //echo '</pre>';
-
-
 
 
         require 'app/views/frontend/itemCrochetView.php';
@@ -76,14 +80,14 @@ class ControllerUser
         $orderedComment = array();
 
         $idRoot = [0];
-        while (count($commentTricot)>0){
-            foreach($commentTricot as $index=>$comUserTricot) {
+        while (count($commentTricot) > 0) {
+            foreach ($commentTricot as $index => $comUserTricot) {
                 $idParent = $comUserTricot['idParent'];
                 $idPost = $comUserTricot['idPost'];
-                if(in_array($comUserTricot['idParent'],$idRoot)){
+                if (in_array($comUserTricot['idParent'], $idRoot)) {
                     $idRoot [] = $comUserTricot['idPost'];
-                    $orderedComment [$idParent]['children'][$idPost] = ['idPost'=>$comUserTricot['idPost'],'idParent'=>$comUserTricot['idParent'],'content'=>$comUserTricot['content'],
-                        'dates'=>$comUserTricot['dates'], 'firstname'=>$comUserTricot['firstname'], 'idItem'=>$comUserTricot['idItem']];
+                    $orderedComment [$idParent]['children'][$idPost] = ['idPost' => $comUserTricot['idPost'], 'idParent' => $comUserTricot['idParent'], 'content' => $comUserTricot['content'],
+                        'dates' => $comUserTricot['dates'], 'firstname' => $comUserTricot['firstname'], 'idItem' => $comUserTricot['idItem']];
                     unset($commentTricot[$index]);
                 }
             }
@@ -166,14 +170,14 @@ class ControllerUser
         $userManager = new \Projet\Models\UserManager();
 
 
-        if(filter_var($mail, FILTER_VALIDATE_EMAIL) ){
+        if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $contactUserMail = $userManager->addMail($lastname, $firstname, $mail, $content);
             header('Location: index.php?action=contact');
-        }
-        else {
+        } else {
             header('Location: app/views/frontend/error.php');
         }
     }
+
     /*====================== commentaires signaler ==========================================================*/
 
     function reportCommentCrochet($idItem, $idPost)
@@ -181,7 +185,7 @@ class ControllerUser
         $userManager = new \Projet\Models\UserManager();
         $report = $userManager->reportUser($idPost);
 
-        header('Location: index.php?action=itemCrochet&idItem='.$idItem);
+        header('Location: index.php?action=itemCrochet&idItem=' . $idItem);
 
     }
 
@@ -190,7 +194,7 @@ class ControllerUser
         $userManager = new \Projet\Models\UserManager();
         $report = $userManager->reportUser($idPost);
 
-        header('Location: index.php?action=itemTricot&idItem='.$idItem);
+        header('Location: index.php?action=itemTricot&idItem=' . $idItem);
     }
 
     /*======================= commentaire signalé livre d'or ====================================================*/
@@ -217,7 +221,7 @@ class ControllerUser
 
         $repCommentUser = $userManager->repComUser($idParent, $content, $idMember, $idItem);
 
-        header('Location: index.php?action=itemCrochet&idItem='. $idItem );
+        header('Location: index.php?action=itemCrochet&idItem=' . $idItem);
 
 
     }
@@ -233,6 +237,6 @@ class ControllerUser
 
         $repCommentUser = $userManager->repComUser($idParent, $content, $idMember, $idItem);
 
-        header('Location: index.php?action=itemTricot&idItem='. $idItem );
+        header('Location: index.php?action=itemTricot&idItem=' . $idItem);
     }
 }

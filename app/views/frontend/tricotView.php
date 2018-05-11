@@ -13,7 +13,7 @@
                                                                                        alt="Créa-carinette crochet tricot"></a>
         </div>
         <div class="creationText">
-            <P><?= $donner['content'] ?></P>
+            <P><?= $donner['contents'] ?></P>
         </div>
     </div>
 

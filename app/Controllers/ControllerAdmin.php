@@ -14,10 +14,16 @@ class ControllerAdmin
 
     /*==================== page de tous les items crochet =========================================================*/
 
-    function crochetsAdmin()
+    function crochetsAdmin($cPage)
     {
         $CrochetManager = new \Projet\Models\CrochetManager();
-        $recCrochets = $CrochetManager->getCrochets();
+
+        $numPage = $CrochetManager->nbPage();
+        if (!($cPage>0 && $cPage<=$numPage)) {
+            $cPage = 1;
+        }
+        
+        $recCrochets = $CrochetManager->getCrochets($cPage);
 
         require 'app/views/backend/crochetAdminView.php';
     }
@@ -62,8 +68,7 @@ class ControllerAdmin
                         $CrochetManager = new \Projet\Models\CrochetManager();
                         $newItemCrochet = $CrochetManager->newCreatCrochet($title, $content, $target_file);
 
-
-                        header('Location: indexAdmin.php');
+                        header('Location: indexAdmin.php?action=crochetAdmin');
                     } else {
                         echo "Désolé, une erreur est survenue dans l'envoi de votre fichier. ";
                     }
@@ -90,7 +95,7 @@ class ControllerAdmin
         require 'app/views/backend/nouveauTricotView.php';
     }
 
-    /*============================= upload titre text et image crochet ====================================*/
+    /*============================= upload titre text et image tricot ====================================*/
 
     function creatItemTricot($title, $content)
     {
@@ -125,7 +130,7 @@ class ControllerAdmin
                         $newItemTricot = $TricotManager->newCreatTricot($title, $content, $target_file);
 
 
-                        header('Location: indexAdmin.php');
+                        header('Location: indexAdmin.php?action=tricotAdmin');
                     } else {
                         echo "Désolé, une erreur est survenue dans l'envoi de votre fichier. ";
                     }
@@ -365,5 +370,26 @@ class ControllerAdmin
         header('Location: indexAdmin.php?action=reportVisitorBook');
     }
 
+    /*============================= page des commentaires admin =========================================*/
+
+    function deleteComment()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $commentUsers = $userManager->commentpostUsers();
+
+        require 'app/views/backend/commentUsersView.php';
+    }
+    /*============================ supprimer commentaire admin ================================================*/
+
+    function deleteCommentUsers($idPost, $idUsers)
+    {
+        $userManager = new \Projet\Models\UserManager();
+
+        $deleteCommentUser = $userManager->deleteUserComment($idPost);
+
+        $deleteUser = $userManager->deleteUser($idUsers);
+
+        header('Location: indexAdmin.php?action=deleteComment');
+    }
 
 }

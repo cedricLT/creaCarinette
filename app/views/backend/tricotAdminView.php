@@ -18,16 +18,18 @@
     <?php while ($donner = $recTricots->fetch()) { ?>
 
         <div class="blockCrochet">
-            <?= $donner['dates_fr'] ?>
 
-            <h3><?= $donner['title'] ?></h3>
+            <h4>Article numéro : <?= $donner['idItem'] ?></h4>
+            <h4>Créé le : <?= $donner['dates_fr'] ?></h4>
+
+            <h3>Tritre : <?= $donner['title'] ?></h3>
 
             <div class="creationIMG">
                 <img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot">
 
             </div>
             <div class="creationText">
-                <P><?= $donner['content'] ?></P>
+                <P><?= $donner['contents'] ?></P>
             </div>
             <div class="gererArticle">
                 <div class="voir">
@@ -54,7 +56,9 @@
                                     <input type="submit" value="Envoyer" name="submit" id='upload'>
 
                                 </form>
-
+                                <div class="img">
+                                    <img id="blah" src="#" alt="image" />
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -97,5 +101,7 @@
     $recTricots->closeCursor();
     ?>
 </div>
+<script src="app/public/js/uploadImg.js"></script>
+<script src="app/public/js/img.js"></script>
 </body>
 </html>

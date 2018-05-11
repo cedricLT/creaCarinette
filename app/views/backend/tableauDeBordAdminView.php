@@ -15,7 +15,7 @@
 <div class="commentaires">
     <h2>Commentaires</h2>
     <ul>
-        <li><a href="">Commentaires par Articles</a></li>
+        <li><a href="indexAdmin.php?action=deleteComment">Commentaires par Articles</a></li>
         <li><a href="indexAdmin.php?action=reportComment">Commentaires Signalés</a></li>
     </ul>
 </div>
@@ -33,6 +33,12 @@
         <li>Vos e-mail</li>
     </ul>
 
+</div>
+
+<div class="parametre">
+    <h2>Vos Paramètres</h2>
+    <li><a href="">Mot de passe</a></li>
+    <li><a href="">Nom d'utilisateur</a></li>
 </div>
 </body>
 </html>

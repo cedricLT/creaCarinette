@@ -9,7 +9,15 @@ try{
     if (isset($_GET['action'])){
         /*====================== affiche tous les items crochets =============================*/
         if ($_GET['action'] == 'crochetAdmin'){
-            $controleurAdmin->crochetsAdmin();
+
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+            $controleurAdmin->crochetsAdmin($cPage);
         }
         /*======================= page itemCrochet ==============================================*/
         elseif ($_GET['action'] == 'nouveauCrochet'){
@@ -132,7 +140,7 @@ try{
             $idPost = $_GET['idPost'];
             $idUsers = $_GET["idUsers"];
             $controleurAdmin->deleteReportComment($idPost, $idUsers);
-        }
+    }
         /*============================= page livre d'or messages signalés ==============================*/
         elseif ($_GET['action'] == 'reportVisitorBook'){
             $controleurAdmin->reportVisitorBook();
@@ -142,6 +150,16 @@ try{
             $idVisitorBook = $_GET['idVisitorBook'];
             $idUsers = $_GET['idUsers'];
             $controleurAdmin->deleteReportVisitBook($idVisitorBook, $idUsers);
+        }
+        /*========================== page des commentaires =================================================*/
+        elseif ($_GET['action'] == 'deleteComment'){
+            $controleurAdmin->deleteComment();
+        }
+        /*=================================== supprimer des commentaires =================================*/
+        elseif ($_GET['action'] == 'deleteCommentUsers'){
+            $idPost = $_GET['idPost'];
+            $idUsers = $_GET["idUsers"];
+            $controleurAdmin->deleteCommentUsers($idPost, $idUsers);
         }
 
 
