@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="fr"  xmlns="http://www.w3.org/1999/html">
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Créa-carinette</title>
@@ -17,12 +17,15 @@
     <meta property="og:description" content="Créa-Carinette site web de création de  tricot, crochet">
     <meta property="og:title" content="Tricot, Crochet, création, réalisation, tutos, Créa-Carinette">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="app/public/css/styleUser.css">
     <link rel="stylesheet" href="app/public/css/normalize.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 
 
 </head>
@@ -89,7 +92,8 @@
         </div>
     </footer>
 </div>
-
+<script src="app/public/js/uploadImg.js"></script>
+<script src="app/public/js/img.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

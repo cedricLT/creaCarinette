@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="app/public/css/styleAdmin.css">
-</head>
+<?php ob_start(); ?>
 
 <h1 class="h1Title">Livre D'Or</h1>
 
@@ -78,7 +73,8 @@
 
 
 </div>
-
+<?php $content = ob_get_clean(); ?>
+<?php require 'template/templateAdmin.php'; ?>
 
 
 

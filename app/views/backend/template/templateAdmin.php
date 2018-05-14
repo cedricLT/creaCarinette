@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="app/public/css/styleAdmin.css">
 </head>
 <body>
+<a href="indexAdmin.php">Retour au tableau de bord</a>
 <?= $content ?>
 </body>
 <script src="app/public/js/uploadImg.js"></script>

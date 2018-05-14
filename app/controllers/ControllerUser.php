@@ -48,9 +48,9 @@ class ControllerUser
                 }
             }
         }
-        //echo '<pre>';
-        //print_r($orderedComment);
-        //echo '</pre>';
+        /*echo '<pre>';
+        print_r($orderedComment);
+        echo '</pre>';*/
 
 
         require 'app/views/frontend/itemCrochetView.php';

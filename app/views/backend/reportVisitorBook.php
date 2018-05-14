@@ -1,12 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="app/public/css/styleAdmin.css">
-</head>
-<body>
+<?php ob_start(); ?>
 <h1>Message Signalé du livre d'or</h1>
 
 <?php
@@ -53,6 +46,5 @@ while ($report = $reportCommentBook->fetch()) {
     $reportCommentBook->closeCursor();
     ?>
 </p>
-
-</body>
-</html>
+<?php $content = ob_get_clean(); ?>
+<?php require 'template/templateAdmin.php'; ?>

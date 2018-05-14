@@ -6,9 +6,21 @@ require_once __DIR__ . '/vendor/autoload.php';
 try{
     $controleurAdmin = new \Projet\Controllers\ControllerAdmin(); //objet controler
 
+
     if (isset($_GET['action'])){
+
+        /*======================= connexion admin ==========================================*/
+        if ($_GET['action'] == 'connexionAdm') { //connexion admin
+            $pseudo = htmlspecialchars($_POST['name']);
+            $mdp = $_POST['pass'];
+            if (isset($pseudo) && isset($mdp)) {
+                $controleurAdmin->connexionAdm($pseudo, $mdp);
+            } else {
+                throw new Exception('renseigner vos identifiants');
+            }
+        }
         /*====================== affiche tous les items crochets =============================*/
-        if ($_GET['action'] == 'crochetAdmin'){
+        elseif ($_GET['action'] == 'crochetAdmin'){
 
             if (isset($_GET['p']))
             {
@@ -185,6 +197,14 @@ try{
             $idPost = $_GET['idPost'];
             $idUsers = $_GET["idUsers"];
             $controleurAdmin->deleteCommentUsers($idPost, $idUsers);
+        }
+        /*========================== creation mot de passe admin ========================*/
+        elseif ($_GET['action'] == 'creatAdmin'){
+            $firstname = $_POST['firstname'];
+            $mdp = $_POST['pass'];
+            $pass =  password_hash($mdp, PASSWORD_DEFAULT);
+            $controleurAdmin->creatAdmin($firstname, $pass);
+
         }
 
 

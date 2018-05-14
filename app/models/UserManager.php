@@ -63,7 +63,7 @@ class UserManager extends Manager
     public function commentpostUsers()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem');//SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers');
+        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem');//SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers');
         $req->execute(array());
         return $req;
     }
@@ -229,4 +229,25 @@ class UserManager extends Manager
         return $req;
     }
 
+    /*========================== connexion admin ==============================================*/
+
+    public function recupMdp($pseudo, $mdp){
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT firstname, pass FROM users  WHERE firstname=?');
+        $req->execute(array($pseudo));
+
+        return $req;
+    }
+
+
+    /*================================= creation admin ========================================*/
+
+    public function creatMdpAdmin($firstname, $pass)
+    {
+        $bdd = $this->dbConnect();
+        $mdp = $bdd->prepare('INSERT INTO users (firstname, pass, status)  VALUE (?, ?, 1)');
+        $mdp->execute(array($firstname, $pass));
+
+        return $mdp;
+    }
 }

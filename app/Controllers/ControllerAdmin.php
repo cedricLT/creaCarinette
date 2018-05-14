@@ -9,7 +9,8 @@ class ControllerAdmin
 {
     function tableauDeBord()
     {
-        require 'app/views/backend/tableauDeBordAdminView.php';
+        //require 'app/views/backend/tableauDeBordAdminView.php';
+        require 'app/views/backend/connexionAdminView.php';
     }
 
     /*==================== page de tous les items crochet =========================================================*/
@@ -410,6 +411,38 @@ class ControllerAdmin
         $deleteUser = $userManager->deleteUser($idUsers);
 
         header('Location: indexAdmin.php?action=deleteComment');
+    }
+
+    /*=========================== connexion admin ===============================================*/
+
+
+    function connexionAdm($pseudo, $mdp){ //recup du mot de pass
+        $userManager = new \Projet\Models\UserManager();
+        $connexAdm = $userManager->recupMdp($pseudo, $mdp);
+        $resultat = $connexAdm->fetch();
+        $isPasswordCorrect = password_verify($mdp, $resultat['pass']);
+        $_SESSION['firstname'] = $resultat['firstname']; // transformation des variable recupere en session
+        $_SESSION['pass'] = $resultat['pass'];
+        //$_SESSION['idUsers'] = $resultat['idUsers'];
+        if ($isPasswordCorrect){
+            //header('Location: indexAdmin.php');
+            require 'app/views/backend/tableauDeBordAdminView.php';
+        }else{
+            echo 'vos identifients sont incorrect';
+            //require('views/backend/erreur.php');
+        }
+
+
+
+    }
+
+    /*=========================== creation admin =======================================*/
+
+
+    function creatAdmin($firstname, $pass)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $mdp = $userManager->creatMdpAdmin($firstname, $pass);
     }
 
 }

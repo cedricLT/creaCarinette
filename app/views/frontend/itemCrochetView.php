@@ -49,9 +49,10 @@
     </form>
 </div>
 
-<!-- affichage des commentaire -->
+<!-- affichage des commentaires -->
 
 <div class="commentReponse">
+
 
     <?php
 
@@ -59,8 +60,9 @@
     function displayChildren($idParent, $orderedComment){
     if (array_key_exists($idParent, $orderedComment)){
     foreach ($orderedComment [$idParent]['children'] as $child) {
-
     ?>
+
+
     <div class="commentCrochet">
         <div class="commentItemCrochet">
             <div class="commentDates">
@@ -81,7 +83,7 @@
 
             <button>
                 <a href="index.php?action=reportCommentCrochet&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
-                    le commentaire</a>
+                    ce commentaire</a>
             </button>
 
         </div>
@@ -117,19 +119,23 @@
 
     </div>
 
+
 </div>
+
+
 <?php
 displayChildren($child['idPost'], $orderedComment);
 }
 
 }
 }
+
 $root = 0;
 displayChildren($root, $orderedComment);
 ?>
 
 
-</div>
+
 
 
 <?php $content = ob_get_clean(); ?>
