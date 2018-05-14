@@ -233,7 +233,7 @@ class UserManager extends Manager
 
     public function recupMdp($pseudo, $mdp){
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT firstname, pass FROM users  WHERE firstname=?');
+        $req = $bdd->prepare('SELECT idUsers, firstname, pass FROM users  WHERE firstname=?');
         $req->execute(array($pseudo));
 
         return $req;
@@ -249,5 +249,26 @@ class UserManager extends Manager
         $mdp->execute(array($firstname, $pass));
 
         return $mdp;
+    }
+
+    /*=========================== page new name admin ==================================*/
+
+    public function newNameAd($idUsers)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT firstname FROM users WHERE idUsers = ?');
+        $req->execute(array($idUsers));
+
+        return $req;
+    }
+
+    /*=============================== nouveau nom admin ============================================*/
+
+    public function newAdminNAme($idUsers, $firstname)
+    {
+        $bdd = $this->dbConnect();
+        $name = $bdd->prepare('UPDATE users SET firstname = ? WHERE idUsers = ?');
+        $name->execute(array($firstname, $idUsers));
+        return $name;
     }
 }

@@ -33,7 +33,9 @@
     <link rel="stylesheet" href="app/public/css/styleAdmin.css">
 </head>
 <body>
-<a href="indexAdmin.php">Retour au tableau de bord</a>
+<a href="indexAdmin.php?action=tdbAdmin">Retour au tableau de bord</a>
+<br>
+<a href="">Déconnexion</a>
 <?= $content ?>
 </body>
 <script src="app/public/js/uploadImg.js"></script>

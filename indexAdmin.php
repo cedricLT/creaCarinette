@@ -206,6 +206,34 @@ try{
             $controleurAdmin->creatAdmin($firstname, $pass);
 
         }
+        /*===================== page newMdp ================================*/
+        elseif ($_GET['action'] == 'newMdp'){
+            $controleurAdmin->newMdp();
+        }
+        /*=================== page newUtilisateur =====================================================================*/
+        elseif ($_GET['action'] == 'newName'){
+            $idUsers = $_GET['idUsers'];
+            $controleurAdmin->newName($idUsers);
+        }
+        /*================= retour tableau de bord =====================================*/
+        elseif ($_GET['action'] == 'tdbAdmin'){
+            $controleurAdmin->tdbAdmin();
+        }
+        /*====================== changer de nom Admin =================================================================*/
+        elseif ($_GET['action'] == 'newNameAdmin'){
+            $idUsers = $_GET['idUsers'];
+            $firstname = htmlspecialchars($_POST['newName']);
+            if (!empty($firstname)){
+                $controleurAdmin->newNameAdmin($idUsers, $firstname);
+            }else {
+                throw new Exception('tous les champs ne sont pas remplis');
+            }
+        }
+        /*======================= deconnexion admin ==================================================*/
+        elseif ($_GET['action'] == 'deconnexion'){
+            session_destroy();
+            header('Location: indexAdmin.php');
+        }
 
 
 

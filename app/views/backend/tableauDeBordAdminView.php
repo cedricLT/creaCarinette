@@ -4,7 +4,8 @@
 <head>
 </head>
 <body>
-<h1>Bienvenue dans votre Tableau de Bord</h1>
+<a href="indexAdmin.php?action=deconnexion">Déconnexion</a>
+<h1>Bienvenue dans votre Tableau de Bord <?= $_SESSION['firstname'] ?></h1>
 <div class="articles">
     <h2>Articles</h2>
     <ul>
@@ -37,8 +38,11 @@
 
 <div class="parametre">
     <h2>Vos Paramètres</h2>
-    <li><a href="">Mot de passe</a></li>
-    <li><a href="">Nom d'utilisateur</a></li>
+    <ul>
+        <li><a href="indexAdmin.php?action=newMdp">Mot de passe</a></li>
+        <li><a href="indexAdmin.php?action=newName&idUsers=<?= $_SESSION['idUsers']?>">Nom d'utilisateur</a></li>
+    </ul>
+
 </div>
 </body>
 </html>

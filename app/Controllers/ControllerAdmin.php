@@ -423,7 +423,7 @@ class ControllerAdmin
         $isPasswordCorrect = password_verify($mdp, $resultat['pass']);
         $_SESSION['firstname'] = $resultat['firstname']; // transformation des variable recupere en session
         $_SESSION['pass'] = $resultat['pass'];
-        //$_SESSION['idUsers'] = $resultat['idUsers'];
+        $_SESSION['idUsers'] = $resultat['idUsers'];
         if ($isPasswordCorrect){
             //header('Location: indexAdmin.php');
             require 'app/views/backend/tableauDeBordAdminView.php';
@@ -443,6 +443,39 @@ class ControllerAdmin
     {
         $userManager = new \Projet\Models\UserManager();
         $mdp = $userManager->creatMdpAdmin($firstname, $pass);
+    }
+
+    /*========================== newMdp ===============================*/
+    function newMdp()
+        {
+        require 'app/views/backend/newMdpView.php';
+    }
+
+    /*=========================== newName ===============================================================*/
+
+    function newName($idUsers)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $newNameAd = $userManager->newNameAd($idUsers);
+        require 'app/views/backend/newNameAdmin.php';
+    }
+
+    /*======================= changer de nom admin ====================================*/
+
+    function newNameAdmin($idUsers, $firstname)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $newAdminName = $userManager->newAdminNAme($idUsers, $firstname);
+
+        $_SESSION['firstname'] = $firstname;
+        header('Location: indexAdmin.php?action=newName&idUsers=' . $idUsers);
+    }
+
+    /*=============================== retour tableau de bord ================================*/
+
+    function tdbAdmin()
+    {
+        require 'app/views/backend/tableauDeBordAdminView.php';
     }
 
 }
