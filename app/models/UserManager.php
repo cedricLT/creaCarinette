@@ -71,7 +71,6 @@ class UserManager extends Manager
     /*=================================visitorBook==================================================================*/
 
 
-
     public function nbPagebook()
     {
         $bdd = $this->dbConnect();
@@ -188,6 +187,7 @@ class UserManager extends Manager
 
         return $req;
     }
+
     /*============================ supprimer un commentaire signalé =========================*/
 
     public function deleteUserComment($idPost)
@@ -231,7 +231,8 @@ class UserManager extends Manager
 
     /*========================== connexion admin ==============================================*/
 
-    public function recupMdp($pseudo, $mdp){
+    public function recupMdp($pseudo, $mdp)
+    {
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('SELECT idUsers, firstname, pass FROM users  WHERE firstname=?');
         $req->execute(array($pseudo));
@@ -271,4 +272,28 @@ class UserManager extends Manager
         $name->execute(array($firstname, $idUsers));
         return $name;
     }
+
+    /*==================== recup mdp admin ===========================================*/
+
+    public function newMdpAdmin($idUsers)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idUsers, firstname, pass FROM users  WHERE idUsers=?');
+        $req->execute(array($idUsers));
+
+        return $req;
+    }
+
+    /*=========================== nouveau mot de passe ==========================================*/
+
+    public function changePass($idMember, $newPass)
+    {
+        $db = $this->dbConnect();
+        $changePass = $db->prepare('UPDATE users SET pass=? WHERE idUsers=?');
+        $changePass->execute(array($newPass, $idMember));
+        return $changePass;
+    }
+
+
+
 }

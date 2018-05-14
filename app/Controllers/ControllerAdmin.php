@@ -5,6 +5,7 @@ namespace Projet\Controllers;
 use Projet\Models\CrochetManager;
 use Projet\Models\TricotManager;
 use Projet\Models\UserManager;
+
 class ControllerAdmin
 {
     function tableauDeBord()
@@ -20,7 +21,7 @@ class ControllerAdmin
         $CrochetManager = new \Projet\Models\CrochetManager();
 
         $numPage = $CrochetManager->nbPage();
-        if (!($cPage>0 && $cPage<=$numPage)) {
+        if (!($cPage > 0 && $cPage <= $numPage)) {
             $cPage = 1;
         }
 
@@ -90,7 +91,7 @@ class ControllerAdmin
         $TricotManager = new \Projet\Models\TricotManager;
 
         $numPage = $TricotManager->nbPage();
-        if (!($cPage>0 && $cPage<=$numPage)) {
+        if (!($cPage > 0 && $cPage <= $numPage)) {
             $cPage = 1;
         }
 
@@ -181,6 +182,7 @@ class ControllerAdmin
         header('Location: indexAdmin.php?action=crochetAdmin');
 
     }
+
     /*=========================== modification du texte article tricot==============================*/
 
     function modifItemTricot($idItem, $title, $content)
@@ -238,6 +240,7 @@ class ControllerAdmin
 
 
     }
+
     /*========================== suppression d'un article crochet et de ses commentaire attenant ======================*/
 
     function deleteItemCrochet($idItem)
@@ -251,6 +254,7 @@ class ControllerAdmin
         header('Location: indexAdmin.php?action=crochetAdmin');
 
     }
+
     /*========================== suppression d'un article tricot et de ses commentaire attenant ======================*/
 
     function deleteItemTricot($idItem)
@@ -309,9 +313,8 @@ class ControllerAdmin
         }
 
 
-
-
     }
+
     /*======================================== livre d'or ====================================================*/
 
     function visitorBook($cPage)
@@ -319,7 +322,7 @@ class ControllerAdmin
         $userManager = new \Projet\Models\UserManager();
 
         $numPage = $userManager->nbPagebook();
-        if (!($cPage>0 && $cPage<=$numPage)) {
+        if (!($cPage > 0 && $cPage <= $numPage)) {
             $cPage = 1;
         }
 
@@ -370,7 +373,7 @@ class ControllerAdmin
         $userManager = new \Projet\Models\UserManager();
 
         $numPage = $userManager->nbPageReportBook();
-        if (!($cPage>0 && $cPage<=$numPage)) {
+        if (!($cPage > 0 && $cPage <= $numPage)) {
             $cPage = 1;
         }
 
@@ -400,6 +403,7 @@ class ControllerAdmin
 
         require 'app/views/backend/commentUsersView.php';
     }
+
     /*============================ supprimer commentaire admin ================================================*/
 
     function deleteCommentUsers($idPost, $idUsers)
@@ -416,7 +420,8 @@ class ControllerAdmin
     /*=========================== connexion admin ===============================================*/
 
 
-    function connexionAdm($pseudo, $mdp){ //recup du mot de pass
+    function connexionAdm($pseudo, $mdp)
+    { //recup du mot de pass
         $userManager = new \Projet\Models\UserManager();
         $connexAdm = $userManager->recupMdp($pseudo, $mdp);
         $resultat = $connexAdm->fetch();
@@ -424,14 +429,13 @@ class ControllerAdmin
         $_SESSION['firstname'] = $resultat['firstname']; // transformation des variable recupere en session
         $_SESSION['pass'] = $resultat['pass'];
         $_SESSION['idUsers'] = $resultat['idUsers'];
-        if ($isPasswordCorrect){
+        if ($isPasswordCorrect) {
             //header('Location: indexAdmin.php');
             require 'app/views/backend/tableauDeBordAdminView.php';
-        }else{
+        } else {
             echo 'vos identifients sont incorrect';
             //require('views/backend/erreur.php');
         }
-
 
 
     }
@@ -446,8 +450,11 @@ class ControllerAdmin
     }
 
     /*========================== newMdp ===============================*/
-    function newMdp()
-        {
+    function newMdp($idUsers)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $mdpAdmin = $userManager->newMdpAdmin($idUsers);
+
         require 'app/views/backend/newMdpView.php';
     }
 
@@ -476,6 +483,29 @@ class ControllerAdmin
     function tdbAdmin()
     {
         require 'app/views/backend/tableauDeBordAdminView.php';
+    }
+
+    /*=========================== changer de mot de passe admin ===========================================*/
+
+    function changeMdp($idUsers, $mdp, $newMdp)
+    {
+        if ($newMdp){
+            $userManager = new \Projet\Models\UserManager();
+            $getMdp = $userManager->newMdpAdmin($idUsers);
+
+            $verifMdp = $getMdp->fetch();
+            $isPasswordCorrect = password_verify($mdp, $verifMdp['pass']);
+            if ($isPasswordCorrect){
+                $newPass = password_hash($newMdp, PASSWORD_DEFAULT);
+                $changePass = $userManager -> changePass($idUsers,$newPass);
+
+                require 'app/views/backend/messageMdp.php';
+            }
+            else{
+                echo 'votre mot de passe actuel est erroné';
+            }
+        }
+
     }
 
 }

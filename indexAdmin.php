@@ -208,7 +208,13 @@ try{
         }
         /*===================== page newMdp ================================*/
         elseif ($_GET['action'] == 'newMdp'){
-            $controleurAdmin->newMdp();
+            $idUsers = $_GET['idUsers'];
+            $controleurAdmin->newMdp($idUsers);
+        }
+
+        /*===================== new mot de passe ==========================================================*/
+        elseif ($_GET['action'] == ''){
+
         }
         /*=================== page newUtilisateur =====================================================================*/
         elseif ($_GET['action'] == 'newName'){
@@ -234,7 +240,28 @@ try{
             session_destroy();
             header('Location: indexAdmin.php');
         }
+        /*======================= modification du mdp admin ===============================*/
+        elseif ($_GET['action'] == 'changeMdp'){
 
+            if (isset($_SESSION['idUsers']) && isset($_POST['mdp']) && isset($_POST['newMdp']) && isset($_POST['newMdp2'])){
+
+                $idUsers = $_GET['idUsers'];
+                $mdp = htmlspecialchars($_POST['mdp']);
+                $newMdp = htmlspecialchars($_POST['newMdp']);
+                $newMdp2 = htmlspecialchars($_POST['newMdp2']);
+
+                if ($newMdp === $newMdp2){
+                    $controleurAdmin->changeMdp($idUsers, $mdp, $newMdp);
+                }
+                else{
+                    throw new \Exception('vos mots de passe ne sont pas identiques');
+                }
+            }
+            else{
+                throw new \Exception('tous les champs ne sont pas remplis');
+            }
+        }
+        /*==============================================================================*/
 
 
     }else{
