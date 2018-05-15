@@ -40,7 +40,8 @@
 <div class="email">
     <h2>E-mail</h2>
     <ul>
-        <li>Vos e-mail</li>
+        <?php $mail = $nbrMail->fetch() ?>
+        <li><a href="indexAdmin.php?action=mail"><?= $mail[0] ?> E-mail</a></li>
     </ul>
 
 </div>

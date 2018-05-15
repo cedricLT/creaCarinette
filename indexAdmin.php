@@ -211,11 +211,6 @@ try{
             $idUsers = $_GET['idUsers'];
             $controleurAdmin->newMdp($idUsers);
         }
-
-        /*===================== new mot de passe ==========================================================*/
-        elseif ($_GET['action'] == ''){
-
-        }
         /*=================== page newUtilisateur =====================================================================*/
         elseif ($_GET['action'] == 'newName'){
             $idUsers = $_GET['idUsers'];
@@ -261,7 +256,15 @@ try{
                 throw new \Exception('tous les champs ne sont pas remplis');
             }
         }
-        /*==============================================================================*/
+        /*========================== page EmailView ====================================================*/
+        elseif ($_GET['action'] == 'mail'){
+            $controleurAdmin->mail();
+        }
+        /*=========================== supprimer un mail de la page vemailView.php ====================================*/
+        elseif ($_GET['action'] == 'deleteMail'){
+            $idContact = $_GET['idContact'];
+            $controleurAdmin->deleteMail($idContact);
+        }
 
 
     }else{

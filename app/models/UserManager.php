@@ -334,10 +334,36 @@ class UserManager extends Manager
         return $req;
     }
 
+    /*================================= page emailView.php ========================================*/
 
+    public function mailAdmin()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idContact, lastname, firstname, mail, content, DATE_FORMAT(dates,  \'%d/%m/%Y\') AS date_fr FROM contact');
+        $req->execute(array());
 
+        return $req;
+    }
 
+    /*====================================== supprimer un mail ===========================================*/
 
+    public function deleteMailUser($idContact)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM contact WHERE idContact = ?');
+        $req->execute(array($idContact));
+        return $req;
+    }
+
+    /*================================ nombres de mail  ====================================*/
+
+    public function nbrUserMail()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(content) FROM contact WHERE idContact');
+        $req->execute(array());
+        return $req;
+    }
 
 
 }

@@ -413,7 +413,6 @@ class ControllerAdmin
         $nbrComment = $userManager->nbrComents();
 
 
-
         require 'app/views/backend/commentUsersView.php';
     }
 
@@ -455,6 +454,7 @@ class ControllerAdmin
             $nbrCommentReport = $userManager->nbrReportComment();
             $nbrCommentBook = $userManager->nbrVisitorBook();
             $nbrReportBook = $userManager->nbrReportCommentBook();
+            $nbrMail = $userManager->nbrUserMail();
 
             require 'app/views/backend/tableauDeBordAdminView.php';
         } else {
@@ -518,6 +518,7 @@ class ControllerAdmin
         $nbrCommentReport = $userManager->nbrReportComment();
         $nbrCommentBook = $userManager->nbrVisitorBook();
         $nbrReportBook = $userManager->nbrReportCommentBook();
+        $nbrMail = $userManager->nbrUserMail();
 
 
         require 'app/views/backend/tableauDeBordAdminView.php';
@@ -527,23 +528,41 @@ class ControllerAdmin
 
     function changeMdp($idUsers, $mdp, $newMdp)
     {
-        if ($newMdp){
+        if ($newMdp) {
             $userManager = new \Projet\Models\UserManager();
             $getMdp = $userManager->newMdpAdmin($idUsers);
 
             $verifMdp = $getMdp->fetch();
             $isPasswordCorrect = password_verify($mdp, $verifMdp['pass']);
-            if ($isPasswordCorrect){
+            if ($isPasswordCorrect) {
                 $newPass = password_hash($newMdp, PASSWORD_DEFAULT);
-                $changePass = $userManager -> changePass($idUsers,$newPass);
+                $changePass = $userManager->changePass($idUsers, $newPass);
 
                 require 'app/views/backend/messageMdp.php';
-            }
-            else{
+            } else {
                 echo 'votre mot de passe actuel est erroné';
             }
         }
 
     }
 
+    /*=========================== page EmailView  ==========================================*/
+
+    function mail()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $mailUser = $userManager->mailAdmin();
+        $nbrMail = $userManager->nbrUserMail();
+
+        require 'app/views/backend/emailView.php';
+    }
+
+    /*=========================== supprimer un mail ==================================*/
+    function deleteMail($idContact)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $deleteEmail = $userManager->deleteMailUser($idContact);
+
+        header('Location: indexAdmin.php?action=mail');
+    }
 }
