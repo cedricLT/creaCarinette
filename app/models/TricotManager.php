@@ -65,4 +65,23 @@ class TricotManager extends Manager
         $req->execute(array($target_file, $idItem));
         return $req;
     }
+
+    /*===================== page home dernier item tricot ===============================================================*/
+
+    public function lastItemTricot()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idItem, title, contents, img,  DATE_FORMAT(postDates, \' % d /%m /%Y\') AS dates_fr FROM item WHERE categorie = \'tricot\' ORDER BY idItem DESC');
+        $req->execute(array());
+        return $req;
+    }
+
+    /*================================= compte le nombre d article tricot =============================================*/
+    public function nbrItemt()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(categorie) FROM item WHERE categorie = \'tricot\'');
+        $req->execute(array());
+        return $req;
+    }
 }

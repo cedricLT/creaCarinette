@@ -10,7 +10,7 @@ class ControllerAdmin
 {
     function tableauDeBord()
     {
-        //require 'app/views/backend/tableauDeBordAdminView.php';
+
         require 'app/views/backend/connexionAdminView.php';
     }
 
@@ -26,6 +26,8 @@ class ControllerAdmin
         }
 
         $recCrochets = $CrochetManager->getCrochets($cPage);
+
+        $nbrItemCrochet = $CrochetManager->nbrItemC();
 
         require 'app/views/backend/crochetAdminView.php';
 
@@ -96,6 +98,8 @@ class ControllerAdmin
         }
 
         $recTricots = $TricotManager->getTricots($cPage);
+        $nbrItemTricot = $TricotManager->nbrItemt();
+
         require 'app/views/backend/tricotAdminView.php';
     }
 
@@ -327,6 +331,8 @@ class ControllerAdmin
         }
 
         $commentUser = $userManager->addCommentBook($cPage);
+        $nbrCommentBook = $userManager->nbrVisitorBook();
+
 
         require 'app/views/backend/visitorBookAdminView.php';
     }
@@ -349,6 +355,8 @@ class ControllerAdmin
     {
         $userManager = new \Projet\Models\UserManager();
         $reportCom = $userManager->reportCommentUser();
+        $nbrCommentReport = $userManager->nbrReportComment();
+
 
         require 'app/views/backend/reportCommentView.php';
     }
@@ -378,6 +386,8 @@ class ControllerAdmin
         }
 
         $reportCommentBook = $userManager->reportComment($cPage);
+        $nbrReportBook = $userManager->nbrReportCommentBook();
+
 
         require 'app/views/backend/reportVisitorBook.php';
     }
@@ -400,6 +410,9 @@ class ControllerAdmin
     {
         $userManager = new \Projet\Models\UserManager();
         $commentUsers = $userManager->commentpostUsers();
+        $nbrComment = $userManager->nbrComents();
+
+
 
         require 'app/views/backend/commentUsersView.php';
     }
@@ -417,7 +430,7 @@ class ControllerAdmin
         header('Location: indexAdmin.php?action=deleteComment');
     }
 
-    /*=========================== connexion admin ===============================================*/
+    /*=========================== connexion admin page tableau de bord ===============================================*/
 
 
     function connexionAdm($pseudo, $mdp)
@@ -426,11 +439,23 @@ class ControllerAdmin
         $connexAdm = $userManager->recupMdp($pseudo, $mdp);
         $resultat = $connexAdm->fetch();
         $isPasswordCorrect = password_verify($mdp, $resultat['pass']);
-        $_SESSION['firstname'] = $resultat['firstname']; // transformation des variable recupere en session
+        $_SESSION['firstname'] = $resultat['firstname']; // transformation des variables recupérées en session
         $_SESSION['pass'] = $resultat['pass'];
         $_SESSION['idUsers'] = $resultat['idUsers'];
         if ($isPasswordCorrect) {
-            //header('Location: indexAdmin.php');
+
+            $CrochetManager = new \Projet\Models\CrochetManager();
+            $nbrItemCrochet = $CrochetManager->nbrItemC();
+
+            $TricotManager = new \Projet\Models\TricotManager;
+            $nbrItemTricot = $TricotManager->nbrItemt();
+
+            $userManager = new \Projet\Models\UserManager();
+            $nbrComment = $userManager->nbrComents();
+            $nbrCommentReport = $userManager->nbrReportComment();
+            $nbrCommentBook = $userManager->nbrVisitorBook();
+            $nbrReportBook = $userManager->nbrReportCommentBook();
+
             require 'app/views/backend/tableauDeBordAdminView.php';
         } else {
             echo 'vos identifients sont incorrect';
@@ -482,6 +507,19 @@ class ControllerAdmin
 
     function tdbAdmin()
     {
+        $CrochetManager = new \Projet\Models\CrochetManager();
+        $nbrItemCrochet = $CrochetManager->nbrItemC();
+
+        $TricotManager = new \Projet\Models\TricotManager;
+        $nbrItemTricot = $TricotManager->nbrItemt();
+
+        $userManager = new \Projet\Models\UserManager();
+        $nbrComment = $userManager->nbrComents();
+        $nbrCommentReport = $userManager->nbrReportComment();
+        $nbrCommentBook = $userManager->nbrVisitorBook();
+        $nbrReportBook = $userManager->nbrReportCommentBook();
+
+
         require 'app/views/backend/tableauDeBordAdminView.php';
     }
 

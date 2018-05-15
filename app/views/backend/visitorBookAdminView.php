@@ -2,8 +2,10 @@
 
 <?php ob_start(); ?>
 
-<h1 class="h1Title">Livre D'Or</h1>
+<?php $commentBook = $nbrCommentBook->fetch() ?>
 
+<h1 class="h1Title">Livre D'Or</h1>
+<h2>Vous avez <?= $commentBook[0] ?> message(s)</h2>
 
 <div class="contentVisitorBook">
     <?php

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <?php ob_start(); ?>
-<h1>Tous les commentaires par Articles</h1>
 
+<?php $comment = $nbrComment->fetch() ?>
+
+<h1>Tous les commentaires par Articles</h1>
+<h3>Vous avez <?= $comment[0] ?> commentaire</h3>
 <?php
 while ($comment = $commentUsers->fetch()){
 
     ?>
-    <p>Article :<?= $comment['categorie'] ?> numero :<?= $comment['idItem'] ?></p>
+    <p>Article :<?= $comment['categorie'] ?> <br> numero <?= $comment['idItem'] ?></p>
     <p>Le :<?= $comment['dates'] ?></p>
     <p>Pseudo :<?= $comment['firstname'] ?></p>
     <p>Commentaire :<br><?= $comment['content'] ?></p>

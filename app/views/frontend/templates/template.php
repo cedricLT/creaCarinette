@@ -80,7 +80,7 @@
                                 <a href="index.php">Accueil</a>
                             </div>
                             <div class="contactFooter">
-                                <a href="">Contact</a>
+                                <a href="index.php?action=contact">Contact</a>
                             </div>
                         </div>
                     </div>

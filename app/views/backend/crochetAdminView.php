@@ -1,7 +1,9 @@
 <!--page Gérer vos articles Crochets admin-->
 <!DOCTYPE html>
 <?php ob_start(); ?>
-<h1>Gérer vos articles Crochets</h1>
+
+<?php $item = $nbrItemCrochet->fetch() ?>
+<h1>Gérer vos articles Crochets</h1><h2>vous avez <?= $item[0] ?> Articles</h2>
 
 <a href="indexAdmin.php?action=nouveauCrochet"><h3>Créer un nouvel Article Crochet</h3></a>
 

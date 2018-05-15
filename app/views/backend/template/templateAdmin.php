@@ -35,10 +35,10 @@
 <body>
 <a href="indexAdmin.php?action=tdbAdmin">Retour au tableau de bord</a>
 <br>
-<a href="">Déconnexion</a>
 <?= $content ?>
 </body>
 <script src="app/public/js/uploadImg.js"></script>
 <script src="app/public/js/img.js"></script>
+<script src="app/public/js/errorChecking.js"></script>
 </html>
 

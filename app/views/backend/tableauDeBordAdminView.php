@@ -9,22 +9,31 @@
 <div class="articles">
     <h2>Articles</h2>
     <ul>
-        <li><a href="indexAdmin.php?action=crochetAdmin">Crochets</a></li>
-        <li><a href="indexAdmin.php?action=tricotAdmin">Tricots</a></li>
+        <?php $itemC = $nbrItemCrochet->fetch() ?>
+        <li><a href="indexAdmin.php?action=crochetAdmin"><?= $itemC[0] ?> Articles Crochets</a></li>
+
+        <?php $itemT = $nbrItemTricot->fetch() ?>
+        <li><a href="indexAdmin.php?action=tricotAdmin"><?= $itemT[0] ?> Articles Tricots</a></li>
     </ul>
 </div>
 <div class="commentaires">
     <h2>Commentaires</h2>
     <ul>
-        <li><a href="indexAdmin.php?action=deleteComment">Commentaires par Articles</a></li>
-        <li><a href="indexAdmin.php?action=reportComment">Commentaires Signalés</a></li>
+        <?php $comment = $nbrComment->fetch() ?>
+        <li><a href="indexAdmin.php?action=deleteComment"><?= $comment[0] ?> Commentaires par Articles</a></li>
+
+        <?php $commentReport = $nbrCommentReport->fetch() ?>
+        <li><a href="indexAdmin.php?action=reportComment"><?= $commentReport[0] ?> Commentaires Signalés</a></li>
     </ul>
 </div>
 <div class="book">
     <h2>Livre d'or</h2>
     <ul>
-        <li><a href="indexAdmin.php?action=visitorBook">Nouveau(x) message(s)</a></li>
-        <li><a href="indexAdmin.php?action=reportVisitorBook">Message(s) signalé(s)</a></li>
+        <?php $commentBook = $nbrCommentBook->fetch() ?>
+        <li><a href="indexAdmin.php?action=visitorBook"><?= $commentBook[0] ?> message(s)</a></li>
+
+        <?php $commentReportBook = $nbrReportBook->fetch() ?>
+        <li><a href="indexAdmin.php?action=reportVisitorBook"><?= $commentReportBook[0] ?> Message(s) signalé(s)</a></li>
     </ul>
 
 </div>
@@ -39,8 +48,8 @@
 <div class="parametre">
     <h2>Vos Paramètres</h2>
     <ul>
-        <li><a href="indexAdmin.php?action=newMdp&idUsers=<?= $_SESSION['idUsers']?>">Mot de passe</a></li>
-        <li><a href="indexAdmin.php?action=newName&idUsers=<?= $_SESSION['idUsers']?>">Nom d'utilisateur</a></li>
+        <li><a href="indexAdmin.php?action=newMdp&idUsers=<?= $_SESSION['idUsers'] ?>">Mot de passe</a></li>
+        <li><a href="indexAdmin.php?action=newName&idUsers=<?= $_SESSION['idUsers'] ?>">Nom d'utilisateur</a></li>
     </ul>
 
 </div>

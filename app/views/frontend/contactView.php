@@ -3,14 +3,13 @@
 <?php ob_start(); ?>
 <div class="contactFormulaire">
     <h1 class="h1Title">Formulaire de Contact</h1>
-    <p>ici c est la prise de contact !!!!</p>
     <form id="contact" action="index.php?action=contactMail" method="post">
         <table>
 
             <tr>
                 <td>
                     <div class="nom">
-                        <label for="nom">Nom :</label>
+                        <label for="nom">Votre Nom :</label>
                         <input required type="text" id="nom" name="name"/>
                     </div>
                 </td>
@@ -19,7 +18,7 @@
             <tr>
                 <td>
                     <div class="prenom">
-                        <label for="prenom">prenom :</label>
+                        <label for="prenom">Votre prenom :</label>
                         <input required type="text" id="prenom" name="prenom"/>
                     </div>
                 </td>
@@ -28,7 +27,7 @@
             <tr>
                 <td>
                     <div class="email">
-                        <label for="email">Email :</label>
+                        <label for="email">Votre Email :</label>
                         <input required type="text" id="email" name="email"/>
                     </div>
                 </td>
@@ -37,7 +36,7 @@
             <tr>
                 <td>
                     <div class="message">
-                        <label for="message">Message :</label>
+                        <label for="message">Vote Message :</label>
                         <textarea required id="message" name="message" cols="70" rows="8"></textarea>
                     </div>
                 </td>

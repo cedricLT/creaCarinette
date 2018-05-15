@@ -63,7 +63,7 @@ class UserManager extends Manager
     public function commentpostUsers()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem');//SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers');
+        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem ORDER BY idUsers DESC');//SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers');
         $req->execute(array());
         return $req;
     }
@@ -293,6 +293,50 @@ class UserManager extends Manager
         $changePass->execute(array($newPass, $idMember));
         return $changePass;
     }
+
+    /*=========================== compte le nombre de commentaires ==============================*/
+
+    public function nbrComents()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(content) FROM post WHERE idItem');
+        $req->execute(array());
+        return $req;
+    }
+
+    /*=========================== compte le nombre de commentaires signalés ==============================*/
+
+    public function nbrReportComment()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(content) FROM post WHERE report > 2');
+        $req->execute(array());
+        return $req;
+    }
+
+    /*=========================== compte le nombre de messages livre d'or ==============================*/
+
+    public function nbrVisitorBook()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(content) FROM visitorBook WHERE idVisitorBook');
+        $req->execute(array());
+        return $req;
+    }
+
+    /*=========================== compte le nombre de messages signalés livre d'or ==============================*/
+
+    public function nbrReportCommentBook()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(content) FROM visitorBook WHERE report > 2');
+        $req->execute(array());
+        return $req;
+    }
+
+
+
+
 
 
 

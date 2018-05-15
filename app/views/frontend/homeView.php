@@ -30,8 +30,45 @@
                             Vous allez découvrir une partie de mes créations faites au crochet ou tricot. Grâce
                             à
                             différents sites web, tutos et videos, j'ai pu réaliser ces différents modèles.
+                            <br>
+                            N'ésitez pas laisser vos commentaire sur les différentes création.
+                            <br>
+                            Vous pouvez signer le livre d'or en laissant un petit message.
+                            <br>
+                            Vous pouvez également me contacter via le formulaire de contact en m'envoyant un mail!
+                            <br>
                             Je vous souhaite une bonne visite sur mon site web.
                         </p>
+                    </div>
+                </article>
+            </section>
+            <section>
+                <article>
+                    <div class="lastItem">
+
+                        <h3>Mes dèrnières réalisations</h3>
+
+                        <div class="lastItemC">
+                            <h3>Du crochet !</h3>
+                            <div class="contenueItem">
+                                <?php $item = $itemC->fetch() ?>
+
+                                <h4><?= $item['title'] ?></h4>
+                                <a href="index.php?action=itemCrochet&idItem=<?= $item['idItem'] ?>"><img
+                                            src="<?= $item['img'] ?>" alt="créa-carinette crochet tricot"></a>
+                            </div>
+
+                        </div>
+                        <div class="lastItemT">
+                            <h3>Et du tricot !</h3>
+                            <div class="contenueItem">
+                                <?php $item = $itemT->fetch() ?>
+
+                                <h4><?= $item['title'] ?></h4>
+                                <a href="index.php?action=itemTricot&idItem=<?= $item['idItem'] ?>"><img
+                                            src="<?= $item['img'] ?>" alt="créa-carinette crochet tricot"></a>
+                             </div>
+                        </div>
                     </div>
                 </article>
             </section>

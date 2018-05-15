@@ -178,7 +178,8 @@ try {
 
 
     } else {
-        require 'app/views/frontend/homeView.php';
+        $controleurUser->homeVIew();
+        //require 'app/views/frontend/homeView.php';
     }
 
 

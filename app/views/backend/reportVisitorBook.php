@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php ob_start(); ?>
+
+<?php $commentReportBook = $nbrReportBook->fetch() ?>
+
 <h1>Message Signalé du livre d'or</h1>
+<h2>Vous avez <?= $commentReportBook[0] ?> message(s) signalé(s) </h2>
 
 <?php
 while ($report = $reportCommentBook->fetch()) {

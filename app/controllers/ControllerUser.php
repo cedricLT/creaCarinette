@@ -18,6 +18,8 @@ class ControllerUser
 
         $recCrochets = $CrochetManager->getCrochets($cPage);// Appel d'une fonction de cet objet
 
+
+
         require 'app/views/frontend/crochetsView.php';
 
     }
@@ -253,5 +255,19 @@ class ControllerUser
         $repCommentUser = $userManager->repComUser($idParent, $content, $idMember, $idItem);
 
         header('Location: index.php?action=itemTricot&idItem=' . $idItem);
+    }
+    /*=============================== page accueil =========================================*/
+
+    function homeView()
+    {
+        $CrochetManager = new \Projet\Models\CrochetManager();
+        $itemC = $CrochetManager->lastItemCrochet();
+
+        $TricotManager = new \Projet\Models\TricotManager();
+        $itemT = $TricotManager->lastItemTricot();
+
+
+
+        require 'app/views/frontend/homeView.php';
     }
 }

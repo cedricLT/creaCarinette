@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <?php ob_start(); ?>
 
-<h1>Gérer vos articles Tricots</h1>
+<?php $item = $nbrItemTricot->fetch() ?>
+<h1>Gérer vos articles Tricots</h1><h2>vous avez <?= $item[0] ?> Articles</h2>
 
 <a href="indexAdmin.php?action=nouveauTricot"><h3>Créer un nouvel Article Tricot</h3></a>
 

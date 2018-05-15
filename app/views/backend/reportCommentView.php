@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <?php ob_start(); ?>
-<h1>Commentaires signalés</h1>
+<?php $commentReport = $nbrCommentReport->fetch() ?>
 
+<h1>Commentaires signalés</h1>
+<h2>Vous avez <?= $commentReport[0] ?> commentaire(s) de signalés</h2>
 <?php
  while ($report = $reportCom->fetch()) {
      ?>

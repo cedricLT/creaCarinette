@@ -69,4 +69,25 @@ class CrochetManager extends Manager
         $req->execute(array($idItem));
         return $req;
     }
+
+    /*============================ home view item ======================================================*/
+
+    public function lastItemCrochet()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idItem, title, contents, img,  DATE_FORMAT(postDates, \' % d /%m /%Y\') AS dates_fr FROM item WHERE categorie = \'crochet\' ORDER BY idItem DESC');
+        $req->execute(array());
+        return $req;
+    }
+
+    /*================================= compte le nombre d article crochet =============================================*/
+    public function nbrItemC()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(categorie) FROM item WHERE categorie = \'crochet\'');
+        $req->execute(array());
+        return $req;
+    }
+
+
 }
