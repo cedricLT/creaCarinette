@@ -5,13 +5,13 @@
 
     <script> tinymce.init({
             selector: "textarea#elm1",
-            language:"fr_FR",
+        language:"fr_FR",
             theme: "modern",
             width: "auto",
             height: 500,
-            plugins: [ "emoticons template paste textcolor"],
+            plugins: [ 'advlist autolink lists link image charmap print preview anchor textcolor','searchreplace visualblocks code fullscreen',"emoticons template paste textcolor"],
             //content_css: "tinymce/skins/lightgray/content.min.css",
-            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
+            toolbar: "insert |formatselect | link | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
             style_formats: [{title: 'Bold text', inline: 'b'}, {
                 title: 'Red text',
                 inline: 'span',

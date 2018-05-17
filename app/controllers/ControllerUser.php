@@ -189,7 +189,7 @@ class ControllerUser
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $contactUserMail = $userManager->addMail($lastname, $firstname, $mail, $content);
-            header('Location: index.php?action=contact');
+            header('Location: index.php');
         } else {
             header('Location: app/views/frontend/error.php');
         }

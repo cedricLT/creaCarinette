@@ -3,9 +3,19 @@
     padding: 0;
 }
 
+body{
+    background: #FFB6C1 !important;
+}
 
 a {
     text-decoration: none;
+}
+
+
+button{
+    border: none;
+    background-color: lightpink !important;
+    padding: 6px 12px;
 }
 
 ul {
@@ -38,11 +48,17 @@ h1{
     font-family: arisona;
 }
 
+hr {
+    width: 85%;
+    border-top: 1px solid deeppink !important;
+    margin: auto;
+}
+
 
 /*================================ homeView.php ==================================================*/
-/*******************************************************/
-/*============== templateMenu.php =====================*/
-/*******************************************************/
+
+/*============== Menu.php =====================*/
+
 .indexcity {
     z-index: 9999;
 }
@@ -56,21 +72,29 @@ h1{
 }
 
 .navbar-inverse {
-    background-color: hotpink !important;
+    /*background-color: hotpink !important;*/
+    background: linear-gradient(white, pink,white);
     border-color: hotpink !important;
+    margin-left: -15px;
+    margin-right: -15px;
+    border-radius: 0 !important;
 }
 
 .navbar-inverse .navbar-nav > .active > a {
-    background-color: mediumvioletred !important;
+    background-color: pink !important;
 
+}
+
+.navbar-inverse .navbar-nav > .open > a{
+    background: linear-gradient(white, pink,white);
 }
 
 .nav .navbar-nav:hover li {
-    color: deeppink !important;
+    color: pink !important;
 }
 
 .navbar-inverse .navbar-nav>li>a {
-     color: #777 !important;
+     color: black !important;
 }
 
 .navbar-inverse .navbar-nav>li>a:hover{
@@ -78,20 +102,20 @@ h1{
 }
 
 .dropdown-menu{
-    background-color: hotpink  !important;
+    background: linear-gradient(white, pink,white) !important;
 }
 
 .dropdown-menu li a:hover {
-    background-color: mediumvioletred !important;
+    background-color: pink !important;
     color: white !important;
 }
 
 .dropdown:hover{
-    background-color: mediumvioletred  !important;
+    background-color: pink !important;
 }
 
 .hoverMenu:hover{
-    background-color: mediumvioletred  !important;
+    background-color: pink !important;
 }
 
 .tricot {
@@ -101,7 +125,8 @@ h1{
 @media only screen and (max-width: 767px) {
     /*menu beurger*/
     .navbar-collapse {
-        background-color: #f9d4e6;
+        /*background-color: #f9d4e6;*/
+        background: linear-gradient(pink, white, pink);
         position: fixed;
         top: 0;
         transition: all 0.8s ease-out;
@@ -111,13 +136,18 @@ h1{
         z-index: 1000;
     }
 
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+        color: black !important;
+    }
+
     .navbar-inverse .navbar-nav > li > a {
         color: #000;
     }
 
     .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
-        background-color: deeppink !important;
+        background-color: pink !important;
     }
+
 
     .navbar-inverse .navbar-nav > li > a:hover {
         color: #333 !important;
@@ -129,7 +159,7 @@ h1{
     }
 
     .dropdown-menu > li > a:hover {
-        background-color: hotpink !important;
+        background-color: pink !important;
     }
 
     .dropdown-menu {
@@ -139,14 +169,36 @@ h1{
     .tricot {
         margin-top: 20px;
     }
+
 }
 
 /*****************************************************/
 .h1Title {
+    margin-top: 80px;
     text-align: center;
     font-family: arisona;
     font-size: 55px;
     font-weight: bold;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: bounceInRight;
+    animation-name: bounceInRight;
+}
+
+/*===================== image profile =======================================*/
+.profileImg{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.profileImg img{
+    width: 220px;
+    box-shadow: 5px 4px 18px -2px;;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+
 }
 
 /*******************slider homeView.php***************/
@@ -175,31 +227,381 @@ h1{
     display: none;
 }
 
-/***********************************************************************************/
-/*************************** container 3 *******************************/
-/***********************************************************************************/
-/************************************* photo img**********************************************/
-.profileImg {
-    text-align: center;
-    margin-top: 35px;
-}
 
 /******************************** texte de présentation ***************************************************/
 .presentation p {
-    margin: 25px 5% 20px 5% ;
+    margin: 65px 5% 50px 5%;
     width: 90%;
-    text-align: center;
     font-family: echei;
     font-size: 28px;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+/*********************** derniere realisation ******************************/
+
+.titleItem{
+    text-align: center;
+    margin-bottom: 35px;
+    font-family: arisona;
+    font-size: 34px;;
     font-weight: bold;
 }
 
-/***************************************************************************************/
-/*****************************template templateFooter.php*******************************/
-.footer {
-    background-color: black;
+.titleImg{
+    border-bottom: 1px solid  hotpink;
+    width: 28%;
 }
 
+.lastItemT{
+    margin-top: 45px;
+}
+
+.contenueItem{
+    margin-top: 25px;
+    text-align: center;
+    background: linear-gradient(pink, white, pink);
+    height: 218px;
+    box-shadow: 5px 5px 30px -8px;
+    padding: 1px;
+    max-width: 330px;
+
+}
+
+.contenueItem img{
+    box-shadow: 5px 6px 20px -3px black;
+    width: 150px;
+
+}
+
+.lastItem{
+    margin-bottom: 50px;
+}
+
+/***************************** PAGE CrochetView.PHP tricotView.php********************************************/
+.hrCrochet{
+    margin-bottom: -35px;
+}
+
+.titleCrochet{
+    font-family: arisona;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 45px;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+.blockCrochet{
+    margin: auto;
+    max-width: 350px;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    box-shadow: 5px 5px 30px -8px;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+    background: linear-gradient(pink, white, pink);
+}
+
+.blockCrochet h3{
+    text-align: center;
+    font-size: 20px;
+}
+
+.creationText p{
+    display: none;
+}
+
+.creationIMG{
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.creationIMG a img{
+    height: 150px;
+    margin-bottom: 20px;
+    box-shadow: 5px 6px 20px -3px black;
+    -webkit-animation-duration: 3.5s;
+    animation-duration: 3.5s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+}
+
+
+
+
+
+
+/*********************************** page item crochet **********************************************/
+
+.blockCrochetItemC{
+    margin-top: 60px;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+    background: linear-gradient(pink, white, pink);
+}
+
+.titleItemC{
+    text-align: center;
+}
+
+.creationIMGItemC{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.creationIMGItemC img{
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+    box-shadow: 5px 6px 20px -3px black;
+    width: 220px;}
+
+.creationTextItemC{
+    margin-top: 20px;
+}
+
+/*==== commentaires ===========*/
+
+.comment{
+    box-shadow: 5px 3px 21px -4px;
+}
+
+.commentPseudo{
+    margin-left: 10px;
+}
+
+.commentText{
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+
+.commentDropUsers{
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.commentCrochet{
+    margin-bottom: 25px;
+    background-color: white;
+}
+
+textarea{
+    width: -webkit-fill-available !important;
+    height: 10em;
+}
+
+.membrePseudo{
+    width: -webkit-fill-available !important;;
+}
+
+.reponseUser{
+    display: none;
+
+}
+
+.commentItemCrochet{
+    margin-bottom: 35px;
+}
+
+.btn-primary{
+    background-color: lightpink !important;
+    border-color: hotpink !important;
+    margin-left: 1% !important;
+    margin-bottom: 5px !important;
+}
+
+.btn-primary:hover{
+    opacity: 0.7;
+    color: deeppink !important;
+
+}
+
+.tbn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.report{
+    margin-right: 1%;
+
+}
+
+.report button {
+    border-radius: 4px;
+    border: 1px solid hotpink;
+}
+
+.report button:hover{
+    opacity: 0.7;
+}
+
+.report button a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.report button a:hover{
+    color: red;
+}
+
+/*********************************** livre d'or *******************************/
+
+.commentDropUsers h4{
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.commentBookUser{
+    background: linear-gradient(pink, white, pink);
+    margin-top: 30px;
+}
+
+.lastnameBook, .firstnameBook{
+    box-shadow: 5px 3px 21px -4px;
+    border: 1px solid pink;
+    height: 30px;
+}
+
+.commentBook{
+    box-shadow: 5px 3px 21px -4px;
+    border: 1px solid pink;
+}
+
+.submit_btn{
+    margin-top: 35px;
+    background: linear-gradient(pink, white, pink);
+    border: none;
+    padding: 4px;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+.submit_btn:hover{
+    opacity: 0.8;
+}
+
+.nameBook{
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+.prénomBook{
+    -webkit-animation-duration: 3.5s;
+    animation-duration: 3.5s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+.messageBook{
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+/********************************* page contact ********************************************/
+.contactFormulaire{
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.message{
+    margin-top: 40px;
+}
+
+.submint_bt{
+    margin-top: 30px;
+}
+.nom, .prenom, .email, .membrePseudo{
+    box-shadow: 5px 3px 21px -4px;
+    border: 1px solid pink;
+    height: 30px;
+}
+
+.messageTexte{
+    box-shadow: 5px 3px 21px -4px;
+    border: 1px solid pink;
+}
+
+.nomInput{
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+}
+
+.prenomInput{
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+}
+
+.emailInput{
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+}
+
+.messageT{
+
+    -webkit-animation-duration: 3.5s;
+    animation-duration: 3.5s;
+    -webkit-animation-name: bounceInRight;
+    animation-name: bounceInRight;
+}
+
+.submint_btContact{
+    background: linear-gradient(pink, white, pink);
+    border: none;
+    margin-top: 25px;
+    padding: 4px;
+    -webkit-animation-duration: 4.5s;
+    animation-duration: 4.5s;
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+.submint_btContact:hover{
+    opacity: 0.8;
+}
+
+/***************************** templateFooter.php*******************************/
+.footer {
+    background-color: black;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.facebook{
+    width: 35px;
+}
+
+.liensMenu a{
+    font-size: 12px;
+}
+
+.instagram{
+    width: 35px;
+}
 
 
 .liensMenu {
@@ -209,11 +611,11 @@ h1{
 
 .copyright{
     margin-top: 15px;
-    text-align: center;
 }
 
 .copyright p{
     color: white;
+    font-size: 12px;
 }
 
 /*=====================================================================================================*/
@@ -263,35 +665,36 @@ h1{
 
 
 
-/*===============================================================================================================*/
-/************************************** PAGE CrochetView.PHP tricotView.php******************************************************/
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/*============================== responsiv ============================================*/
 
-.blockCrochet{
-    border: 2px solid black;
-    margin-top: 40px;
-    margin-bottom: 25px;
+@media all and (min-width: 768px){
+    /*======================= home view ======================================*/
+
+    /************image profile************/
+    .profileImg img{
+        width: 300px;
+    }
+
+    .presentation p{
+        margin: 43px 5% 50px 5%;
+    }
+
+    .textImg{
+        margin-bottom: 50px;
+    }
+
+        /**************** item dernieres realisations ***********************/
+    .titleItem{
+        font-size: 45px;
+    }
+
+    .lastItemT{
+        margin-top: 0;
+    }
+
 }
 
-textarea{
-    width: -webkit-fill-available !important;
-    height: 10em;
-}
-
-.membrePseudo{
-    width: -webkit-fill-available !important;;
-}
-
-.reponseUser{
+#popMail{
     display: none;
-
-}
-
-.commentCrochet{
-    border: 2px solid black;
-    margin-bottom: 15px;
-}
-
-.creationIMG a img{
-    height: 150px;
 }

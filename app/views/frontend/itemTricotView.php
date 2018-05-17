@@ -5,17 +5,21 @@
 <h1 class="h1Title">Créations Tricot</h1>
 
 <?php $donner = $lookItem ?>
-<div class="blockCrochet">
-    <p class="DateAdd">Ajouté le :<?= $donner['dates_fr'] ?></p>
-    <h3><?= $donner['title'] ?></h3>
-    <div class="creationIMG">
+<div class="blockCrochetItemC">
+    <div class="titleItemC">
+        <h3><?= $donner['title'] ?></h3>
+    </div>
+    <div class="creationIMGItemC">
         <img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot">
     </div>
-    <div class="creationText">
+    <div class="creationTextItemC">
         <P><?= $donner['contents'] ?></P>
     </div>
 </div>
+
+<hr>
 <!--====================== commentaires ============================================-->
+
 <div class="commentDropUsers">
     <h4>Ecrire un commentaire :</h4>
     <form action="index.php?action=commentTricot&idItem=<?= htmlspecialchars($donner['idItem']) ?>"
@@ -45,83 +49,97 @@
 
         </table>
     </form>
-    <!-- affichage des commentaire -->
-    <div class="commentReponse">
+</div>
+<!-- affichage des commentaire -->
+<div class="commentReponse">
 
-        <?php
+    <?php
 
 
-        function displayChildren($idParent, $orderedComment){
-        if (array_key_exists($idParent, $orderedComment)){
-        foreach ($orderedComment [$idParent]['children'] as $child) {
+    function displayChildren($idParent, $orderedComment){
+    if (array_key_exists($idParent, $orderedComment)){
+    foreach ($orderedComment [$idParent]['children'] as $child) {
 
-        ?>
-        <div class="commentCrochet">
-            <div class="commentItemCrochet">
-                <div class="commentDates">
-                    <p>le : <?= $child['dates'] ?></p>
-                </div>
-
-                <div class="commentPseudo">
-                    <p>de : <?= $child['firstname'] ?></p>
-                </div>
-
-                <div class="commentText">
-                    <p>commentaire : <?= $child['content'] ?></p>
-                </div>
-
-                <?= $child['idParent'] ?>
+    ?>
+    <div class="commentCrochet">
+        <div class="commentItemCrochet">
+            <div class="commentDates">
+                <p><?= $child['dates'] ?></p>
             </div>
-            <div class="report">
 
-                <button>
-                    <a href="index.php?action=reportCommentTricot&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
-                        le commentaire</a>
+            <div class="commentPseudo">
+                <p><?= $child['firstname'] ?></p>
+            </div>
+
+            <div class="commentText">
+                <p><?= $child['content'] ?></p>
+            </div>
+        </div>
+        <hr>
+
+        <!-- btn modal -->
+        <div class="row">
+            <div class="tbn col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal">
+                    Répondre
                 </button>
 
-            </div>
-
-
-            <div class="formComment">
-
-                <input type="submit" class="submit_btn" value="Répondre"/>
-
-                <div class="reponseUser">
-                    <h2>Réponse</h2>
-
-                    <form action="index.php?action=repCommentTricot&idItem=<?= $child['idItem'] ?>&idPostParent=<?= $child['idPost'] ?>"
-                          method="post">
-
-                        <label for="pseudo">Pseudo :</label>
-                        <input required type="text" name="repPrenom" class="repPseudo"/>
-
-                        <label for="message">Commentaire :</label>
-                        <textarea required name="content" class="comment"></textarea>
-
-                        <div class="btnRep">
-                            <input type="submit" class="submit_btn" value="Envoyer"/>
-                    </form>
-
-                    <input type="submit" class="submit_cancel" value="Annuler"/>
-
-
+                <div class="report">
+                    <button>
+                        <a href="index.php?action=reportCommentTricot&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
+                            le commentaire</a>
+                    </button>
                 </div>
-
             </div>
-
-
         </div>
+        <!-- Modal -->
 
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="exampleModalLabel">Répondre au commentaire</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <form action="index.php?action=repCommentTricot&idItem=<?= $child['idItem'] ?>&idPostParent=<?= $child['idPost'] ?>"
+                              method="post">
+
+
+                            <label for="pseudo">Pseudo :</label><br>
+                            <input required type="text" name="repPrenom" class="repPseudo"/>
+                            <br><br>
+                            <label for="message">Commentaire :</label>
+                            <textarea required name="content" class="comment"></textarea>
+
+                            <div class="btnRep">
+                                <input type="submit" class="submit_btn" value="Envoyer"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">annuler</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <?php
-    displayChildren($child['idPost'], $orderedComment);
-    }
+</div>
+<?php
+displayChildren($child['idPost'], $orderedComment);
+}
 
-    }
-    }
-    $root = 0;
-    displayChildren($root, $orderedComment);
-    ?>
+}
+}
+$root = 0;
+displayChildren($root, $orderedComment);
+?>
 </div>
 
 <?php $content = ob_get_clean(); ?>

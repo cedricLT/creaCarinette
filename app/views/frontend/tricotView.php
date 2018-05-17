@@ -4,29 +4,30 @@
 <h1 class="h1Title">Créations Tricot</h1>
 <div class="contener">
 
-<?php while ($donner = $recTricot->fetch()) { ?>
-
-    <div class="blockCrochet">
-        <p class="DateAdd">Ajouté le :<?= $donner['dates_fr'] ?></p>
-        <h3><?= $donner['title'] ?></h3>
-        <div class="creationIMG">
-            <a href="index.php?action=itemTricot&idItem=<?= $donner['idItem'] ?>"><img src="<?= $donner['img'] ?>"
-                                                                                       alt="Créa-carinette crochet tricot"></a>
-        </div>
-        <div class="creationText">
-            <P><?= $donner['contents'] ?></P>
-        </div>
-    </div>
-
     <?php
-}
-?>
+    while ($donner = $recTricot->fetch()) {
+        ?>
+        <hr class="hrCrochet">
+        <div class="blockCrochet">
+            <h3><?= $donner['title'] ?></h3>
+            <div class="creationIMG">
+                <a href="index.php?action=itemTricot&idItem=<?= $donner['idItem'] ?>"><img src="<?= $donner['img'] ?>"
+                                                                                           alt="Créa-carinette crochet tricot"></a>
+            </div>
+            <div class="creationText">
+                <P><?= $donner['contents'] ?></P>
+            </div>
+        </div>
 
-<p id="numberPages">Pages : <?php
+        <?php
+    }
+    ?>
+
+    <p id="numberPages">Pages : <?php
         for ($i = 1; $i <= $numPage; $i++) {
             echo "<a href=\"index.php?action=tricots&p=$i\">$i </a>";
         }
-    $recTricot->closeCursor();
+        $recTricot->closeCursor();
         ?>
     </p>
 </div>

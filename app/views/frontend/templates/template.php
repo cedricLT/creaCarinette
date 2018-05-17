@@ -3,19 +3,19 @@
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Créa-carinette</title>
+    <title>Titoune&laine</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="homeView, tricotView, crochetViews">
-    <meta name="copyright" content="Créa-carinette"/>
+    <meta name="copyright" content="Titoune&laine"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Créa-Carinette site web de création de  tricot, crochet">
-    <meta name="keywords" content="Tricot, Crochet, création, réalisation, tutos, Créa-Carinette">
+    <meta name="description" content="Titoune&laine site web de création de  tricot, crochet">
+    <meta name="keywords" content="Tricot, Crochet, création, réalisation, tutos, Titoune&laine">
 
     <!--******************Meta Facebook**************-->
     <meta property=’og:locale’ content=’fr_FR’/>
-    <meta property="og:site_name" content="Créa-Carinette.fr">
-    <meta property="og:description" content="Créa-Carinette site web de création de  tricot, crochet">
-    <meta property="og:title" content="Tricot, Crochet, création, réalisation, tutos, Créa-Carinette">
+    <meta property="og:site_name" content="Titoune&laine.fr">
+    <meta property="og:description" content="Titoune&laine site web de création de  tricot, crochet">
+    <meta property="og:title" content="Tricot, Crochet, création, réalisation, tutos, Titoune&laine">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,6 +23,7 @@
 
     <link rel="stylesheet" href="app/public/css/styleUser.css">
     <link rel="stylesheet" href="app/public/css/normalize.css">
+    <link rel="stylesheet" href="app/public/css/animate.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -69,20 +70,28 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="iconMenu col-xs-12">
+                    <div class="iconMenu col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="icons col-xs-6">
-                            <a href="https://facebook.com/profile.php?id=100009374260556"><img
-                                        src="https://png.icons8.com/color/50/000000/facebook.png" alt=""></a>
-                            <a href=""><img src="https://png.icons8.com/color/50/000000/instagram-new.png"></a>
+                            <a href="https://facebook.com/profile.php?id=100009374260556">
+                                <img class="facebook"
+                                     src="https://png.icons8.com/color/50/000000/facebook.png" alt="crea-carinette">
+                            </a>
+                            <a href="https://www.instagram.com/titouneetlaine">
+                                <img class="instagram"
+                                     src="https://png.icons8.com/color/50/000000/instagram-new.png"
+                                     alt="crea-carinette">
+                            </a>
                         </div>
-                        <div class="liensMenu">
-                            <div class="accueil col-xs-4">
-                                <a href="index.php">Accueil</a>
+
+                            <div class="liensMenu col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <div class="accueil col-xs-9">
+                                    <a href="index.php">Accueil</a>
+                                </div>
+                                <div class="contactFooter">
+                                    <a href="index.php?action=contact">Contact</a>
+                                </div>
                             </div>
-                            <div class="contactFooter">
-                                <a href="index.php?action=contact">Contact</a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="copyright">
@@ -94,6 +103,7 @@
 </div>
 <script src="app/public/js/uploadImg.js"></script>
 <script src="app/public/js/img.js"></script>
+<script src="app/public/js/errorChecking.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -103,6 +113,7 @@
 
 <script src="app/public/js/sliderHome.js"></script>
 <script src="app/public/js/reponseComment.js"></script>
+<script src="app/public/js/annimat.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"

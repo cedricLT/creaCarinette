@@ -2,16 +2,16 @@
 
 <?php ob_start(); ?>
 
-<h1 class="h1Title">Creations Crochet</h1>
+<h1 class="titleCrochet">Creations Crochet</h1>
+
 <div class="contener">
     <?php
     while ($donner = $recCrochets->fetch())
     {
         ?>
-
+        <hr class="hrCrochet">
 
         <div class="blockCrochet">
-            <?= htmlspecialchars($donner['dates_fr']) ?>
             <h3><?= htmlspecialchars($donner['title']) ?></h3>
             <div class="creationIMG">
                 <a href="index.php?action=itemCrochet&idItem=<?= $donner['idItem'] ?>"><img src="<?= htmlspecialchars($donner['img']) ?>"
@@ -21,6 +21,7 @@
                 <P><?= $donner['contents'] ?></P>
             </div>
         </div>
+
 
         <?php
 
