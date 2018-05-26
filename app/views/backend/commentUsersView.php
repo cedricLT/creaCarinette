@@ -19,24 +19,27 @@ while ($comment = $commentUsers->fetch()) {
             <div class="nameArticle">
                 <p>Article :<?= $comment['categorie'] ?> <br> numero <?= $comment['idItem'] ?></p>
             </div>
-
+            <br>
             <div class="dateComment">
-                <p>Le :<?= $comment['dates'] ?></p>
+                <p>Le :<?= $comment['date_fr'] ?></p>
             </div>
-
+            <br>
             <div class="pseudoComment">
                 <p>Pseudo :<br><?= $comment['firstname'] ?></p>
             </div>
-
+            <br>
             <div class="commentText">
                 <p>Commentaire :<br><?= $comment['content'] ?></p>
             </div>
         </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            supprimer ce commentaire
-        </button>
+        <br><br>
 
+        <div class="btnDelete">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                supprimer ce commentaire
+            </button>
+        </div>
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
              aria-hidden="true">

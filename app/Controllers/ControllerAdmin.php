@@ -406,12 +406,16 @@ class ControllerAdmin
 
     /*============================= page des commentaires admin =========================================*/
 
-    function deleteComment()
+    function deleteComment($cPage)
     {
         $userManager = new \Projet\Models\UserManager();
 
+        $numPage = $userManager->nbPageComment();
+        if (!($cPage > 0 && $cPage <= $numPage)) {
+            $cPage = 1;
+        }
 
-        $commentUsers = $userManager->commentpostUsers();
+        $commentUsers = $userManager->commentpostUsers($cPage);
         $nbrComment = $userManager->nbrComents();
 
 

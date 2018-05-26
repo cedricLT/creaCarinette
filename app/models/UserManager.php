@@ -60,15 +60,7 @@ class UserManager extends Manager
 
     /*=========================== tous les commentaires pour l admin ===============================================*/
 
-    public function commentpostUsers()
-    {
-        $bdd = $this->dbConnect();
-        $req = $bdd->query('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem ORDER BY idUsers DESC');
-
-        return $req;
-    }
-
-    public function nbrPagesComents()
+    public function nbPageComment()
     {
         $bdd = $this->dbConnect();
         $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM post WHERE idPost');
@@ -79,7 +71,14 @@ class UserManager extends Manager
         return $nbPage;
     }
 
+    public function commentpostUsers($cPage)
+    {
+        $this->cPage = $cPage;
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT idPost, content, DATE_FORMAT(dates, '%d/%m/%Y') AS date_fr, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem ORDER BY idUsers DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
 
+        return $req;
+    }
 
     /*=================================visitorBook==================================================================*/
 

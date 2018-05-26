@@ -271,6 +271,14 @@ hr {
     margin-top: 45px;
 }
 
+.detailArticle{
+    margin-left: 2%;
+}
+
+.btnDelete{
+    text-align: center;
+    margin-top: 40px;
+}
 /************************************* media querise ***************************************************************/
 
 @media (min-width: 768px) {

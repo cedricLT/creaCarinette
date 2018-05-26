@@ -220,7 +220,15 @@ try{
 
         elseif ($_GET['action'] == 'deleteComment'){
 
-            $controleurAdmin->deleteComment();
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+
+            $controleurAdmin->deleteComment($cPage);
         }
         /*=================================== supprimer des commentaires =================================*/
 
