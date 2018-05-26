@@ -186,7 +186,7 @@ try{
             else {
                 $cPage = 1;
             }
-            $controleurAdmin->reportComment();
+            $controleurAdmin->reportComment($cPage);
         }
         /*============================ supprimer un commentaire signalé ===============================*/
 

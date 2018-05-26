@@ -191,11 +191,23 @@ class UserManager extends Manager
 
     /*=============================== commentaire signalé pour l admin =============================*/
 
-    public function reportCommentUser()
+    public function nbPageCommentReport()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE report>2');
-        $req->execute(array());
+        $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM post WHERE report > 2');
+        $result = $reqPage->fetch();
+        $total = $result['total'];
+        $nbPage = ceil($total / $this->perPage);
+
+        return $nbPage;
+    }
+
+
+    public function reportCommentUser($cPage)
+    {
+        $this->cPage = $cPage;
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE report > 2 ORDER BY idPost  DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
 
         return $req;
     }

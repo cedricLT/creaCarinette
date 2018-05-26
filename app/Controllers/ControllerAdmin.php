@@ -351,10 +351,16 @@ class ControllerAdmin
 
     /*============================== commentaire signalés ===================================*/
 
-    function reportComment()
+    function reportComment($cPage)
     {
         $userManager = new \Projet\Models\UserManager();
-        $reportCom = $userManager->reportCommentUser();
+
+        $numPage = $userManager->nbPageCommentReport();
+        if (!($cPage > 0 && $cPage <= $numPage)) {
+            $cPage = 1;
+        }
+
+        $reportCom = $userManager->reportCommentUser($cPage);
         $nbrCommentReport = $userManager->nbrReportComment();
 
 

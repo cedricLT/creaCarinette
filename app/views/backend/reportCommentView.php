@@ -43,5 +43,14 @@
  }
 $reportCom->closeCursor();
 ?>
+
+<p id="numberPages">Pages : <?php
+    for ($i = 1; $i <= $numPage; $i++) {
+        echo "<a href=\"indexAdmin.php?action=reportComment&p=$i\">$i </a>";
+    }
+
+    ?>
+</p>
+
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/templateAdmin.php'; ?>
