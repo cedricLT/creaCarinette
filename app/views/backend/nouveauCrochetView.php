@@ -2,7 +2,9 @@
 <!DOCTYPE html>
 <?php ob_start(); ?>
 <div class="creationItemCrochet">
+    <div class="titleCrochet">
     <h1>Création d'un nouvel Article Crochet</h1>
+    </div>
 
     <form action="indexAdmin.php?action=creatItemCrochet" method="post" enctype="multipart/form-data" >
         <div class="creationTitre">

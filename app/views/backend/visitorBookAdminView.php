@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <?php ob_start(); ?>
 
 <?php $commentBook = $nbrCommentBook->fetch() ?>

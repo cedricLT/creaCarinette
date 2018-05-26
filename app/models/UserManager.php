@@ -35,7 +35,7 @@ class UserManager extends Manager
     public function commentItemC($idItem)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ?');
+        $req = $bdd->prepare('SELECT idPost, content, post.idItem, firstname, idParent, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ?');
         $req->execute(array($idItem));
         return $req;
 
@@ -52,7 +52,7 @@ class UserManager extends Manager
     public function commentItemT($idItem)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent FROM post INNER JOIN users ON users.idUsers = post.idUsers WHERE idItem = ?');
+        $req = $bdd->prepare('SELECT idPost, content, post.idItem, firstname, idParent, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM post INNER JOIN users ON users.idUsers = post.idUsers WHERE idItem = ?');
         $req->execute(array($idItem));
         return $req;
 
@@ -63,10 +63,23 @@ class UserManager extends Manager
     public function commentpostUsers()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem ORDER BY idUsers DESC');//SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers');
-        $req->execute(array());
+        $req = $bdd->query('SELECT idPost, content, dates, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem ORDER BY idUsers DESC');
+
         return $req;
     }
+
+    public function nbrPagesComents()
+    {
+        $bdd = $this->dbConnect();
+        $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM post WHERE idPost');
+        $result = $reqPage->fetch();
+        $total = $result['total'];
+        $nbPage = ceil($total / $this->perPage);
+
+        return $nbPage;
+    }
+
+
 
     /*=================================visitorBook==================================================================*/
 
@@ -197,6 +210,7 @@ class UserManager extends Manager
         $req->execute(array($idPost));
         return $req;
     }
+
 
     public function deleteUser($idUsers)
     {

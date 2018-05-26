@@ -45,7 +45,7 @@ class ControllerUser
                 if (in_array($comUserCrochet['idParent'], $idRoot)) {
                     $idRoot [] = $comUserCrochet['idPost'];
                     $orderedComment [$idParent]['children'][$idPost] = ['idPost' => $comUserCrochet['idPost'], 'idParent' => $comUserCrochet['idParent'], 'content' => $comUserCrochet['content'],
-                        'dates' => $comUserCrochet['dates'], 'firstname' => $comUserCrochet['firstname'], 'idItem' => $comUserCrochet['idItem']];
+                        'dates' => $comUserCrochet['dates_fr'], 'firstname' => $comUserCrochet['firstname'], 'idItem' => $comUserCrochet['idItem']];
                     unset($commentCrochet[$index]);
                 }
             }
@@ -94,7 +94,7 @@ class ControllerUser
                 if (in_array($comUserTricot['idParent'], $idRoot)) {
                     $idRoot [] = $comUserTricot['idPost'];
                     $orderedComment [$idParent]['children'][$idPost] = ['idPost' => $comUserTricot['idPost'], 'idParent' => $comUserTricot['idParent'], 'content' => $comUserTricot['content'],
-                        'dates' => $comUserTricot['dates'], 'firstname' => $comUserTricot['firstname'], 'idItem' => $comUserTricot['idItem']];
+                        'dates' => $comUserTricot['dates_fr'], 'firstname' => $comUserTricot['firstname'], 'idItem' => $comUserTricot['idItem']];
                     unset($commentTricot[$index]);
                 }
             }
@@ -189,7 +189,7 @@ class ControllerUser
 
         if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
             $contactUserMail = $userManager->addMail($lastname, $firstname, $mail, $content);
-            header('Location: index.php');
+            require 'app/views/frontend/confirmMailContactView.php';
         } else {
             header('Location: app/views/frontend/error.php');
         }
@@ -202,7 +202,7 @@ class ControllerUser
         $userManager = new \Projet\Models\UserManager();
         $report = $userManager->reportUser($idPost);
 
-        header('Location: index.php?action=itemCrochet&idItem=' . $idItem);
+        header('Location: index.php?action=itemCrochet&idItem=' . $idItem . "#ancre" .$idPost);
 
     }
 

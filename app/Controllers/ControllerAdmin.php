@@ -409,6 +409,8 @@ class ControllerAdmin
     function deleteComment()
     {
         $userManager = new \Projet\Models\UserManager();
+
+
         $commentUsers = $userManager->commentpostUsers();
         $nbrComment = $userManager->nbrComents();
 

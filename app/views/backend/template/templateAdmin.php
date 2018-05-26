@@ -5,11 +5,11 @@
 
     <script> tinymce.init({
             selector: "textarea#elm1",
-        language:"fr_FR",
+            language: "fr_FR",
             theme: "modern",
             width: "auto",
             height: 500,
-            plugins: [ 'advlist autolink lists link image charmap print preview anchor textcolor','searchreplace visualblocks code fullscreen',"emoticons template paste textcolor"],
+            plugins: ['advlist autolink lists link image charmap print preview anchor textcolor', 'searchreplace visualblocks code fullscreen', "emoticons template paste textcolor"],
             //content_css: "tinymce/skins/lightgray/content.min.css",
             toolbar: "insert |formatselect | link | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons",
             style_formats: [{title: 'Bold text', inline: 'b'}, {
@@ -33,12 +33,25 @@
     <link rel="stylesheet" href="app/public/css/styleAdmin.css">
 </head>
 <body>
-<a href="indexAdmin.php?action=tdbAdmin">Retour au tableau de bord</a>
-<br>
-<?= $content ?>
-</body>
+<div class="container">
+    <div class="row">
+        <div class="btnAdmin col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="backTdb col-sm-8">
+                <button><a href="indexAdmin.php?action=tdbAdmin">Retour au tableau de bord</a></button>
+            </div>
+            <br>
+            <div class="deconTemp col-sm-4">
+                <button><a href="indexAdmin.php?action=deconnexion">Déconnexion</a></button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <?= $content ?>
+</div>
+
 <script src="app/public/js/uploadImg.js"></script>
 <script src="app/public/js/img.js"></script>
 <script src="app/public/js/errorChecking.js"></script>
+</body>
 </html>
 

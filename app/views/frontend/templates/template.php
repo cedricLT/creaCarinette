@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
-<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
     <title>Titoune&laine</title>
+    <meta charset="UTF-8">
+    <meta name="Language" CONTENT="fr">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="homeView, tricotView, crochetViews">
     <meta name="copyright" content="Titoune&laine"/>
@@ -12,7 +12,7 @@
     <meta name="keywords" content="Tricot, Crochet, création, réalisation, tutos, Titoune&laine">
 
     <!--******************Meta Facebook**************-->
-    <meta property=’og:locale’ content=’fr_FR’/>
+    <meta property="og:locale" content="fr_FR">
     <meta property="og:site_name" content="Titoune&laine.fr">
     <meta property="og:description" content="Titoune&laine site web de création de  tricot, crochet">
     <meta property="og:title" content="Tricot, Crochet, création, réalisation, tutos, Titoune&laine">
@@ -27,7 +27,6 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
 
 </head>
 <body>

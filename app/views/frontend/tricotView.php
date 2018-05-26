@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <?php ob_start(); ?>
 
 <h1 class="h1Title">Créations Tricot</h1>
-<div class="contener">
 
     <?php
     while ($donner = $recTricot->fetch()) {
@@ -15,7 +13,7 @@
                                                                                            alt="Créa-carinette crochet tricot"></a>
             </div>
             <div class="creationText">
-                <P><?= $donner['contents'] ?></P>
+                <p> <?= $donner['contents'] ?> </p>
             </div>
         </div>
 
@@ -30,7 +28,6 @@
         $recTricot->closeCursor();
         ?>
     </p>
-</div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require 'templates/template.php'; ?>

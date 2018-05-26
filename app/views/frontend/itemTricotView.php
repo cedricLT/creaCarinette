@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-
 <?php ob_start(); ?>
 
 <h1 class="h1Title">Créations Tricot</h1>
 
 <?php $donner = $lookItem ?>
-<div class="blockCrochetItemC">
-    <div class="titleItemC">
-        <h3><?= $donner['title'] ?></h3>
-    </div>
-    <div class="creationIMGItemC">
-        <img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot">
-    </div>
-    <div class="creationTextItemC">
-        <P><?= $donner['contents'] ?></P>
+<div class="row">
+    <div class="blockCrochetItemC col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="titleItemC col-xs-12 col-sm-12">
+            <h3><?= $donner['title'] ?></h3>
+        </div>
+        <div class="creationIMGItemC col-xs-12 col-sm-4 col-md-6">
+            <img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot">
+        </div>
+        <div class="creationTextItemC col-xs-12 col-sm-8 col-md-5">
+            <P><?= $donner['contents'] ?></P>
+        </div>
     </div>
 </div>
-
 <hr>
 <!--====================== commentaires ============================================-->
 
@@ -86,6 +85,7 @@
                     Répondre
                 </button>
 
+
                 <div class="report">
                     <button>
                         <a href="index.php?action=reportCommentTricot&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
@@ -129,6 +129,8 @@
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>
 <?php

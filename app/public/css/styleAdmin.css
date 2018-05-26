@@ -3,15 +3,286 @@
     padding: 0;
 }
 
+body {
+    background: #FFB6C1 !important;
+}
+
 .blockCrochet {
-    border: 1px solid;
     margin-top: 30px;
 }
 
-.img{
+@font-face {
+    font-family: arisona;
+    src: url("../polices/arisona.ttf");
+}
+
+@font-face {
+    font-family: echei;
+    src: url("../polices/echei.ttf");
+}
+
+.img {
     display: none;
 }
 
-#pop{
+#pop {
     display: none;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none !important;
+}
+
+.blockAdmin {
+    margin: 1%;
+}
+
+hr {
+    width: 85%;
+    border-top: 1px solid deeppink !important;
+    margin: auto;
+}
+
+.backTdb a, .deconTemp a {
+    font-size: 40px;
+}
+
+.backTdb button, .deconTemp button {
+    padding: 20px;
+    box-shadow: 7px 3px 23px -7px;
+    border: 1px inset hotpink;
+    border-radius: 5px;
+}
+
+.backTdb button:active, .deconTemp button:active {
+    box-shadow: none;
+    border: 1px inset pink;
+}
+
+.backTdb button:hover, .deconTemp button:hover {
+    background: white;
+}
+
+.backTdb {
+    margin-top: 20px;
+}
+
+.btnAdmin {
+    margin-bottom: 56px;
+}
+
+#numberPages {
+    font-size: 50px;
+    margin-top: 74px;
+}
+
+#numberPages a {
+    margin-left: 20px;
+}
+
+#numberPages a:active {
+    background: hotpink;
+}
+
+/******************************* tableau de bord *************************************************/
+
+.deconnexion {
+    margin-top: 10px;
+    direction: rtl;
+    margin-right: 2%;
+    padding: 5px !important;
+}
+
+.deconnexion button {
+    padding: 20px;
+}
+
+.deconnexion button a {
+    font-size: 40px;
+}
+
+.titleTdb h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 89px;
+    font-family: arisona;
+}
+
+.articles, .commentaires, .book, .email, .parametre {
+    margin-left: 3%;
+}
+
+.articles button, .commentaires button, .book button, .email button, .parametre button {
+    padding: 4px;
+    box-shadow: 7px 3px 23px -7px;
+    border: 1px inset hotpink;
+    border-radius: 5px;
+}
+
+.articles button:active, .commentaires button:active, .book button:active, .email button:active, .parametre button:active {
+    box-shadow: none;
+    border: 1px inset pink;
+}
+
+.articles button:hover, .commentaires button:hover, .book button:hover, .email button:hover, .parametre button:hover {
+    background: white;
+}
+
+.articles button a, .commentaires button a, .book button a, .email button a, .parametre button a {
+    font-size: 42px;
+    color: deeppink;
+}
+
+.articlesTdb h2, .commentairesTdb h2, .bookTdb h2, .emailTdb h2, .parametreTdb h2 {
+    font-size: 80px;
+    font-family: arisona;
+}
+
+.articlesTdb:hover, .commentairesTdb:hover, .bookTdb:hover, .emailTdb:hover, .parametreTdb:hover {
+    background: pink;
+}
+
+.articlesTdb, .commentairesTdb, .bookTdb, .emailTdb, .parametreTdb {
+    padding: 30px;
+}
+
+/************************* page articles *********************************/
+.titleCrochet h1 {
+    text-align: center;
+    font-size: 61px;
+}
+
+.nbrArticles h2 {
+    font-size: 45px;
+}
+
+.nbrArticles {
+    text-align: center;
+    margin-bottom: 76px;
+}
+
+.createArticle {
+    margin-bottom: 45px;
+}
+
+.createArticle button {
+    padding: 4px;
+    box-shadow: 16px 5px 65px -12px;
+}
+
+.createArticle button:hover {
+    background: white;
+}
+
+.createArticle button:active {
+    box-shadow: none;
+    border: 1px inset pink;
+    margin-bottom: 2px;
+}
+
+.createArticle button a {
+    font-size: 40px;
+    color: deeppink;
+}
+
+.blockCrochet {
+    background: linear-gradient(pink, white, pink);
+    margin-bottom: 45px;
+    margin-top: 45px;
+}
+
+.blockCrochet h4 {
+    font-size: 40px;
+}
+
+.titleArticle {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.titleArticle h3 {
+    font-size: 60px;
+}
+
+.creationIMG {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 74px;
+}
+
+.creationIMG img {
+    width: 712px;
+    box-shadow: 16px 16px 57px -1px;
+}
+
+.creationText {
+    margin-top: 30px;
+}
+
+.creationText p {
+    font-size: 45px;
+}
+
+.creationText img {
+    width: 60px;
+}
+
+.modifText {
+    margin-top: 75px;
+    margin-bottom: 40px;
+}
+
+.modifText button:hover {
+    background: white;
+}
+
+.modifText button {
+    padding: 4px;
+    width: 100%;
+}
+
+.modifText button a {
+    font-size: 40px;
+}
+
+.btn {
+    font-size: 40px !important;
+    margin-bottom: 40px;
+}
+
+.btnItem {
+    display: flex;
+    flex-direction: column;
+}
+
+/************************ page commentaires *******************************/
+
+.nameArticle p, .dateComment p, .pseudoComment p, .commentText p {
+    font-size: 40px;
+}
+
+.commentairesArticle {
+    background: linear-gradient(pink, white, pink);
+    margin-bottom: 45px;
+    margin-top: 45px;
+}
+
+/************************************* media querise ***************************************************************/
+
+@media (min-width: 768px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media all and (min-width: 992px) {
+
+}
+
+@media all and (min-width: 1170px) {
+
 }

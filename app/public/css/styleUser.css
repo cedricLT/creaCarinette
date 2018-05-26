@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body, html{height:100%;}
 
-body{
+body {
     background: #FFB6C1 !important;
 }
 
@@ -11,18 +12,17 @@ a {
     text-decoration: none;
 }
 
-
-button{
+button {
     border: none;
     background-color: lightpink !important;
-    padding: 6px 12px;
+    padding: 4px 12px;
 }
 
 ul {
     list-style: none;
 }
 
-.homePage{
+.homePage {
     background-color: #f9d4e6;
 }
 
@@ -43,7 +43,7 @@ ul {
     }
 }
 
-h1{
+h1 {
     text-align: center;
     font-family: arisona;
 }
@@ -53,7 +53,6 @@ hr {
     border-top: 1px solid deeppink !important;
     margin: auto;
 }
-
 
 /*================================ homeView.php ==================================================*/
 
@@ -73,7 +72,7 @@ hr {
 
 .navbar-inverse {
     /*background-color: hotpink !important;*/
-    background: linear-gradient(white, pink,white);
+    background: linear-gradient(white, pink, white);
     border-color: hotpink !important;
     margin-left: -15px;
     margin-right: -15px;
@@ -85,24 +84,24 @@ hr {
 
 }
 
-.navbar-inverse .navbar-nav > .open > a{
-    background: linear-gradient(white, pink,white);
+.navbar-inverse .navbar-nav > .open > a {
+    background: linear-gradient(white, pink, white);
 }
 
 .nav .navbar-nav:hover li {
     color: pink !important;
 }
 
-.navbar-inverse .navbar-nav>li>a {
-     color: black !important;
+.navbar-inverse .navbar-nav > li > a {
+    color: black !important;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover{
+.navbar-inverse .navbar-nav > li > a:hover {
     color: white !important;
 }
 
-.dropdown-menu{
-    background: linear-gradient(white, pink,white) !important;
+.dropdown-menu {
+    background: linear-gradient(white, pink, white) !important;
 }
 
 .dropdown-menu li a:hover {
@@ -110,11 +109,11 @@ hr {
     color: white !important;
 }
 
-.dropdown:hover{
+.dropdown:hover {
     background-color: pink !important;
 }
 
-.hoverMenu:hover{
+.hoverMenu:hover {
     background-color: pink !important;
 }
 
@@ -136,7 +135,7 @@ hr {
         z-index: 1000;
     }
 
-    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
+    .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
         color: black !important;
     }
 
@@ -147,7 +146,6 @@ hr {
     .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
         background-color: pink !important;
     }
-
 
     .navbar-inverse .navbar-nav > li > a:hover {
         color: #333 !important;
@@ -186,12 +184,12 @@ hr {
 }
 
 /*===================== image profile =======================================*/
-.profileImg{
+.profileImg {
     text-align: center;
     margin-top: 50px;
 }
 
-.profileImg img{
+.profileImg img {
     width: 220px;
     box-shadow: 5px 4px 18px -2px;;
     -webkit-animation-duration: 2.5s;
@@ -227,7 +225,6 @@ hr {
     display: none;
 }
 
-
 /******************************** texte de présentation ***************************************************/
 .presentation p {
     margin: 65px 5% 50px 5%;
@@ -242,7 +239,7 @@ hr {
 
 /*********************** derniere realisation ******************************/
 
-.titleItem{
+.titleItem {
     text-align: center;
     margin-bottom: 35px;
     font-family: arisona;
@@ -250,16 +247,16 @@ hr {
     font-weight: bold;
 }
 
-.titleImg{
-    border-bottom: 1px solid  hotpink;
-    width: 28%;
+.titleImg {
+    border-bottom: 1px solid hotpink;
+    width: 158px;
 }
 
-.lastItemT{
+.lastItemT {
     margin-top: 45px;
 }
 
-.contenueItem{
+.contenueItem {
     margin-top: 25px;
     text-align: center;
     background: linear-gradient(pink, white, pink);
@@ -270,22 +267,22 @@ hr {
 
 }
 
-.contenueItem img{
+.contenueItem img {
     box-shadow: 5px 6px 20px -3px black;
     width: 150px;
 
 }
 
-.lastItem{
+.lastItem {
     margin-bottom: 50px;
 }
 
 /***************************** PAGE CrochetView.PHP tricotView.php********************************************/
-.hrCrochet{
+.hrCrochet {
     margin-bottom: -35px;
 }
 
-.titleCrochet{
+.titleCrochet {
     font-family: arisona;
     font-weight: bold;
     margin-top: 60px;
@@ -297,7 +294,7 @@ hr {
     animation-name: bounceInDown;
 }
 
-.blockCrochet{
+.blockCrochet {
     margin: auto;
     max-width: 350px;
     margin-top: 60px;
@@ -310,22 +307,20 @@ hr {
     background: linear-gradient(pink, white, pink);
 }
 
-.blockCrochet h3{
+.blockCrochet h3 {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+    padding-top: 10px;
 }
 
-.creationText p{
-    display: none;
-}
 
-.creationIMG{
+.creationIMG {
     text-align: center;
     margin-top: 20px;
 
 }
 
-.creationIMG a img{
+.creationIMG a img {
     height: 150px;
     margin-bottom: 20px;
     box-shadow: 5px 6px 20px -3px black;
@@ -335,14 +330,9 @@ hr {
     animation-name: bounceInLeft;
 }
 
-
-
-
-
-
 /*********************************** page item crochet **********************************************/
 
-.blockCrochetItemC{
+.blockCrochetItemC {
     margin-top: 60px;
     -webkit-animation-duration: 2.5s;
     animation-duration: 2.5s;
@@ -351,90 +341,94 @@ hr {
     background: linear-gradient(pink, white, pink);
 }
 
-.titleItemC{
+.titleItemC {
     text-align: center;
 }
 
-.creationIMGItemC{
+.creationIMGItemC {
     margin-top: 25px;
     text-align: center;
 }
 
-.creationIMGItemC img{
+.creationIMGItemC img {
     -webkit-animation-duration: 2.5s;
     animation-duration: 2.5s;
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
     box-shadow: 5px 6px 20px -3px black;
-    width: 220px;}
+    width: 220px;
+}
 
-.creationTextItemC{
+.creationTextItemC {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 /*==== commentaires ===========*/
 
-.comment{
+.comment {
     box-shadow: 5px 3px 21px -4px;
 }
 
-.commentPseudo{
+.commentPseudo {
     margin-left: 10px;
 }
 
-.commentText{
+.commentText {
     margin-left: 10px;
     margin-top: 30px;
 }
 
-
-.commentDropUsers{
+.commentDropUsers {
     margin-top: 60px;
     margin-bottom: 50px;
+
 }
 
-.commentCrochet{
+.commentCrochet {
     margin-bottom: 25px;
     background-color: white;
+    box-shadow: 5px 3px 21px -4px;
 }
 
-textarea{
+textarea {
     width: -webkit-fill-available !important;
     height: 10em;
 }
 
-.membrePseudo{
+.membrePseudo {
     width: -webkit-fill-available !important;;
 }
 
-.reponseUser{
+.reponseUser {
     display: none;
 
 }
 
-.commentItemCrochet{
+.commentItemCrochet {
     margin-bottom: 35px;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: lightpink !important;
     border-color: hotpink !important;
     margin-left: 1% !important;
     margin-bottom: 5px !important;
+    font-size: 11px !important;
 }
 
-.btn-primary:hover{
+.btn-primary:hover {
     opacity: 0.7;
     color: deeppink !important;
 
 }
 
-.tbn{
+.tbn {
     display: flex;
     justify-content: space-between;
 }
 
-.report{
+.report {
     margin-right: 1%;
 
 }
@@ -444,44 +438,64 @@ textarea{
     border: 1px solid hotpink;
 }
 
-.report button:hover{
+.report button:hover {
     opacity: 0.7;
 }
 
-.report button a{
+.report button a {
     text-decoration: none;
     color: white;
+    font-size: 11px;
 
 }
 
-.report button a:hover{
+.report button a:hover {
     color: red;
 }
 
 /*********************************** livre d'or *******************************/
 
-.commentDropUsers h4{
-    margin-top: 60px;
-    margin-bottom: 50px;
-}
-
-.commentBookUser{
-    background: linear-gradient(pink, white, pink);
+.commentBookUser {
+    background: white;
     margin-top: 30px;
 }
 
-.lastnameBook, .firstnameBook{
+.titleBook{
+    margin-bottom: 60px;
+}
+
+.textBook{
+    margin: auto;
+    background: linear-gradient(pink, white, pink);
+    padding: 2px;
+    border-radius: 8px;
+    box-shadow: 5px 3px 21px -7px;
+    -webkit-animation-duration: 2.5s;
+    animation-duration: 2.5s;
+    -webkit-animation-name: bounceInLeft;
+    animation-name: bounceInLeft;
+
+}
+
+.textBook h3 p{
+    font-size: 15px;
+    text-align: center;
+    color: hotpink;
+    padding: 12px;
+}
+
+.lastnameBook, .firstnameBook {
     box-shadow: 5px 3px 21px -4px;
     border: 1px solid pink;
     height: 30px;
 }
 
-.commentBook{
+.commentBook {
     box-shadow: 5px 3px 21px -4px;
     border: 1px solid pink;
 }
 
-.submit_btn{
+.submit_btn {
     margin-top: 35px;
     background: linear-gradient(pink, white, pink);
     border: none;
@@ -490,78 +504,100 @@ textarea{
     animation-duration: 2.5s;
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
+    font-size: 11px;
 }
 
-.submit_btn:hover{
+.submit_btn:hover {
     opacity: 0.8;
+    color: hotpink;
 }
 
-.nameBook{
+.nameBook {
     -webkit-animation-duration: 4s;
     animation-duration: 4s;
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
 }
 
-.prénomBook{
+.prénomBook {
     -webkit-animation-duration: 3.5s;
     animation-duration: 3.5s;
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
 }
 
-.messageBook{
+.messageBook {
     -webkit-animation-duration: 3s;
     animation-duration: 3s;
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
 }
+
+.reportBook{
+    margin-left: 1%;
+    margin-bottom: 45px;
+}
+
+.nomBook{
+    margin-left: 10px;
+}
+
+.contentBook{
+    margin-left: 10px;
+    margin-top: 30px;
+}
+
+.reportBook button{
+    margin-bottom: 5px;
+}
+
 /********************************* page contact ********************************************/
-.contactFormulaire{
+.contactFormulaire {
     margin-top: 80px;
     margin-bottom: 100px;
 }
 
-.message{
+.message {
     margin-top: 40px;
 }
 
-.submint_bt{
+.submint_bt {
     margin-top: 30px;
 }
-.nom, .prenom, .email, .membrePseudo{
+
+.nom, .prenom, .email, .membrePseudo {
     box-shadow: 5px 3px 21px -4px;
     border: 1px solid pink;
     height: 30px;
 }
 
-.messageTexte{
+.messageTexte {
     box-shadow: 5px 3px 21px -4px;
     border: 1px solid pink;
 }
 
-.nomInput{
+.nomInput {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-name: bounceInLeft;
     animation-name: bounceInLeft;
 }
 
-.prenomInput{
+.prenomInput {
     -webkit-animation-duration: 2.5s;
     animation-duration: 2.5s;
     -webkit-animation-name: bounceInLeft;
     animation-name: bounceInLeft;
 }
 
-.emailInput{
+.emailInput {
     -webkit-animation-duration: 3s;
     animation-duration: 3s;
     -webkit-animation-name: bounceInLeft;
     animation-name: bounceInLeft;
 }
 
-.messageT{
+.messageT {
 
     -webkit-animation-duration: 3.5s;
     animation-duration: 3.5s;
@@ -569,7 +605,7 @@ textarea{
     animation-name: bounceInRight;
 }
 
-.submint_btContact{
+.submint_btContact {
     background: linear-gradient(pink, white, pink);
     border: none;
     margin-top: 25px;
@@ -580,72 +616,124 @@ textarea{
     animation-name: bounceInDown;
 }
 
-.submint_btContact:hover{
+.submint_btContact:hover {
     opacity: 0.8;
 }
 
+/***************************** page confirmeMailContactView.php **************************************/
+
+.confirmMail {
+    margin-top: 200px;
+}
+
 /***************************** templateFooter.php*******************************/
+
 .footer {
     background-color: black;
     margin-left: -15px;
     margin-right: -15px;
 }
 
-.facebook{
+.facebook {
     width: 35px;
 }
 
-.liensMenu a{
+.liensMenu a {
     font-size: 12px;
 }
 
-.instagram{
+.instagram {
     width: 35px;
 }
-
 
 .liensMenu {
     margin-top: 12px;
     font-size: 15px;
 }
 
-.copyright{
+.copyright {
     margin-top: 15px;
 }
 
-.copyright p{
+.copyright p {
     color: white;
     font-size: 12px;
 }
 
 /*=====================================================================================================*/
 /***************************************media queries *************************************************/
+/*====================================================================================================*/
 @media (min-width: 768px) {
     .container {
         width: auto !important;
     }
-
+    /************** home page ******************************/
     /*********** title *********/
-    .titleH1 h1{
+    .titleH1 h1 {
         font-size: 100px;
         margin-bottom: 36px;
     }
-    /************* footer ******/
 
-    .footer{
+    /*************** page crochet et tricot views***********************/
+
+
+
+    /**************** item page *****************************/
+    .creationTextItemC{
+        margin-top: 9px;
+    }
+
+    .titleItemC{
+        margin-bottom: 30px;
+    }
+
+    .creationIMGItemC{
+        padding: 30px;
+        margin-top: -7px;
+    }
+
+    /**** commentaires ****/
+
+    .membrePseudo{
+        width: 110% !important;
+    }
+
+    .comment{
+        width: 175% !important;
+        height: 175px;
+    }
+
+    .commentCrochet{
+        width: 80%;
+    }
+
+    /******************* livre d'or ************************************/
+
+    .lastnameBook, .firstnameBook{
+        width: 100%;
+    }
+
+    .commentBook{
+        width: 150% !important;
+        height: 200px;
+    }
+
+
+        /************* footer ******/
+    .footer {
         margin-top: 30px;
     }
 
-    .accueil{
+    .accueil {
         font-size: 20px;
     }
 
-    .contactFooter{
+    .contactFooter {
         font-size: 20px;
     }
 
-    .copyright p{
-    font-size: 16px
+    .copyright p {
+        font-size: 16px
     }
 }
 
@@ -655,46 +743,196 @@ textarea{
     }
 }
 
-
-
 @media all and (min-width: 1200px) {
     .container {
         width: auto !important;
     }
 }
 
-
-
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-/*============================== responsiv ============================================*/
+/*============================== responsive ============================================*/
 
-@media all and (min-width: 768px){
+@media all and (min-width: 768px) {
     /*======================= home view ======================================*/
-
     /************image profile************/
-    .profileImg img{
+    .profileImg img {
         width: 300px;
     }
 
-    .presentation p{
+    .presentation p {
         margin: 43px 5% 50px 5%;
     }
 
-    .textImg{
+    .textImg {
         margin-bottom: 50px;
     }
 
-        /**************** item dernieres realisations ***********************/
-    .titleItem{
+    /**************** item dernieres realisations ***********************/
+    .titleItem {
         font-size: 45px;
     }
 
-    .lastItemT{
+    .lastItemT {
         margin-top: 0;
+    }
+
+    /***************** livre d'or *****************************************/
+
+    .commentBookUser{
+        width: 80%;
     }
 
 }
 
-#popMail{
-    display: none;
+
+/*****************************************/
+
+@media all and (min-width: 992px){
+
+    /*********************** page item *******************************************/
+    .creationIMGItemC img{
+        width: 330px;
+    }
+
+    /*********************** livre d'or  *******************************/
+
+    .commentBookUser{
+        width: 64%;
+    }
+
+    .textBook{
+        width: 56%;
+    }
+
+    .nom, .prenom, .email{
+        width: 100%;
+    }
+
+    .messageT{
+        margin-top: 25px;
+    }
+
+    .messageTexte{
+        width: 150% !important;
+        height: 200px;
+    }
+
+}
+
+
+/********************************************/
+
+@media all and (min-width: 1170px){
+
+    /*================== homeView ============================*/
+
+    .nav li a {
+        font-size: 18px !important;
+    }
+
+    .h1Title{
+        font-size: 90px;
+    }
+
+    .textImg{
+        margin-top: 55px;
+        margin-bottom: 100px;
+    }
+
+    .presentation p{
+        font-size: 30px;
+    }
+
+
+    .titleItem{
+        font-size: 55px;
+    }
+
+    .titleImg{
+        font-size: 28px;
+    }
+
+    .item{
+        margin-top: 40px;
+    }
+
+    .contenueItem{
+        height: 263px;
+        max-width: 400px;
+        padding: 5px;
+    }
+
+    .contenueItem h4{
+        font-size: 22px;
+    }
+
+    .contenueItem img{
+        width: 180px;
+    }
+
+
+    /*================= crochet et tricot View =============================*/
+
+    .titleCrochet{
+        font-size: 90px;
+    }
+
+    .blockCrochet h3{
+        font-size: 24px;
+    }
+
+    .blockCrochet{
+        max-width: 448px;
+        height: 284px;
+    }
+
+
+    .creationIMG a img{
+        height: 190px;
+    }
+
+    /*********************** page item *******************************************/
+
+    .titleItemC h3{
+        font-size: 35px;
+    }
+
+    .titleItemC{
+        margin-bottom: 50px;
+    }
+
+    .creationIMGItemC img{
+        width: 450px;
+    }
+
+    .creationTextItemC p{
+        font-size: 16px;
+    }
+
+    .commentDropUsers h4{
+        font-size: 24px;
+        margin-bottom: 46px;
+    }
+
+    .submit_btn{
+        zoom: 1.2;
+    }
+
+    .commentCrochet {
+        width: 64%;
+    }
+
+    .btn{
+        zoom: 1.2;
+    }
+
+    .report{
+        zoom: 1.2;
+    }
+
+    /********************** livre d'or ******************************/
+
+    .textBook h3 p{
+        font-size: 17px;
+    }
 }

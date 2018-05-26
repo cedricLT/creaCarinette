@@ -1,23 +1,22 @@
-<!DOCTYPE html>
 <?php ob_start(); ?>
 
 <h1 class="h1Title">Creations Crochet</h1>
 
 <?php $donner = $getCrochet ?>
-<div class="blockCrochetItemC">
-    <div class="titleItemC">
-        <h3><?= $donner['title'] ?></h3>
-    </div>
-    <div class="creationIMGItemC">
-        <img src="<?= $donner['img'] ?>" alt="Créa-carinette crochet tricot">
-    </div>
-    <div class="creationTextItemC">
-        <P><?= $donner['contents'] ?></P>
+<div class="row">
+    <div class="blockCrochetItemC col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="titleItemC col-xs-12 col-sm-12">
+            <h3><?= $donner['title'] ?></h3>
+        </div>
+        <div class="creationIMGItemC col-xs-12 col-sm-4 col-md-6">
+            <img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot">
+        </div>
+        <div class="creationTextItemC col-xs-12 col-sm-8 col-md-5">
+            <P><?= $donner['contents'] ?></P>
+        </div>
     </div>
 </div>
-
 <hr>
-
 <!--====================== commentaires ============================================-->
 
 <div class="commentDropUsers">
@@ -29,7 +28,7 @@
                 <td>
                     <div class="pseudo">
                         <label for="pseudo">Pseudo :</label>
-                        <input required type="text" name="firstname" class="membrePseudo"/>
+                        <input required type="text" name="firstname" class="membrePseudo" placeholder="Votre pseudo"/>
                     </div>
 
 
@@ -39,7 +38,7 @@
                 <td>
                     <div class="message">
                         <label for="message">Commentaire :</label>
-                        <textarea required name="content" class="comment"></textarea>
+                        <textarea required name="content" class="comment" placeholder="Votre commentaire"></textarea>
                     </div>
                 </td>
             </tr>
@@ -51,6 +50,7 @@
 
         </table>
     </form>
+    <hr>
 </div>
 
 
@@ -70,7 +70,7 @@
 
     <div class="commentCrochet">
         <div class="commentItemCrochet">
-            <div class="commentDates">
+            <div class="commentDates" id="ancre<?= $child['idPost'] ?>" >
                 <p><?= $child['dates'] ?></p>
             </div>
 
@@ -92,9 +92,11 @@
                 </button>
 
                 <div class="report">
+
                     <button>
-                        <a href="index.php?action=reportCommentCrochet&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
-                            ce commentaire</a>
+                        <a
+                                    href="index.php?action=reportCommentCrochet&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>#ancre">Signaler
+                                ce commentaire</a>
                     </button>
                 </div>
             </div>
@@ -119,10 +121,11 @@
                               method="post">
 
                             <label for="pseudo">Pseudo :</label>
-                            <input required type="text" name="repPrenom" class="repPseudo"/>
-
+                            <input required type="text" name="repPrenom" class="repPseudo" placeholder="Votre pseudo">
                             <label for="message">Commentaire :</label>
-                            <textarea required name="content" class="comment"></textarea>
+                            <textarea required name="content" class="comment">
+
+                            </textarea>
 
                             <div class="btnRep">
                                 <input type="submit" class="submit_btn" value="Envoyer"/>
@@ -147,7 +150,6 @@ displayChildren($child['idPost'], $orderedComment);
 $root = 0;
 displayChildren($root, $orderedComment);
 ?>
-</div>
 
 <?php $content = ob_get_clean(); ?>
 
