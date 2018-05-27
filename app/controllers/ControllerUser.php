@@ -211,17 +211,17 @@ class ControllerUser
         $userManager = new \Projet\Models\UserManager();
         $report = $userManager->reportUser($idPost);
 
-        header('Location: index.php?action=itemTricot&idItem=' . $idItem);
+        header('Location: index.php?action=itemTricot&idItem=' . $idItem . "#ancre" . $idPost);
     }
 
     /*======================= commentaire signalé livre d'or ====================================================*/
 
-    function reportBook($idVisitorBook)
+    function reportBook($idVisitorBook, $idUsers)
     {
         $userManager = new \Projet\Models\UserManager();
         $reportBook = $userManager->reportUserBook($idVisitorBook);
 
-        header('Location: index.php?action=book');
+        header('Location: index.php?action=book#ancre' . $idUsers);
 
     }
 

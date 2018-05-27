@@ -9,7 +9,7 @@
             <h3><?= $donner['title'] ?></h3>
         </div>
         <div class="creationIMGItemC col-xs-12 col-sm-4 col-md-6">
-            <img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot">
+            <a href="<?= $donner['img'] ?>"><img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot"></a>
         </div>
         <div class="creationTextItemC col-xs-12 col-sm-8 col-md-5">
             <P><?= $donner['contents'] ?></P>
@@ -62,7 +62,7 @@
     ?>
     <div class="commentCrochet">
         <div class="commentItemCrochet">
-            <div class="commentDates">
+            <div class="commentDates"  id="ancre<?= $child['idPost'] ?>">
                 <p><?= $child['dates'] ?></p>
             </div>
 
@@ -88,7 +88,7 @@
 
                 <div class="report">
                     <button>
-                        <a href="index.php?action=reportCommentTricot&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>">Signaler
+                        <a href="index.php?action=reportCommentTricot&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>#ancre">Signaler
                             le commentaire</a>
                     </button>
                 </div>

@@ -15,7 +15,8 @@
                     <a href="index.php?action=itemCrochet&idItem=<?= $donner['idItem'] ?>"><img
                                 src="<?= htmlspecialchars($donner['img']) ?>"
                                 alt="Créa-carinette crochet tricot"></a>
-                </div>
+
+                </div>cliquez sur l'image
             </div>
 
 

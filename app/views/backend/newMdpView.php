@@ -28,9 +28,6 @@
         <input type='submit' id="btn_submit" class="btn_submit">
     </form>
 </div>
-<div id="pop" class="pop">
-    <p>Votre mot de passe correspond à la première saisie vous pouvez valider</p>
-</div>
 
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/templateAdmin.php'; ?>

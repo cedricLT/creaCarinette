@@ -65,7 +65,7 @@
         ?>
         <div class="commentBookUser">
 
-            <div class="datesBook">
+            <div class="datesBook"  id="ancre<?= $commentBook['idUsers'] ?>">
                 <p><?= $commentBook['date_fr'] ?></p>
             </div>
 
@@ -81,7 +81,7 @@
 
             <div class="report reportBook">
                 <button>
-                    <a href="index.php?action=reportCommentBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>">Signaler
+                    <a href="index.php?action=reportCommentBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>#ancre">Signaler
                         ce commentaire</a>
                 </button>
             </div>

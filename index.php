@@ -147,8 +147,9 @@ try {
         }
         elseif ($_GET['action'] == 'reportCommentBook') {
             $idVisitorBook = htmlspecialchars($_GET['idVisitorBook']);
+            $idUsers = htmlspecialchars($_GET['idUsers']);
 
-            $controleurUser->reportBook($idVisitorBook);
+            $controleurUser->reportBook($idVisitorBook, $idUsers);
         }
         //repondre a un commentaire  item crochet
         elseif ($_GET['action'] == 'repCommentCrochet') {

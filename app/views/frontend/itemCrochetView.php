@@ -9,7 +9,7 @@
             <h3><?= $donner['title'] ?></h3>
         </div>
         <div class="creationIMGItemC col-xs-12 col-sm-4 col-md-6">
-            <img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot">
+            <a href="<?= $donner['img'] ?>"><img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot"></a>
         </div>
         <div class="creationTextItemC col-xs-12 col-sm-8 col-md-5">
             <P><?= $donner['contents'] ?></P>
