@@ -2,6 +2,7 @@
 session_start();
 
 require_once __DIR__ . '/vendor/autoload.php';
+require 'app/views/backend/secure.php';
 
 try{
     $controleurAdmin = new \Projet\Controllers\ControllerAdmin(); //objet controler
@@ -23,7 +24,7 @@ try{
         /*====================== affiche tous les items crochets =============================*/
 
         elseif ($_GET['action'] == 'crochetAdmin'){
-
+            isConnect();
             if (isset($_GET['p']))
             {
                 $cPage = $_GET['p'];
@@ -36,11 +37,13 @@ try{
         /*======================= page itemCrochet ==============================================*/
 
         elseif ($_GET['action'] == 'nouveauCrochet'){
+            isConnect();
             $controleurAdmin->nouveauCrochet();
         }
         /*======================= création d'un item crochet=====================================*/
 
         elseif ($_GET['action'] =='creatItemCrochet'){
+            isConnect();
             $title = htmlspecialchars($_POST['title']);
             $content = $_POST['area'];
 
@@ -56,6 +59,7 @@ try{
         /*====================== affichage de tous les items tricot===========================*/
 
         elseif ($_GET['action'] == 'tricotAdmin'){
+            isConnect();
             if (isset($_GET['p']))
             {
                 $cPage = $_GET['p'];
@@ -69,11 +73,13 @@ try{
         /*======================= page item tricot ================================================*/
 
         elseif ($_GET['action'] == 'nouveauTricot'){
+            isConnect();
             $controleurAdmin->nouveauTricot();
         }
         /*========================= création d'un item crochet =============================*/
 
         elseif ($_GET['action'] =='creatItemTricot'){
+            isConnect();
             $title = htmlspecialchars($_POST['title']);
             $content = $_POST['area'];
 
@@ -89,12 +95,14 @@ try{
         /*======================= page modification d'un article crochet =====================================*/
 
         elseif ($_GET['action'] == 'viewItemCrochet'){
+            isConnect();
             $idItem = $_GET['idItem'];
             $controleurAdmin->viewItemCrochet($idItem);
         }
         /*========================= modifier le texte d'un article crochet =====================================*/
 
         elseif ($_GET['action'] == 'modifItemCrochet'){
+            isConnect();
             $idItem = $_GET['idItem'];
             $title = htmlspecialchars($_POST['title']);
             $content = $_POST['area'];
@@ -110,6 +118,7 @@ try{
         /*========================= modifier le texte d'un article tricot =====================================*/
 
         elseif ($_GET['action'] == 'modifItemTricot'){
+            isConnect();
             $idItem = $_GET['idItem'];
             $title = htmlspecialchars($_POST['title']);
             $content = $_POST['area'];
@@ -126,6 +135,7 @@ try{
         /*======================= modifier une image item crochet ===========================================*/
 
         elseif ($_GET['action'] == 'modifImg'){
+            isConnect();
             $idItem = $_GET['idItem'];
 
             $controleurAdmin->modifImg($idItem);
@@ -134,24 +144,28 @@ try{
         /*======================== page modification d'un article tricot ======================================*/
 
         elseif ($_GET['action'] == 'viewItemTricot'){
+            isConnect();
             $idItem = $_GET['idItem'];
             $controleurAdmin->viewItemTricot($idItem);
         }
         /*========================== supprimer un article crochet ======================================*/
 
         elseif ($_GET['action'] == 'deleteItemCrochet'){
+            isConnect();
             $idItem = $_GET['idItem'];
             $controleurAdmin->deleteItemCrochet($idItem);
         }
         /*========================== supprimer un article tricot ======================================*/
 
         elseif ($_GET['action'] == 'deleteItemTricot'){
+            isConnect();
             $idItem = $_GET['idItem'];
             $controleurAdmin->deleteItemTricot($idItem);
         }
         /*=========================== modifier une image tricot======================================*/
 
         elseif ($_GET['action'] == 'modifImgTricot'){
+            isConnect();
             $idItem = $_GET['idItem'];
 
             $controleurAdmin->modifImgTricot($idItem);
@@ -159,6 +173,7 @@ try{
         /*=========================== affichage des commentaires du livre d'or ==================*/
 
         elseif ($_GET['action'] == 'visitorBook'){
+            isConnect();
 
             if (isset($_GET['p']))
             {
@@ -172,6 +187,7 @@ try{
         /*========================== supprimer un commentaire du livre d'or ====================*/
 
         elseif ($_GET['action'] == 'deleteCommBook'){
+            isConnect();
             $idVisitorBook = $_GET['idVisitorBook'];
             $idUsers = $_GET['idUsers'];
             $controleurAdmin->deleteCommBook($idVisitorBook, $idUsers);
@@ -179,6 +195,7 @@ try{
         /*=========================== page des commentaires signalé ===================================*/
 
         elseif ($_GET['action'] == 'reportComment'){
+            isConnect();
             if (isset($_GET['p']))
             {
                 $cPage = $_GET['p'];
@@ -191,6 +208,7 @@ try{
         /*============================ supprimer un commentaire signalé ===============================*/
 
         elseif ($_GET['action'] == 'deleteReportComment'){
+            isConnect();
             $idPost = $_GET['idPost'];
             $idUsers = $_GET["idUsers"];
             $controleurAdmin->deleteReportComment($idPost, $idUsers);
@@ -198,7 +216,7 @@ try{
         /*============================= page livre d'or messages signalés ==============================*/
 
         elseif ($_GET['action'] == 'reportVisitorBook'){
-
+            isConnect();
             if (isset($_GET['p']))
             {
                 $cPage = $_GET['p'];
@@ -212,6 +230,7 @@ try{
         /*============================ supprimeer un message signalé dans le livre d'or =====================*/
 
         elseif ($_GET['action'] == 'deleteReportVisitBook'){
+            isConnect();
             $idVisitorBook = $_GET['idVisitorBook'];
             $idUsers = $_GET['idUsers'];
             $controleurAdmin->deleteReportVisitBook($idVisitorBook, $idUsers);
@@ -219,7 +238,7 @@ try{
         /*========================== page des commentaires =================================================*/
 
         elseif ($_GET['action'] == 'deleteComment'){
-
+            isConnect();
             if (isset($_GET['p']))
             {
                 $cPage = $_GET['p'];
@@ -233,6 +252,7 @@ try{
         /*=================================== supprimer des commentaires =================================*/
 
         elseif ($_GET['action'] == 'deleteCommentUsers'){
+            isConnect();
             $idPost = $_GET['idPost'];
             $idUsers = $_GET["idUsers"];
             $controleurAdmin->deleteCommentUsers($idPost, $idUsers);
@@ -240,6 +260,7 @@ try{
         /*========================== creation mot de passe admin ========================*/
 
         elseif ($_GET['action'] == 'creatAdmin'){
+            isConnect();
             $firstname = $_POST['firstname'];
             $mdp = $_POST['pass'];
             $pass =  password_hash($mdp, PASSWORD_DEFAULT);
@@ -249,12 +270,14 @@ try{
         /*===================== page newMdp ================================*/
 
         elseif ($_GET['action'] == 'newMdp'){
+            isConnect();
             $idUsers = $_GET['idUsers'];
             $controleurAdmin->newMdp($idUsers);
         }
         /*=================== page newUtilisateur =====================================================================*/
 
         elseif ($_GET['action'] == 'newName'){
+            isConnect();
             $idUsers = $_GET['idUsers'];
             $controleurAdmin->newName($idUsers);
         }
@@ -266,6 +289,7 @@ try{
         /*====================== changer de nom Admin =================================================================*/
 
         elseif ($_GET['action'] == 'newNameAdmin'){
+            isConnect();
             $idUsers = $_GET['idUsers'];
             $firstname = htmlspecialchars($_POST['newName']);
             if (!empty($firstname)){
@@ -283,7 +307,7 @@ try{
         /*======================= modification du mdp admin ===============================*/
 
         elseif ($_GET['action'] == 'changeMdp'){
-
+            isConnect();
             if (isset($_SESSION['idUsers']) && isset($_POST['mdp']) && isset($_POST['newMdp']) && isset($_POST['newMdp2'])){
 
                 $idUsers = $_GET['idUsers'];
@@ -305,11 +329,20 @@ try{
         /*========================== page EmailView ====================================================*/
 
         elseif ($_GET['action'] == 'mail'){
-            $controleurAdmin->mail();
+            isConnect();
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+            $controleurAdmin->mail($cPage);
         }
         /*=========================== supprimer un mail de la page emailView.php ==========================*/
 
         elseif ($_GET['action'] == 'deleteMail'){
+            isConnect();
             $idContact = $_GET['idContact'];
             $controleurAdmin->deleteMail($idContact);
         }

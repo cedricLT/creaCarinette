@@ -2,32 +2,39 @@
 
 <?php $commentBook = $nbrCommentBook->fetch() ?>
 
-<h1 class="h1Title">Livre D'Or</h1>
-<h2>Vous avez <?= $commentBook[0] ?> message(s)</h2>
+<div class="titleCrochet">
+    <h1>Livre D'Or</h1>
+</div>
 
-<div class="contentVisitorBook">
-    <?php
+<div class="nbrArticles">
+    <h2>Vous avez <?= $commentBook[0] ?> message(s)</h2>
+</div>
 
-    while ($commentBook = $commentUser->fetch()) {
+<hr>
+<?php
 
-        ?>
+while ($commentBook = $commentUser->fetch()) {
 
-        <div class="dates">
-            <p>Le :<?= $commentBook['date_fr'] ?></p>
+    ?>
+
+    <div class="contentVisitorBook">
+        <div class="detailArticle">
+            <div class="dates">
+                <p><?= $commentBook['date_fr'] ?></p>
+            </div>
+
+            <div class="nom">
+                <p>nom : <?= $commentBook['lastname'] ?></p>
+            </div>
+
+            <div class="prenom">
+                <p>Prénom : <?= $commentBook['firstname'] ?></p>
+            </div>
+
+            <div class="message">
+                <p>Commentaire : <?= $commentBook['content'] ?></p>
+            </div>
         </div>
-
-        <div class="nom">
-            <p>nom : <?= $commentBook['lastname'] ?></p>
-        </div>
-
-        <div class="prenom">
-            <p>Prénom : <?= $commentBook['firstname'] ?></p>
-        </div>
-
-        <div class="message">
-            <p>Commentaire : <?= $commentBook['content'] ?></p>
-        </div>
-
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             supprimer ce mesage
@@ -45,12 +52,10 @@
                         <h4 class="modal-title" id="exampleModalLabel">confirmation de suppression </h4>
                     </div>
                     <div class="modal-body">
-                        <div class="report">
-                            <button>
+                        <div class="suppre">
                                 <a href="indexAdmin.php?action=deleteCommBook&idVisitorBook=<?= $commentBook['idVisitorBook'] ?>&idUsers=<?= $commentBook['idUsers'] ?>">Supprimer
                                     ce message</a>
 
-                            </button>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -59,20 +64,20 @@
                 </div>
             </div>
         </div>
-        <?php
+    </div>
+    <hr>
+    <?php
+}
+?>
+<p id="numberPages">Pages : <?php
+    for ($i = 1; $i <= $numPage; $i++) {
+        echo "<a href=\"indexAdmin.php?action=visitorBook&p=$i\">$i </a>";
     }
+    $commentUser->closeCursor();
     ?>
-    <p id="numberPages">Pages : <?php
-        for ($i = 1; $i <= $numPage; $i++) {
-            echo "<a href=\"indexAdmin.php?action=visitorBook&p=$i\">$i </a>";
-        }
-        $commentUser->closeCursor();
-        ?>
-    </p>
+</p>
 
 
-
-</div>
 <?php $content = ob_get_clean(); ?>
 <?php require 'template/templateAdmin.php'; ?>
 

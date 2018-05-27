@@ -560,10 +560,16 @@ class ControllerAdmin
 
     /*=========================== page EmailView  ==========================================*/
 
-    function mail()
+    function mail($cPage)
     {
         $userManager = new \Projet\Models\UserManager();
-        $mailUser = $userManager->mailAdmin();
+
+        $numPage = $userManager->nbPagemail();
+        if (!($cPage > 0 && $cPage <= $numPage)) {
+            $cPage = 1;
+        }
+
+        $mailUser = $userManager->mailAdmin($cPage);
         $nbrMail = $userManager->nbrUserMail();
 
         require 'app/views/backend/emailView.php';

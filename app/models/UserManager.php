@@ -207,7 +207,7 @@ class UserManager extends Manager
     {
         $this->cPage = $cPage;
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT idPost, content, dates, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE report > 2 ORDER BY idPost  DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
+        $req = $bdd->query("SELECT idPost, content, DATE_FORMAT(dates,  '%d/%m/%Y') AS date_fr, post.idItem, firstname, idParent, post.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE report > 2 ORDER BY idPost  DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
 
         return $req;
     }
@@ -249,7 +249,7 @@ class UserManager extends Manager
     {
         $this->cPage = $cPage;
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT idVisitorBook, content, postDate, firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  WHERE report > 2 ORDER BY idVisitorBook DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
+        $req = $bdd->query("SELECT idVisitorBook, content, DATE_FORMAT(postDate,  '%d/%m/%Y') AS date_fr ,firstname, lastname, visitorbook.idUsers FROM visitorbook INNER JOIN users ON users.idUsers = visitorbook.idUsers  WHERE report > 2 ORDER BY idVisitorBook DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
 
         return $req;
     }
@@ -361,11 +361,22 @@ class UserManager extends Manager
 
     /*================================= page emailView.php ========================================*/
 
-    public function mailAdmin()
+    public function nbPagemail()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idContact, lastname, firstname, mail, content, DATE_FORMAT(dates,  \'%d/%m/%Y\') AS date_fr FROM contact');
-        $req->execute(array());
+        $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM contact WHERE idContact');
+        $result = $reqPage->fetch();
+        $total = $result['total'];
+        $nbPage = ceil($total / $this->perPage);
+
+        return $nbPage;
+    }
+
+    public function mailAdmin($cPage)
+    {
+        $this->cPage = $cPage;
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT idContact, lastname, firstname, mail, content, DATE_FORMAT(dates, '%d/%m/%Y') AS date_fr FROM contact ORDER BY idContact  DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
 
         return $req;
     }

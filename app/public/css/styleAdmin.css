@@ -271,14 +271,84 @@ hr {
     margin-top: 45px;
 }
 
-.detailArticle{
+.detailArticle {
     margin-left: 2%;
 }
 
-.btnDelete{
+.btnDelete {
     text-align: center;
     margin-top: 40px;
 }
+
+.modal-title {
+    font-size: 40px !important;
+}
+
+.suppre {
+    margin-bottom: 40px;
+}
+
+.suppre a {
+    font-size: 40px;
+}
+
+/****************** livre d'or ********************************/
+
+.dates p, .nom p, .prenom p, .message p {
+    font-size: 40px;
+}
+
+.contentVisitorBook {
+    background: linear-gradient(pink, white, pink);
+    margin-bottom: 45px;
+    margin-top: 45px;
+}
+
+/***************** page E-mail **********************************************/
+.mailAdmin{
+    background: linear-gradient(pink, white, pink);
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.destinat h4{
+    font-size: 38px;
+}
+
+.expediteur p{
+    font-size: 40px;
+}
+
+.messageExpediteur p{
+    font-size: 40px;
+}
+
+/***************** page newMdp **************************************/
+
+.actuMdp p, .newMdp1 p{
+    font-size: 40px;
+}
+
+.mdp, .newMdp2{
+    width: 350px;
+}
+
+.btn_submit{
+    font-size: 40px;
+    padding: 12px;
+    box-shadow: 7px 3px 23px -7px;
+    border: 1px inset hotpink;
+    border-radius: 5px;
+}
+
+.btn_submit:hover{
+    background: white;
+}
+
+.btn_submit{
+    box-shadow: none;
+}
+
 /************************************* media querise ***************************************************************/
 
 @media (min-width: 768px) {

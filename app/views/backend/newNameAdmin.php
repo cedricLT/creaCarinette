@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php ob_start(); ?>
 
 <?php $name = $newNameAd->fetch() ?>

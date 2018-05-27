@@ -24,7 +24,7 @@
                 <ul>
                     <?php $itemC = $nbrItemCrochet->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=crochetAdmin"><?= $itemC[0] ?> Articles Crochets</a>
+                        <button><a href="indexAdmin.php?action=crochetAdmin"></><?= $itemC[0] ?> Articles Crochets</a>
                         </button>
                     </li>
                     <br>
@@ -46,14 +46,15 @@
                 <ul>
                     <?php $comment = $nbrComment->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=deleteComment"><?= $comment[0] ?> Commentaire(s)</a>
+                        <button><a href="indexAdmin.php?action=deleteComment"><?= $comment[0] ?> Commentaires par
+                                Articles</a>
                         </button>
                     </li>
                     <br>
                     <?php $commentReport = $nbrCommentReport->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=reportComment"><?= $commentReport[0] ?> Commentaire(s)
-                                Signalé(s)</a>
+                        <button><a href="indexAdmin.php?action=reportComment"><?= $commentReport[0] ?> Commentaires
+                                Signalés</a>
                         </button>
                     </li>
                 </ul>
@@ -93,7 +94,7 @@
                 <ul>
                     <?php $mail = $nbrMail->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=mail"><?= $mail[0] ?> E-mail(s)</a></button>
+                        <button><a href="indexAdmin.php?action=mail"><?= $mail[0] ?> E-mail</a></button>
                     </li>
                 </ul>
 
