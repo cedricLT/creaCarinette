@@ -302,7 +302,7 @@ try{
 
         elseif ($_GET['action'] == 'deconnexion'){
             session_destroy();
-            header('Location: indexAdmin.php');
+            header('Location: index.php');
         }
         /*======================= modification du mdp admin ===============================*/
 

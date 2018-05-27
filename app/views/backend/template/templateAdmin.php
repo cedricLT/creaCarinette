@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <script src="app/public/tinymce/js/tinymce/tinymce.min.js"></script>
 
     <script> tinymce.init({
@@ -33,16 +34,18 @@
     <link rel="stylesheet" href="app/public/css/styleAdmin.css">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="btnAdmin col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="backTdb col-sm-8">
-                <button><a href="indexAdmin.php?action=tdbAdmin">Retour au tableau de bord</a></button>
-            </div>
-            <br>
-            <div class="deconTemp col-sm-4">
+
+            <div class="deconTemp col-xs-12 col-sm-8 col-md-9 col-lg-10">
                 <button><a href="indexAdmin.php?action=deconnexion">Déconnexion</a></button>
             </div>
+            <br>
+            <div class="backTdb col-xs-12 col-sm-4 col-md-3 col-lg-2">
+                <button><a href="indexAdmin.php?action=tdbAdmin">Retour au tableau de bord</a></button>
+            </div>
+
         </div>
     </div>
     <br>

@@ -18,11 +18,9 @@ while ($report = $reportCommentBook->fetch()) {
             <div class="dates">
                 <p><?= $report['date_fr'] ?></p>
             </div>
-            <br>
             <div class="nom">
                 <p>nom :<?= $report['lastname'] ?></p>
             </div>
-            <br>
             <div class="prenom">
                 <p>Prénom : <?= $report['firstname'] ?></p>
             </div>
@@ -30,7 +28,6 @@ while ($report = $reportCommentBook->fetch()) {
             <div class="message">
                 <p>Message :<br><?= $report['content'] ?></p>
             </div>
-            <br><br>
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 supprimer ce message

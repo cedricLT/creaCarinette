@@ -15,6 +15,7 @@
     <button><a href="indexAdmin.php?action=nouveauTricot">Créer un nouvel Article Tricot</a></button>
 </div>
 
+<hr>
 
 <?php while ($donner = $recTricots->fetch()) { ?>
 
@@ -29,17 +30,22 @@
             <h3><?= $donner['title'] ?></h3>
         </div>
 
-        <div class="creationIMG">
-            <img src="<?= $donner['img'] ?>" alt="Titoune&Laine création crochet tricot laine">
+        <div class="row">
+            <div class="imgText col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="creationIMG col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                    <img src="<?= $donner['img'] ?>" alt="Titoune&Laine création crochet tricot laine">
 
-        </div>
-        <div class="creationText">
-            <P><?= $donner['contents'] ?></P>
+                </div>
+                <div class="creationText col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                    <P><?= $donner['contents'] ?></P>
+                </div>
+            </div>
         </div>
         <div class="gererArticle">
             <div class="modifText">
-                <button><a href="indexAdmin.php?action=viewItemTricot&idItem=<?= $donner['idItem'] ?>">Modifier le texte de
-                    cet Article</a></button>
+                <button><a href="indexAdmin.php?action=viewItemTricot&idItem=<?= $donner['idItem'] ?>">Modifier le texte
+                        de
+                        cet Article</a></button>
             </div>
 
             <div class="btnItem">
@@ -104,7 +110,7 @@
             </div>
         </div>
     </div>
-
+    <hr>
     <?php
 }
 $recTricots->closeCursor();

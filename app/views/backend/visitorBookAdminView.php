@@ -31,8 +31,9 @@ while ($commentBook = $commentUser->fetch()) {
                 <p>Prénom : <?= $commentBook['firstname'] ?></p>
             </div>
 
+            <br><br>
             <div class="message">
-                <p>Commentaire : <?= $commentBook['content'] ?></p>
+                <p>Message : <br><?= $commentBook['content'] ?></p>
             </div>
         </div>
 

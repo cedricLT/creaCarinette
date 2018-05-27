@@ -2,10 +2,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="app/public/css/styleAdmin.css">
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="deconnexion">
         <button><a href="indexAdmin.php?action=deconnexion">Déconnexion</a></button>
     </div>

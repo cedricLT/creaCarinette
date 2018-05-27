@@ -33,7 +33,6 @@ while ($comment = $commentUsers->fetch()) {
             </div>
         </div>
 
-        <br><br>
 
         <div class="btnDelete">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
