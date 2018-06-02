@@ -1,6 +1,7 @@
 <?php ob_start(); ?>
 
 <h1 class="titleCrochet">Creations Crochet</h1>
+
 <div class="itemTotal">
     <div class="itemCreation">
         <?php
@@ -16,7 +17,7 @@
                                 src="<?= htmlspecialchars($donner['img']) ?>"
                                 alt="Créa-carinette crochet tricot"></a>
 
-                </div>cliquez sur l'image
+                </div>
             </div>
 
 

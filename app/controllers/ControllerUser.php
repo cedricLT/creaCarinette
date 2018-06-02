@@ -191,7 +191,7 @@ class ControllerUser
             $contactUserMail = $userManager->addMail($lastname, $firstname, $mail, $content);
             require 'app/views/frontend/confirmMailContactView.php';
         } else {
-            header('Location: app/views/frontend/error.php');
+            header('Location: app/views/frontend/errorUseurView.php');
         }
     }
 

@@ -54,6 +54,12 @@ hr {
     margin: auto;
 }
 
+.infos{
+    font-family: arisona;
+    font-size: 27px;
+    font-weight: bold;
+}
+
 /*================================ homeView.php ==================================================*/
 
 /*============== Menu.php =====================*/
@@ -200,30 +206,61 @@ hr {
 }
 
 /*******************slider homeView.php***************/
-#slideshow {
-    margin: 50px auto;
+.cards {
+    width: 200px;
+    margin: 0 auto;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+}
+.cards__container {
     position: relative;
-    width: 240px;
-    height: 240px;
-    padding: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    padding-bottom: 100%;
+    transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
-
-#slideshow > div {
+.cards__front, .cards__back {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-size: cover;
+    box-shadow: 25px 25px 50px rgba(0, 0, 0, 0.2);
+}
+.cards__front {
+    z-index: 2;
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.cards__back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+.cards.is-flipped .cards__container {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-#slideshow img {
-
+.card-1 {
+    background-image: url('../img/slider/chauve-sourie.jpg');
 }
 
-.container2 {
-    display: none;
+.card-2 {
+    background-image: url('../img/slider/groot2.jpg');
 }
+
+.card-3 {
+    background-image: url('../img/slider/poncho.jpg');
+}
+
+.card-4{
+    background-image: url('../img/slider/licorne.jpg');
+}
+
 
 /******************************** texte de présentation ***************************************************/
 .presentation p {
@@ -231,6 +268,9 @@ hr {
     width: 90%;
     font-family: echei;
     font-size: 28px;
+    background: linear-gradient(pink, white, pink);
+    box-shadow: 8px 6px 42px -17px;
+    padding: 12px;
     -webkit-animation-duration: 2.5s;
     animation-duration: 2.5s;
     -webkit-animation-name: bounceInDown;
@@ -296,6 +336,9 @@ hr {
 
 .blockCrochet {
     margin: auto;
+    font-family: arisona;
+
+    font-weight: bold;
     max-width: 350px;
     margin-top: 60px;
     margin-bottom: 25px;
@@ -309,7 +352,7 @@ hr {
 
 .blockCrochet h3 {
     text-align: center;
-    font-size: 18px;
+    font-size: 28px;
     padding-top: 10px;
 }
 
@@ -343,6 +386,13 @@ hr {
 
 .titleItemC {
     text-align: center;
+
+}
+
+.titleItemC h3{
+    font-size: 30px;
+    font-family: arisona;
+    font-weight: bold;
 }
 
 .creationIMGItemC {
@@ -667,6 +717,8 @@ textarea {
     .container {
         width: auto !important;
     }
+
+
     /************** home page ******************************/
     /*********** title *********/
     .titleH1 h1 {
@@ -674,17 +726,23 @@ textarea {
         margin-bottom: 36px;
     }
 
+    .cards{
+        width: 350px !important;
+    }
+
     /*************** page crochet et tricot views***********************/
 
-
+    .blockCrochet h3{
+        font-size: 35px;
+    }
 
     /**************** item page *****************************/
     .creationTextItemC{
         margin-top: 9px;
     }
 
-    .titleItemC{
-        margin-bottom: 30px;
+    .titleItemC h3 {
+        font-size: 40px;
     }
 
     .creationIMGItemC{
@@ -761,6 +819,7 @@ textarea {
 
     .presentation p {
         margin: 43px 5% 50px 5%;
+
     }
 
     .textImg {
@@ -878,7 +937,7 @@ textarea {
     }
 
     .blockCrochet h3{
-        font-size: 24px;
+        font-size: 44px;
     }
 
     .blockCrochet{
@@ -894,7 +953,8 @@ textarea {
     /*********************** page item *******************************************/
 
     .titleItemC h3{
-        font-size: 35px;
+        font-size: 50px;
+
     }
 
     .titleItemC{
@@ -936,3 +996,7 @@ textarea {
         font-size: 17px;
     }
 }
+
+
+
+

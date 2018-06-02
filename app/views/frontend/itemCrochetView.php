@@ -2,6 +2,7 @@
 
 <h1 class="h1Title">Creations Crochet</h1>
 
+
 <?php $donner = $getCrochet ?>
 <div class="row">
     <div class="blockCrochetItemC col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -70,7 +71,7 @@
 
     <div class="commentCrochet">
         <div class="commentItemCrochet">
-            <div class="commentDates" id="ancre<?= $child['idPost'] ?>" >
+            <div class="commentDates" id="ancre<?= $child['idPost'] ?>">
                 <p><?= $child['dates'] ?></p>
             </div>
 
@@ -95,8 +96,8 @@
 
                     <button>
                         <a
-                                    href="index.php?action=reportCommentCrochet&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>#ancre">Signaler
-                                ce commentaire</a>
+                                href="index.php?action=reportCommentCrochet&idItem=<?= $child['idItem'] ?>&idPost=<?= $child['idPost'] ?>#ancre">Signaler
+                            ce commentaire</a>
                     </button>
                 </div>
             </div>
