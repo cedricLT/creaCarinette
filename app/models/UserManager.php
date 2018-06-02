@@ -401,5 +401,24 @@ class UserManager extends Manager
         return $req;
     }
 
+    /*========================= new text home =============================================================*/
+
+    public function contentHome($content)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE home SET content = ? WHERE idHome = 1');
+        $req->execute(array($content));
+        return $req;
+    }
+
+    /*======================== affichage new text home ====================================================*/
+
+    public function readContentHome()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT content FROM `home` WHERE idHome = 1');
+        $req->execute(array());
+        return $req;
+    }
 
 }

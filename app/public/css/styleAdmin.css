@@ -203,7 +203,6 @@ hr {
 .creationIMG {
     text-align: center;
     margin-top: 20px;
-    margin-bottom: 34px;
 }
 
 .creationIMG img {
@@ -428,7 +427,7 @@ hr {
 
     /********************** article item**************************************/
     .creationIMG img {
-        width: 350px;
+        width: 300px;
     }
 
     .btn {

@@ -20,6 +20,7 @@
     <br>
     <div class="blockAdmin">
         <div class="articlesTdb">
+
             <h2>Articles</h2>
             <br>
             <div class="articles">
@@ -110,6 +111,10 @@
             <br>
             <div class="parametre">
                 <ul>
+                    <li>
+                        <button><a href="indexAdmin.php?action=homeText">Modifier votre texte d'accueil</a></button>
+                    </li>
+                    <br>
                     <li>
                         <button><a href="indexAdmin.php?action=newMdp&idUsers=<?= $_SESSION['idUsers'] ?>">Mot de
                                 passe</a>

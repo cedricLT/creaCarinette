@@ -1,6 +1,6 @@
 // You can change the speed and amount of cards here
 var cardAmount = 4;
-var flipSpeed = 1500;
+var flipSpeed = 2000;
 
 // Preload all images to prevent blank cards
 // because they're switched with CSS classes

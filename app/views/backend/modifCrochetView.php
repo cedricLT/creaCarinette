@@ -1,5 +1,4 @@
 <!--page modification d'un  article Crochet admin-->
-<!DOCTYPE html>
 <?php ob_start(); ?>
 <?php $modif = $modifItemC ?>
 <div class="creationItemCrochet">

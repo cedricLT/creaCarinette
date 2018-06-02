@@ -17,19 +17,8 @@
         </div>
 
         <div class="presentation col-xs-12 col-sm-6">
-            <p>Bienvenue sur Titoune&Laine !<br>
-                Vous allez découvrir une partie de mes créations faites au crochet ou tricot. Grâce
-                à
-                différents sites web, tutos et videos, j'ai pu réaliser ces différents modèles.
-                <br>
-                N'ésitez pas laisser vos commentaire sur les différentes création.
-                <br>
-                Vous pouvez signer le livre d'or en laissant un petit message.
-                <br>
-                Vous pouvez également me contacter via le formulaire de contact en m'envoyant un mail !
-                <br>
-                Je vous souhaite une bonne visite sur mon site web.
-            </p>
+            <?php $read = $newtext->fetch() ?>
+            <?= $read ['content'] ?>
         </div>
     </div>
 </div>

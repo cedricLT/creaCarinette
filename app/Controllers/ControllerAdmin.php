@@ -605,4 +605,24 @@ class ControllerAdmin
 
         header('Location: indexAdmin.php?action=mail');
     }
+
+    /*========================= lire text homeview ========================================================*/
+
+    function homeText()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $newtext = $userManager->readContentHome();
+
+        require 'app/views/backend/textHomeView.php';
+    }
+
+    /*======================= new text home ================================================*/
+
+    function newtextHome($content)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $newtext = $userManager->contentHome($content);
+
+     header('Location:indexAdmin.php?action=homeText');
+    }
 }

@@ -347,6 +347,21 @@ try{
             $controleurAdmin->deleteMail($idContact);
         }
 
+        /*============================ texte presentation homeView ===============================================*/
+
+        elseif ($_GET['action'] == 'homeText'){
+            isConnect();
+            $controleurAdmin->homeText();
+        }
+
+        /*============================ modification du text homeView ========================================*/
+
+        elseif ($_GET['action'] == 'newTextHome'){
+            isConnect();
+            $content = $_POST['area'];
+            $controleurAdmin->newtextHome($content);
+        }
+
 
     }else{
         $controleurAdmin->tableauDeBord();

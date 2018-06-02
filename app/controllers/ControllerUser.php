@@ -266,6 +266,9 @@ class ControllerUser
         $TricotManager = new \Projet\Models\TricotManager();
         $itemT = $TricotManager->lastItemTricot();
 
+        $userManager = new \Projet\Models\UserManager();
+        $newtext = $userManager->readContentHome();
+
 
 
         require 'app/views/frontend/homeView.php';
