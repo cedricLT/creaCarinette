@@ -27,6 +27,8 @@ $(document).ready(function () { // on s'assure que le document est chargé
 
 });
 
+
+
 /*===================================== vérif de mail formulaire de contact  ===============================================*/
 
     function surligne(champ, erreur)

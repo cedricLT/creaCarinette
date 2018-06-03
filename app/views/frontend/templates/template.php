@@ -71,22 +71,21 @@
                 <div class="row">
                     <div class="iconMenu col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="icons col-xs-6">
-                            <a href="https://facebook.com/profile.php?id=100009374260556">
+                            <a class="facebook" href="https://facebook.com/profile.php?id=100009374260556">
                                 <img class="facebook"
                                      src="https://png.icons8.com/color/50/000000/facebook.png" alt="crea-carinette">
                             </a>
-                            <a href="https://www.instagram.com/titouneetlaine">
+                            <a class="instagram" href="https://www.instagram.com/titouneetlaine">
                                 <img class="instagram"
                                      src="https://png.icons8.com/color/50/000000/instagram-new.png"
                                      alt="crea-carinette">
                             </a>
                         </div>
-
                         <div class="liensMenu col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                            <div class="accueil col-xs-9">
+                            <div class="accueil col-xs-9 col-sm-8">
                                 <a href="index.php">Accueil</a>
                             </div>
-                            <div class="contactFooter">
+                            <div class="contactFooter col-xs-9 col-sm-4">
                                 <a href="index.php?action=contact">Contact</a>
                             </div>
                         </div>

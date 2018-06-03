@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="app/public/css/styleAdmin.css">
 </head>
@@ -90,6 +90,16 @@
         <br>
         <hr>
         <br><br>
+        <div class="publication">
+            <h2>Publication</h2>
+            <ul>
+                <li>
+                    <button><a href="indexAdmin.php?action=publication">publication(s)</a></button>
+                </li>
+            </ul>
+        </div>
+        <br><br>
+        <hr>
         <div class="emailTdb">
             <h2>E-mail</h2>
             <br>

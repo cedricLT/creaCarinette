@@ -206,6 +206,11 @@ hr {
 
 }
 
+.item{
+    margin-bottom: 85px;
+}
+
+
 /*******************slider homeView.php***************/
 
 /******************************** texte de présentation ***************************************************/
@@ -625,30 +630,34 @@ textarea {
 /***************************** templateFooter.php*******************************/
 
 .footer {
-    background-color: black;
+    background: linear-gradient(#4e5b66, black);
     margin-left: -15px;
     margin-right: -15px;
 }
 
-.facebook {
-    width: 35px;
-}
 
 .liensMenu a {
-    font-size: 12px;
+    color: white;
 }
 
-.instagram {
-    width: 35px;
+.liensMenu a:hover{
+    color: hotpink;
 }
 
 .liensMenu {
-    margin-top: 12px;
     font-size: 15px;
 }
 
+.icons{
+    border-right: 1px solid white;
+}
+
+.accueil{
+    margin-bottom: 12px;
+}
+
 .copyright {
-    margin-top: 15px;
+    margin-top: 35px;
 }
 
 .copyright p {
@@ -780,6 +789,7 @@ textarea {
     .lastItemT {
         margin-top: 0;
     }
+
 
     /***************** livre d'or *****************************************/
 

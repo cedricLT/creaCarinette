@@ -440,4 +440,23 @@ class UserManager extends Manager
         $req->execute(array());
         return $req;
     }
+
+    /*========================== create publication =====================================*/
+
+    public function creatPublication($title, $content, $target_file)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('INSERT INTO publication (title, content, img, dates) VALUES(?,?,?, now() )');
+        $req->execute(array($title, $content, $target_file));
+        return $req;
+    }
+
+    /*============================ page des publications ==============================================*/
+    public function lookPublication()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT title, content, img, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM publication');
+        $req->execute(array());
+        return $req;
+    }
 }

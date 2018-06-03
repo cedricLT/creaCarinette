@@ -376,6 +376,29 @@ try{
             $controleurAdmin->newImgHome();
         }
 
+        /*================================= publication ==========================================*/
+
+        elseif ($_GET['action'] == 'publication'){
+            isConnect();
+            $controleurAdmin->publication();
+        }
+
+        /*================================= new publication ==========================================*/
+
+        elseif ($_GET['action'] == 'newPublication'){
+            isConnect();
+            $controleurAdmin->newPublication();
+        }
+
+        /*========================== create publication ===========================================*/
+
+        elseif ($_GET['action'] == 'creatPublication'){
+            $title = htmlspecialchars($_POST['title']);
+            $content = $_POST['area'];
+
+            $controleurAdmin->creatPublication($title, $content);
+        }
+
 
     }else{
         $controleurAdmin->tableauDeBord();
