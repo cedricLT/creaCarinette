@@ -21,12 +21,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
     <link rel="stylesheet" href="app/public/css/styleUser.css">
     <link rel="stylesheet" href="app/public/css/normalize.css">
     <link rel="stylesheet" href="app/public/css/animate.css">
-
-
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -85,19 +82,19 @@
                             </a>
                         </div>
 
-                            <div class="liensMenu col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <div class="accueil col-xs-9">
-                                    <a href="index.php">Accueil</a>
-                                </div>
-                                <div class="contactFooter">
-                                    <a href="index.php?action=contact">Contact</a>
-                                </div>
+                        <div class="liensMenu col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <div class="accueil col-xs-9">
+                                <a href="index.php">Accueil</a>
                             </div>
+                            <div class="contactFooter">
+                                <a href="index.php?action=contact">Contact</a>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
                 <div class="copyright">
-                    <p>© copyrignt 2018, Titoune&Laine.</p>
+                    <p>© copyrignt 2018, Créa-Carinette.</p>
                 </div>
             </div>
         </div>

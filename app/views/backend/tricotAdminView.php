@@ -66,15 +66,19 @@
                                       method="post"
                                       enctype="multipart/form-data">
                                     <input type="file" name="fileToUpload" id="fileToUpload">
-                                    <input type="submit" value="Envoyer" name="submit" id='upload'>
+                                    <br>
+                                    <div class="img">
+                                        <img id="blah" src="#" alt="image"/>
+                                        <br><br>
+                                        <input type="submit" value="Envoyer" name="submit" id='upload'>
+                                    </div>
+
 
                                 </form>
-                                <div class="img">
-                                    <img id="blah" src="#" alt="image"/>
-                                </div>
+
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
                             </div>
                         </div>
                     </div>

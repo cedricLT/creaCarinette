@@ -421,4 +421,23 @@ class UserManager extends Manager
         return $req;
     }
 
+    /*========================= new img home ====================================*/
+
+    public function newImgHome($target_file)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE home SET img = ? WHERE idHome = 1');
+        $req->execute(array($target_file));
+        return $req;
+    }
+
+    /*========================= img home ====================================*/
+
+    public function imgHome()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT img FROM home WHERE idHome = 1');
+        $req->execute(array());
+        return $req;
+    }
 }

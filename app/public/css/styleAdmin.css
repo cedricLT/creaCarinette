@@ -63,6 +63,10 @@ hr {
     background: white;
 }
 
+.backTdb{
+    margin-top: 25px;
+}
+
 .deconTemp{
     margin-top: 20px;
 }
@@ -352,10 +356,44 @@ hr {
 .warning {
     margin-top: 20px;
 }
+/************************* change photo home **************************************/
 
+.imgHome{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+}
+
+.imgHome img{
+    width: 210px;
+}
+
+.titleNewImg h4{
+    text-align: center;
+    font-family: arisona;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.img{
+    text-align: center;
+}
+
+.img img{
+    width: 210px;
+
+}
+
+.submit{
+    margin-bottom: 30px;
+}
 /************************************* Media Queries ***************************************************************/
 
 @media all and (min-width: 768px) {
+
+    .backTdb{
+        margin-top: 0px;
+    }
     /*************** tableau de bord *************************/
     .titleTdb h1 {
         font-size: 61px;
@@ -408,6 +446,45 @@ hr {
     .destinat, .expediteur, .messageExpediteur {
         margin-left: 2%;
     }
+
+    /************************* change photo home **************************************/
+
+    .imgHome{
+        text-align: center;
+        margin-top: 80px;
+        margin-bottom: 60px;
+    }
+
+    .imgHome img{
+        width: 300px;
+    }
+
+    .titleNewImg h4{
+        font-size: 50px;
+
+    }
+
+    .img{
+        text-align: center;
+    }
+
+    .img img{
+        width: 300px;
+
+    }
+
+    .submit{
+
+    }
+
+    .filesImg{
+        margin: auto;
+    }
+
+    .sub_btn{
+        text-align: center;
+    }
+
 }
 
 @media all and (min-width: 992px) {

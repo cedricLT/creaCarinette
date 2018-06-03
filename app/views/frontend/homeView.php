@@ -1,19 +1,12 @@
 <?php ob_start(); ?>
 <h1 class="h1Title">Titoune&Laine</h1>
 
-<!--            <img src="app/public/img/profile/carine.jpg" alt="Titoune&Laine carine crochet tricot cours de crochet">-->
-
 <div class="row">
     <div class="textImg col-xs-12 col-sm-12">
 
         <div class="profileImg col-xs-12 col-sm-6">
-
-            <div class="cards">
-                <div class="cards__container">
-                    <div class="cards__front card-1"></div>
-                    <div class="cards__back card-2"></div>
-                </div>
-            </div>
+            <?php $img = $imgHome->fetch() ?>
+            <img src="<?= $img['img'] ?>" alt="Titoune&Laine carine crochet tricot cours de crochet">
         </div>
 
         <div class="presentation col-xs-12 col-sm-6">

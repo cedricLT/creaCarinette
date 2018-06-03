@@ -269,6 +269,9 @@ class ControllerUser
         $userManager = new \Projet\Models\UserManager();
         $newtext = $userManager->readContentHome();
 
+        $userManager = new \Projet\Models\UserManager();
+        $imgHome = $userManager->imgHome();
+
 
 
         require 'app/views/frontend/homeView.php';

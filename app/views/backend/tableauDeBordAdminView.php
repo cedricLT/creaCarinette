@@ -116,6 +116,10 @@
                     </li>
                     <br>
                     <li>
+                        <button><a href="indexAdmin.php?action=imgHome">Modifier photo d'accueil</a></button>
+                    </li>
+                    <br>
+                    <li>
                         <button><a href="indexAdmin.php?action=newMdp&idUsers=<?= $_SESSION['idUsers'] ?>">Mot de
                                 passe</a>
                         </button>

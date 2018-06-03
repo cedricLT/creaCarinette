@@ -358,8 +358,22 @@ try{
 
         elseif ($_GET['action'] == 'newTextHome'){
             isConnect();
-            $content = $_POST['area'];
+            $content = htmlspecialchars($_POST['area']);
             $controleurAdmin->newtextHome($content);
+        }
+
+        /*========================= photo home =====================================*/
+
+        elseif ($_GET['action'] == 'imgHome'){
+            isConnect();
+            $controleurAdmin->imgHome();
+        }
+
+        /*========================= new photo home ============================================*/
+
+        elseif ($_GET['action'] == 'newImgHome'){
+            isConnect();
+            $controleurAdmin->newImgHome();
         }
 
 
