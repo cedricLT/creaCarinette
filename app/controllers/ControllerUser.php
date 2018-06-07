@@ -276,4 +276,20 @@ class ControllerUser
 
         require 'app/views/frontend/homeView.php';
     }
+
+    /*============================ page publication =========================================================*/
+
+    function publicationUsers($cPage)
+    {
+        $userManager = new \Projet\Models\UserManager();
+
+        $numPage = $userManager->nbPagePublis();
+        if (!($cPage > 0 && $cPage <= $numPage)) {
+            $cPage = 1;
+        }
+
+        $lookPublication = $userManager->lookPublication($cPage);
+
+        require 'app/views/frontend/publicationView.php';
+    }
 }

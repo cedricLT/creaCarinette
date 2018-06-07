@@ -15,7 +15,7 @@ try{
         if ($_GET['action'] == 'connexionAdm') { //connexion admin
             $pseudo = htmlspecialchars($_POST['name']);
             $mdp = $_POST['pass'];
-            if (isset($pseudo) && isset($mdp)) {
+            if (!empty($pseudo) && !empty($mdp)) {
                 $controleurAdmin->connexionAdm($pseudo, $mdp);
             } else {
                 throw new Exception('renseigner vos identifiants');
@@ -380,7 +380,14 @@ try{
 
         elseif ($_GET['action'] == 'publication'){
             isConnect();
-            $controleurAdmin->publication();
+            if (isset($_GET['p']))
+            {
+                $cPage = $_GET['p'];
+            }
+            else {
+                $cPage = 1;
+            }
+            $controleurAdmin->publication($cPage);
         }
 
         /*================================= new publication ==========================================*/
@@ -393,10 +400,53 @@ try{
         /*========================== create publication ===========================================*/
 
         elseif ($_GET['action'] == 'creatPublication'){
+            isConnect();
             $title = htmlspecialchars($_POST['title']);
             $content = $_POST['area'];
 
             $controleurAdmin->creatPublication($title, $content);
+        }
+
+        /*============================= delete publication ===========================================*/
+
+        elseif ($_GET['action'] == 'deletePublis'){
+            isConnect();
+            $idPublication = $_GET['idPublication'];
+            $controleurAdmin->deletePublis($idPublication);
+        }
+        /*============================== modification img publication ===========================================*/
+
+        elseif ($_GET['action'] == 'modifImgPublis'){
+            isConnect();
+            $idPublication = $_GET['idPublication'];
+            $controleurAdmin->modifImgPublis($idPublication);
+        }
+
+        /*=============================== new img publication ===========================*/
+
+        elseif ($_GET['action'] == 'newImgPublis'){
+            isConnect();
+            $idPublication = $_GET['idPublication'];
+            $controleurAdmin->newImgPublis($idPublication);
+        }
+
+        /*============================== modification text publication ===========================================*/
+
+        elseif ($_GET['action'] == 'modifTextPublis'){
+            isConnect();
+            $idPublication = $_GET['idPublication'];
+            $controleurAdmin->modifTextPublis($idPublication);
+        }
+
+        /*===================== enregistrement modif text publication ==========================================*/
+
+        elseif ($_GET['action'] == 'newModifPublication'){
+            isConnect();
+            $idPublication = $_GET['idPublication'];
+            $title = $_POST['title'];
+            $content = $_POST['area'];
+
+            $controleurAdmin->newModifPublication($idPublication, $title, $content);
         }
 
 

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Titoune&Laine Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
     <script src="app/public/tinymce/js/tinymce/tinymce.min.js"></script>
 
     <script> tinymce.init({
@@ -39,11 +41,11 @@
         <div class="btnAdmin col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
             <div class="deconTemp col-xs-12 col-sm-8 col-md-9 col-lg-10">
-                <button><a href="indexAdmin.php?action=deconnexion">Déconnexion</a></button>
+                <a href="indexAdmin.php?action=deconnexion"><button>Déconnexion</button></a>
             </div>
             <br>
             <div class="backTdb col-xs-12 col-sm-4 col-md-3 col-lg-2">
-                <button><a href="indexAdmin.php?action=tdbAdmin">Retour au tableau de bord</a></button>
+                <a href="indexAdmin.php?action=tdbAdmin"><button>Retour au tableau de bord</button></a>
             </div>
 
         </div>
@@ -51,6 +53,7 @@
     <br>
     <?= $content ?>
 </div>
+
 
 <script src="app/public/js/uploadImg.js"></script>
 <script src="app/public/js/img.js"></script>

@@ -489,6 +489,7 @@ class ControllerAdmin
             $nbrCommentBook = $userManager->nbrVisitorBook();
             $nbrReportBook = $userManager->nbrReportCommentBook();
             $nbrMail = $userManager->nbrUserMail();
+            $nbrPublications = $userManager->nbrPubliation();
 
             require 'app/views/backend/tableauDeBordAdminView.php';
         } else {
@@ -552,6 +553,7 @@ class ControllerAdmin
         $nbrCommentBook = $userManager->nbrVisitorBook();
         $nbrReportBook = $userManager->nbrReportCommentBook();
         $nbrMail = $userManager->nbrUserMail();
+        $nbrPublications = $userManager->nbrPubliation();
 
 
         require 'app/views/backend/tableauDeBordAdminView.php';
@@ -687,10 +689,16 @@ class ControllerAdmin
 
     /*================================================== publication ======================================================*/
 
-    function publication()
+    function publication($cPage)
     {
         $userManager = new \Projet\Models\UserManager();
-        $lookPublication = $userManager->lookPublication();
+
+        $numPage = $userManager->nbPagePublis();
+        if (!($cPage > 0 && $cPage <= $numPage)) {
+            $cPage = 1;
+        }
+
+        $lookPublication = $userManager->lookPublication($cPage);
         require 'app/views/backend/publicationAdminViews.php';
     }
 
@@ -708,6 +716,9 @@ class ControllerAdmin
 
         $target_dir = "app/public/img/profile"; //spécifie le répertoire où le fichier va être placé
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);// spécifie le chemin du fichier à télécharger
+        if ($target_file === $target_dir){
+            $target_file = null;
+        }
         $uploadOk = 1; // n'est pas encore utilisé (sera utilisé plus tard)
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); //contient l'extension du fichier (en minuscules)
         try {
@@ -743,6 +754,81 @@ class ControllerAdmin
                         }
                     }
                 } else {
+                    $userManager = new \Projet\Models\UserManager();
+                    $newCreatPublication = $userManager->creatPublication($title, $content, $target_file);
+
+                    header('Location: indexAdmin.php?action=publication');
+
+                }
+            }
+        } catch (Exception $e) {
+            require 'app/views/backend/errorImg.php';
+
+        }
+
+    }
+
+    /*======================================= delete publication =============================================*/
+
+    function deletePublis($idPublication){
+
+        $userManager = new \Projet\Models\UserManager();
+        $deleteP = $userManager->deletePublication($idPublication);
+
+        header('Location: indexAdmin.php?action=publication');
+    }
+
+    /*==================================== modif img publication ===============================================*/
+
+    function modifImgPublis($idPublication)
+    {
+
+        $userManager = new \Projet\Models\UserManager();
+        $ImgPublis = $userManager->ImgPublis($idPublication);
+
+        require 'app/views/backend/publicationImg.php';
+
+    }
+
+    function newImgPublis($idPublication)
+    {
+        $target_dir = "app/public/img/profile"; //spécifie le répertoire où le fichier va être placé
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);// spécifie le chemin du fichier à télécharger
+        $uploadOk = 1; // n'est pas encore utilisé (sera utilisé plus tard)
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); //contient l'extension du fichier (en minuscules)
+        try {
+            // on vérifie que le fichier image est une image réelle
+            if (!empty($_POST["submit"])) {
+                $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+                if ($check !== false) {
+                    // Check file size
+                    if ($_FILES["fileToUpload"]["size"] > 5000000) {
+                        throw new \Exception('Désolé, votre fichier est trop volumineux.');
+                        $uploadOk = 0;
+                    }
+                    // Allow certain file formats
+                    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                        && $imageFileType != "gif") {
+                        throw new \Exception('Seuls les formats JPG, JPEG, PNG & GIF files sont authorisés.');
+                        $uploadOk = 0;
+                    }
+                    // Check if $uploadOk is set to 0 by an error
+                    if ($uploadOk == 0) {
+                        throw new \Exception('Désolé, votre avatar n\'a pu être envoyé.');
+                        // if everything is ok, try to upload file
+                    } else {
+                        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
+                            $userManager = new \Projet\Models\UserManager();
+                            $ImgPublis = $userManager->ImgPublis($idPublication, $target_file);
+
+                            header('Location: indexAdmin.php?action=modifImgPublis&idPublication=' . $idPublication);
+
+                        } else {
+                            throw new \Exception('Désolé, une erreur est survenue dans l\'envoi de votre fichier.');
+                        }
+                    }
+                } else {
                     header('Location: indexAdmin.php?action=newPublication');
                     $uploadOk = 0;
                 }
@@ -751,6 +837,27 @@ class ControllerAdmin
             require 'app/views/backend/errorImg.php';
 
         }
+
+    }
+
+    /*====================================== modif text publication ============================================*/
+
+    function modifTextPublis($idPublication)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $textPublis = $userManager->modifTextPublis($idPublication);
+
+        require 'app/views/backend/newTextPublication.php';
+    }
+
+    /*===================== enregistrement modif text publication ==========================================*/
+
+    function newModifPublication($idPublication, $title, $content)
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $newTextPublication = $userManager->changeTextPublication($idPublication, $title, $content);
+
+        header('Location: indexAdmin.php?action=publication');
 
     }
 }

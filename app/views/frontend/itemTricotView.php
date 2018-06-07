@@ -81,7 +81,7 @@
             <div class="tbn col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
                 <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModal">
+                        data-target="#exampleModal<?= $child['idPost'] ?>">
                     Répondre
                 </button>
 
@@ -96,7 +96,7 @@
         </div>
         <!-- Modal -->
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+        <div class="modal fade" id="exampleModal<?= $child['idPost'] ?>" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">

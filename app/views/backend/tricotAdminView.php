@@ -12,7 +12,7 @@
 </div>
 
 <div class="createArticle">
-    <button><a href="indexAdmin.php?action=nouveauTricot">Créer un nouvel Article Tricot</a></button>
+    <a href="indexAdmin.php?action=nouveauTricot"><button>Créer un nouvel Article Tricot</button></a>
 </div>
 
 <hr>
@@ -43,18 +43,18 @@
         </div>
         <div class="gererArticle">
             <div class="modifText">
-                <button><a href="indexAdmin.php?action=viewItemTricot&idItem=<?= $donner['idItem'] ?>">Modifier le texte
-                        de
-                        cet Article</a></button>
+                <a href="indexAdmin.php?action=viewItemTricot&idItem=<?= $donner['idItem'] ?>"><button>Modifier le texte de
+                        cet Article</button>
+                        </a>
             </div>
 
             <div class="btnItem">
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Modifier
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal<?= $donner['idItem'] ?>">Modifier
                     l'image
                 </button>
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal fade" id="myModal<?= $donner['idItem'] ?>" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -84,12 +84,12 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $donner['idItem'] ?>">
                     supprimer cet article
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                <div class="modal fade" id="exampleModal<?= $donner['idItem'] ?>" tabindex="-1" role="dialog"
                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">

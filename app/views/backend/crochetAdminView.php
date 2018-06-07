@@ -12,7 +12,7 @@
 </div>
 
 <div class="createArticle">
-    <button><a href="indexAdmin.php?action=nouveauCrochet">Créer un nouvel Article Crochet</a></button>
+    <a href="indexAdmin.php?action=nouveauCrochet"><button>Créer un nouvel Article Crochet</button></a>
 </div>
 
 <hr>
@@ -43,18 +43,18 @@
         <div class="gererArticle">
 
             <div class="modifText">
-                <button><a href="indexAdmin.php?action=viewItemCrochet&idItem=<?= $donner['idItem'] ?>">Modifier le
-                        texte de cet Article</a></button>
+                <a href="indexAdmin.php?action=viewItemCrochet&idItem=<?= $donner['idItem'] ?>"><button>Modifier le
+                        texte de cet Article</button></a>
             </div>
             <div class="btnItem">
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal<?= $donner['idItem'] ?>">
                     Modifier
                     l'image
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal fade" id="myModal<?= $donner['idItem'] ?>" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -66,16 +66,19 @@
                                       method="post"
                                       enctype="multipart/form-data">
 
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    <input type="file" name="fileToUpload" id="fileToUpload" accept='image/*' onchange='openFile(event)'>
                                     <br>
-                                    <div class="img">
-                                        <img id="blah" src="#" alt="image"/>
-                                        <br>
-                                        <br>
-                                        <input type="submit" value="Envoyer" name="submit" id='upload'>
-                                    </div>
-                                </form>
 
+
+                                    <input type="submit" value="Envoyer" name="submit" id='upload'>
+<!--                                    <div class="img">-->
+<!--                                        <img id="blah" src="#" alt="image"/>-->
+<!--                                        <br>-->
+<!--                                        <br>-->
+<!--                                        <input type="submit" value="Envoyer" name="submit" id='upload'>-->
+<!--                                    </div>-->
+                                </form>
+                                <img id='output<?= $donner['idItem'] ?>'>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
@@ -84,12 +87,12 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal<?= $donner['idItem'] ?>">
                     supprimer cet article
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                <div class="modal fade" id="exampleModal<?= $donner['idItem'] ?>" tabindex="-1" role="dialog"
                      aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">

@@ -451,12 +451,83 @@ class UserManager extends Manager
         return $req;
     }
 
-    /*============================ page des publications ==============================================*/
-    public function lookPublication()
+    /*============================ page des publications users ==============================================*/
+    public function lookPublication($cPage)
+    {
+        $this->cPage = $cPage;
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT idPublication, title, content, img, DATE_FORMAT(dates, '%d/%m/%Y') AS dates_fr FROM publication ORDER BY idPublication  DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
+        return $req;
+    }
+
+    public function nbPagePublis()
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT title, content, img, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM publication');
+        $reqPage = $bdd->query('SELECT COUNT(*) AS total FROM publication WHERE idPublication');
+        $result = $reqPage->fetch();
+        $total = $result['total'];
+        $nbPage = ceil($total / $this->perPage);
+
+        return $nbPage;
+    }
+
+    /*============================== nombre de publications ===============================================*/
+
+    public function nbrPubliation()
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT COUNT(idPublication) FROM publication WHERE idPublication');
         $req->execute(array());
         return $req;
     }
+
+    /*======================================= delete publication =============================================*/
+
+    public function deletePublication($idPublication)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM publication WHERE idPublication = ?');
+        $req->execute(array($idPublication));
+        return $req;
+    }
+
+    /*==============================================================================================*/
+
+    public function ImgPublis($idPublication)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idPublication, title, content, img, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM publication WHERE idPublication = ?');
+        $req->execute(array($idPublication));
+        return $req;
+    }
+
+    public function newImgPublis($idPublication, $target_file)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE publication SET img = ? WHERE idPublication =?');
+        $req->execute(array($target_file, $idPublication));
+        return $req;
+    }
+
+    /*====================================== modif text publication ============================================*/
+
+    public function modifTextPublis($idPublication)
+    {
+
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare("SELECT idPublication, title, content, DATE_FORMAT(dates, '%d/%m/%Y') AS dates_fr FROM publication WHERE idPublication = ?");
+        $req->execute(array($idPublication));
+        return $req;
+    }
+
+    /*===================== enregistrement modif text publication ==========================================*/
+
+    public function changeTextPublication($idPublication, $title, $content)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('UPDATE publication SET title = ?, content = ? WHERE idPublication = ?');
+        $req->execute(array($title, $content, $idPublication));
+        return $req;
+    }
+
 }

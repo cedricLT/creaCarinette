@@ -57,6 +57,7 @@
                             </ul>
                         </li>
                         <li class="hoverMenu"><a href="index.php?action=book">Livre d'or</a></li>
+                        <li class="hoverMenu"><a href="index.php?action=publicationUsers">Publications</a></li>
                         <li class="hoverMenu"><a href="index.php?action=contact">Contact</a></li>
                     </ul>
                 </div>

@@ -9,7 +9,7 @@
 <body>
 <div class="container-fluid">
     <div class="deconnexion">
-        <button><a href="indexAdmin.php?action=deconnexion">Déconnexion</a></button>
+        <a href="indexAdmin.php?action=deconnexion"><button>Déconnexion</button></a>
     </div>
 
     <br>
@@ -27,21 +27,21 @@
                 <ul>
                     <?php $itemC = $nbrItemCrochet->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=crochetAdmin"></><?= $itemC[0] ?> Articles Crochets</a>
-                        </button>
+                       <a href="indexAdmin.php?action=crochetAdmin"><button><?= $itemC[0] ?> Articles Crochets</button></a>
+
                     </li>
                     <br>
                     <?php $itemT = $nbrItemTricot->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=tricotAdmin"><?= $itemT[0] ?> Articles Tricots</a>
-                        </button>
+                        <a href="indexAdmin.php?action=tricotAdmin"><button><?= $itemT[0] ?> Articles Tricots</button></a>
+
                     </li>
                 </ul>
             </div>
         </div>
-        <br>
+
         <hr>
-        <br>
+
         <div class="commentairesTdb">
             <h2>Commentaires</h2>
             <br>
@@ -49,23 +49,23 @@
                 <ul>
                     <?php $comment = $nbrComment->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=deleteComment"><?= $comment[0] ?> Commentaires par
-                                Articles</a>
-                        </button>
+                       <a href="indexAdmin.php?action=deleteComment"><button><?= $comment[0] ?> Commentaires par
+                               Articles</button></a>
+
                     </li>
                     <br>
                     <?php $commentReport = $nbrCommentReport->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=reportComment"><?= $commentReport[0] ?> Commentaires
-                                Signalés</a>
-                        </button>
+                      <a href="indexAdmin.php?action=reportComment"><button><?= $commentReport[0] ?> Commentaires
+                              Signalés</button></a>
+
                     </li>
                 </ul>
             </div>
         </div>
-        <br>
+
         <hr>
-        <br><br>
+
 
         <div class="bookTdb">
             <h2>Livre d'or</h2>
@@ -74,32 +74,38 @@
                 <ul>
                     <?php $commentBook = $nbrCommentBook->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=visitorBook"><?= $commentBook[0] ?> message(s)</a>
-                        </button>
+                        <a href="indexAdmin.php?action=visitorBook"><button><?= $commentBook[0] ?> Message(s)</button></a>
+
                     </li>
                     <br>
                     <?php $commentReportBook = $nbrReportBook->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=reportVisitorBook"><?= $commentReportBook[0] ?>
+                        <a href="indexAdmin.php?action=reportVisitorBook"><button><?= $commentReportBook[0] ?>
                                 Message(s)
-                                signalé(s)</a></button>
+                                signalé(s)</button></a>
                     </li>
                 </ul>
             </div>
         </div>
-        <br>
+
         <hr>
-        <br><br>
-        <div class="publication">
+
+        <div class="publicationTdb">
             <h2>Publication</h2>
-            <ul>
-                <li>
-                    <button><a href="indexAdmin.php?action=publication">publication(s)</a></button>
-                </li>
-            </ul>
+            <br>
+            <div class="publication">
+                <ul>
+                    <?php $publication = $nbrPublications->fetch() ?>
+                    <li>
+                        <a href="indexAdmin.php?action=publication"><button><?= $publication[0] ?> Publication(s)</button></a>
+
+                    </li>
+                </ul>
+            </div>
         </div>
-        <br><br>
+
         <hr>
+
         <div class="emailTdb">
             <h2>E-mail</h2>
             <br>
@@ -107,38 +113,38 @@
                 <ul>
                     <?php $mail = $nbrMail->fetch() ?>
                     <li>
-                        <button><a href="indexAdmin.php?action=mail"><?= $mail[0] ?> E-mail</a></button>
+                       <a href="indexAdmin.php?action=mail"><button><?= $mail[0] ?> E-mail</button></a>
                     </li>
                 </ul>
 
             </div>
         </div>
-        <br>
+
         <hr>
-        <br><br>
+
         <div class="parametreTdb">
             <h2>Vos Paramètres</h2>
             <br>
             <div class="parametre">
                 <ul>
                     <li>
-                        <button><a href="indexAdmin.php?action=homeText">Modifier votre texte d'accueil</a></button>
+                        <a href="indexAdmin.php?action=homeText"><button>Modifier votre texte d'accueil</button></a>
                     </li>
                     <br>
                     <li>
-                        <button><a href="indexAdmin.php?action=imgHome">Modifier photo d'accueil</a></button>
+                       <a href="indexAdmin.php?action=imgHome"><button>Modifier photo d'accueil</button></a>
                     </li>
                     <br>
                     <li>
-                        <button><a href="indexAdmin.php?action=newMdp&idUsers=<?= $_SESSION['idUsers'] ?>">Mot de
-                                passe</a>
-                        </button>
+                        <a href="indexAdmin.php?action=newMdp&idUsers=<?= $_SESSION['idUsers'] ?>"><button>Mot de
+                                passe</button></a>
+
                     </li>
                     <br>
                     <li>
-                        <button><a href="indexAdmin.php?action=newName&idUsers=<?= $_SESSION['idUsers'] ?>">Nom
-                                d'utilisateur</a>
-                        </button>
+                        <a href="indexAdmin.php?action=newName&idUsers=<?= $_SESSION['idUsers'] ?>"><button>Nom
+                                d'utilisateur</button></a>
+
                     </li>
                 </ul>
             </div>

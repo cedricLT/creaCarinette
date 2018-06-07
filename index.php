@@ -144,6 +144,17 @@ try {
 
         }
 
+        /*============================ page de publication =========================================*/
+        elseif ($_GET['action'] == 'publicationUsers'){
+
+            if (isset($_GET['p'])) {
+                $cPage = $_GET['p'];
+            } else {
+                $cPage = 1;
+            }
+            $controleurUser->publicationUsers($cPage);
+        }
+
 
     } else {
         $controleurUser->homeVIew();
