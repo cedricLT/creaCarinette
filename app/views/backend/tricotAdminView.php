@@ -12,7 +12,9 @@
 </div>
 
 <div class="createArticle">
-    <a href="indexAdmin.php?action=nouveauTricot"><button>Créer un nouvel Article Tricot</button></a>
+    <a href="indexAdmin.php?action=nouveauTricot">
+        <button>Créer un nouvel Article Tricot</button>
+    </a>
 </div>
 
 <hr>
@@ -43,14 +45,16 @@
         </div>
         <div class="gererArticle">
             <div class="modifText">
-                <a href="indexAdmin.php?action=viewItemTricot&idItem=<?= $donner['idItem'] ?>"><button>Modifier le texte de
-                        cet Article</button>
-                        </a>
+                <a href="indexAdmin.php?action=viewItemTricot&idItem=<?= $donner['idItem'] ?>">
+                    <button>Modifier le texte
+                    </button>
+                </a>
             </div>
 
             <div class="btnItem">
                 <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal<?= $donner['idItem'] ?>">Modifier
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+                        data-target="#myModal<?= $donner['idItem'] ?>">Modifier
                     l'image
                 </button>
                 <!-- Modal -->
@@ -65,15 +69,17 @@
                                 <form action="indexAdmin.php?action=modifImgTricot&idItem=<?= $donner['idItem'] ?>"
                                       method="post"
                                       enctype="multipart/form-data">
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
+
+                                    <input type="file" name="fileToUpload" id="fileToUpload" accept='image/*'
+                                           onchange='openFile(event, <?= $donner['idItem'] ?>)'>
                                     <br>
-                                    <div class="img">
-                                        <img id="blah" src="#" alt="image"/>
-                                        <br><br>
+                                    <div class="imgModal">
+                                        <img id='output<?= $donner['idItem'] ?>'>
+                                    </div>
+                                    <br><br>
+                                    <div class="subBtn">
                                         <input type="submit" value="Envoyer" name="submit" id='upload'>
                                     </div>
-
-
                                 </form>
 
                             </div>
@@ -84,7 +90,8 @@
                     </div>
                 </div>
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $donner['idItem'] ?>">
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal<?= $donner['idItem'] ?>">
                     supprimer cet article
                 </button>
 

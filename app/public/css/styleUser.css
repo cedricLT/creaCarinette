@@ -36,12 +36,6 @@ ul {
     src: url("../polices/echei.ttf");
 }
 
-@media all and (min-width: 1500px) {
-    .container {
-        margin-right: 10%;
-        margin-left: 10%;
-    }
-}
 
 h1 {
     text-align: center;
@@ -78,7 +72,6 @@ hr {
 }
 
 .navbar-inverse {
-    /*background-color: hotpink !important;*/
     background: linear-gradient(white, pink, white);
     border-color: hotpink !important;
     margin-left: -15px;
@@ -131,7 +124,6 @@ hr {
 @media only screen and (max-width: 767px) {
     /*menu beurger*/
     .navbar-collapse {
-        /*background-color: #f9d4e6;*/
         background: linear-gradient(pink, white, pink);
         position: fixed;
         top: 0;
@@ -365,6 +357,11 @@ hr {
     margin-bottom: 20px;
 }
 
+.child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12 {
+    position: relative;
+    background-color: Cornsilk !important;
+}
+
 /*==== commentaires ===========*/
 
 .comment {
@@ -390,6 +387,13 @@ hr {
     margin-bottom: 25px;
     background-color: white;
     box-shadow: 5px 3px 21px -4px;
+    width: 270px;
+}
+
+@media all and (min-width: 400px){
+    .child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12{
+        left: 70px !important;
+    }
 }
 
 textarea {
@@ -550,6 +554,38 @@ textarea {
 
 .reportBook button{
     margin-bottom: 5px;
+}
+
+/********************************** page publications ***************************************/
+.logo img{
+    margin-bottom: -114px;
+}
+
+.publication{
+    background: linear-gradient(pink, white, pink);
+    padding-bottom: 15px;
+    margin-top: 78px;
+}
+
+.publication h3{
+    text-align: center;
+}
+.publicationDate{
+    text-align: center;
+}
+
+.publicationImg{
+    text-align: center;
+}
+
+.publicationImg  img{
+    width: 254px;
+    box-shadow: 10px 16px 83px -23px black;
+}
+
+.publicationContent{
+    text-align: center;
+    margin-top: 35px;
 }
 
 /********************************* page contact ********************************************/
@@ -717,7 +753,10 @@ textarea {
     }
 
     .commentCrochet{
-        width: 80%;
+        width: 50%;
+    }
+    .child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12{
+        left: 100px !important;
     }
 
     /******************* livre d'or ************************************/
@@ -731,6 +770,11 @@ textarea {
         height: 200px;
     }
 
+    /****************** publication ********************************************/
+
+    .publicationImg img {
+        width: 344px;
+    }
 
         /************* footer ******/
     .footer {
@@ -935,7 +979,7 @@ textarea {
     }
 
     .commentCrochet {
-        width: 64%;
+        width: 34%;
     }
 
     .btn{
@@ -946,13 +990,29 @@ textarea {
         zoom: 1.2;
     }
 
+    .child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12{
+        left: 150px !important;
+    }
+
     /********************** livre d'or ******************************/
 
     .textBook h3 p{
         font-size: 17px;
     }
+
+    /************************* page publications ************************/
+
+    .publication{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+
+    .publicationImg img {
+        width: 449px;
+    }
+
+    .publicationContent{
+        font-size: 15px;
+    }
 }
-
-
-
 

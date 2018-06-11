@@ -17,7 +17,8 @@ while ($comment = $commentUsers->fetch()) {
     <div class="commentairesArticle">
         <div class="detailArticle">
             <div class="nameArticle">
-                <p>Article :<?= $comment['categorie'] ?> <br> numero <?= $comment['idItem'] ?></p>
+                <p>Article :<?= $comment['categorie'] ?><br> numero <?= $comment['idItem'] ?></p><p><?= $comment['title'] ?></p>
+                <p><?= $comment['idPost'] ?> <?= $comment['idParent'] ?></p>
             </div>
             <br>
             <div class="dateComment">
@@ -52,7 +53,7 @@ while ($comment = $commentUsers->fetch()) {
                     </div>
                     <div class="modal-body">
                         <div class="suppre">
-                            <a href="indexAdmin.php?action=deleteCommentUsers&idPost=<?= $comment['idPost'] ?>&idUsers=<?= $comment['idUsers'] ?>">Supprimer
+                            <a href="indexAdmin.php?action=deleteCommentUsers&idPost=<?= $comment['idPost'] ?>&idUsers=<?= $comment['idUsers'] ?>&idParent=<?= $comment['idParent'] ?>">Supprimer
                                 ce commentaire</a>
                         </div>
                     </div>

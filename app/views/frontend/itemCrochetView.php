@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-
+<?php require 'templates/logo.php';?>
 <h1 class="h1Title">Creations Crochet</h1>
 
 
@@ -63,13 +63,13 @@
     <?php
 
 
-    function displayChildren($idParent, $orderedComment){
+    function displayChildren($idParent, $orderedComment, $offset){
     if (array_key_exists($idParent, $orderedComment)){
     foreach ($orderedComment [$idParent]['children'] as $child) {
     ?>
 
 
-    <div class="commentCrochet">
+    <div class="commentCrochet child<?= $offset ?>">
         <div class="commentItemCrochet">
             <div class="commentDates" id="ancre<?= $child['idPost'] ?>">
                 <p><?= $child['dates'] ?></p>
@@ -88,9 +88,17 @@
         <div class="row">
             <div class="tbn col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $child['idPost'] ?>">
-                    Répondre
-                </button>
+
+                <?php if ( $child['idParent'] <= 0) { ?>
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $child['idPost'] ?>">
+                        Répondre
+                    </button>
+
+                <?php
+                }
+                ?>
+
 
                 <div class="report">
 
@@ -124,7 +132,7 @@
                             <label for="pseudo">Pseudo :</label>
                             <input required type="text" name="repPrenom" class="repPseudo" placeholder="Votre pseudo">
                             <label for="message">Commentaire :</label>
-                            <textarea required name="content" class="comment">
+                            <textarea required name="content" class="comments">
 
                             </textarea>
 
@@ -141,14 +149,14 @@
     </div>
 </div>
 <?php
-displayChildren($child['idPost'], $orderedComment);
+displayChildren($child['idPost'], $orderedComment, $offset+1);
 }
 
 }
 }
-
+$offset = 0;
 $root = 0;
-displayChildren($root, $orderedComment);
+displayChildren($root, $orderedComment, $offset);
 ?>
 
 <?php $content = ob_get_clean(); ?>

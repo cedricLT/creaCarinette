@@ -1,4 +1,5 @@
 <?php ob_start(); ?>
+
 <h1 class="h1Title">Titoune&Laine</h1>
 
 <div class="row">
@@ -6,7 +7,9 @@
 
         <div class="profileImg col-xs-12 col-sm-6">
             <?php $img = $imgHome->fetch() ?>
-            <img src="<?= $img['img'] ?>" alt="Titoune&Laine carine crochet tricot cours de crochet">
+            <div class="shake-slow">
+                <img src="<?= $img['img'] ?>" alt="Titoune&Laine carine crochet tricot cours de crochet">
+            </div>
         </div>
 
         <div class="presentation col-xs-12 col-sm-6">
@@ -15,6 +18,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 
 <div class="lastItem">
@@ -31,9 +37,12 @@
                     <?php $item = $itemC->fetch() ?>
 
                     <h4><?= $item['title'] ?></h4>
-                    <a href="index.php?action=itemCrochet&idItem=<?= $item['idItem'] ?>"><img
-                                src="<?= $item['img'] ?>" alt="créa-carinette crochet tricot">
-                    </a>
+                    <div class="shake-slow">
+                        <a href=" index.php?action=itemCrochet&idItem=<?= $item['idItem'] ?>"><img
+                                    src="<?= $item['img'] ?>" alt="créa-carinette crochet tricot"></a>
+                    </div>
+
+
                 </div>
 
             </div>
@@ -44,8 +53,10 @@
                     <?php $item = $itemT->fetch() ?>
 
                     <h4><?= $item['title'] ?></h4>
-                    <a href="index.php?action=itemTricot&idItem=<?= $item['idItem'] ?>"><img
-                                src="<?= $item['img'] ?>" alt="créa-carinette crochet tricot"></a>
+                    <div class="shake-slow">
+                        <a href="index.php?action=itemTricot&idItem=<?= $item['idItem'] ?>"><img
+                                    src="<?= $item['img'] ?>" alt="créa-carinette crochet tricot"></a>
+                    </div>
                 </div>
             </div>
         </div>

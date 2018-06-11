@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-
+<?php require 'templates/logo.php'; ?>
 <h1 class="h1Title">Créations Tricot</h1>
 <div class="itemTotal">
     <div class="itemCreation">
@@ -10,9 +10,11 @@
             <div class="blockCrochet">
                 <h3><?= $donner['title'] ?></h3>
                 <div class="creationIMG">
-                    <a href="index.php?action=itemTricot&idItem=<?= $donner['idItem'] ?>"><img
-                                src="<?= $donner['img'] ?>"
-                                alt="Créa-carinette crochet tricot"></a>
+                    <div class="shake-slow">
+                        <a href="index.php?action=itemTricot&idItem=<?= $donner['idItem'] ?>"><img
+                                    src="<?= $donner['img'] ?>"
+                                    alt="Créa-carinette crochet tricot"></a>
+                    </div>
                 </div>
             </div>
 

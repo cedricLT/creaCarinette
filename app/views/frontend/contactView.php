@@ -1,5 +1,6 @@
 <?php ob_start(); ?>
 <div class="main">
+
     <h1 class="h1Title">Formulaire de Contact</h1>
         <div class="row">
             <div class="contactFormulaire col-xs-12 col-sm-12 col-md-12 col-lg-12">

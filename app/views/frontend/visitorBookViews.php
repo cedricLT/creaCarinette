@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-
+<?php require 'templates/logo.php';?>
 <h1 class="h1Title titleBook">Livre D'Or</h1>
 
 <div class="textBook">

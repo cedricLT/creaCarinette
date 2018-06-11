@@ -251,7 +251,7 @@ class ControllerAdmin
                         }
                     }
                 } else {
-                    header('Location: indexAdmin.php');
+                    header('Location: indexAdmin.php?action=crochetAdmin');
                     $uploadOk = 0;
                 }
             }
@@ -329,7 +329,7 @@ class ControllerAdmin
                         }
                     }
                 } else {
-                    header('Location: indexAdmin.php');
+                    throw new \Exception('Ce fichier n\'est pas une image.');
                     $uploadOk = 0;
                 }
             }
@@ -452,14 +452,23 @@ class ControllerAdmin
 
     /*============================ supprimer commentaire admin ================================================*/
 
-    function deleteCommentUsers($idPost, $idUsers)
+    function deleteCommentUsers($idPost, $idUsers, $idParent)
     {
         $userManager = new \Projet\Models\UserManager();
 
+        $getUsersParent = $userManager->getUserParent($idPost);
+        $getUsersParent2 = $getUsersParent->fetchAll();
         $deleteCommentUser = $userManager->deleteUserComment($idPost);
+
+
+        $deleteCommentParent = $userManager->deleteUserParent($idPost);
 
         $deleteUser = $userManager->deleteUser($idUsers);
 
+        foreach ($getUsersParent2 as $singleUser){
+            $newSingleUser = $singleUser[0];
+            $deleteUserParent = $userManager->deleteUser($newSingleUser);
+        }
         header('Location: indexAdmin.php?action=deleteComment');
     }
 
@@ -583,19 +592,20 @@ class ControllerAdmin
 
     /*=========================== page EmailView  ==========================================*/
 
-    function mail($cPage)
+    function email()
     {
-        $userManager = new \Projet\Models\UserManager();
+//        $userManager = new \Projet\Models\UserManager();
+//
+//        $numPage = $userManager->nbPagemail();
+//        if (!($cPage > 0 && $cPage <= $numPage)) {
+//            $cPage = 1;
+//        }
 
-        $numPage = $userManager->nbPagemail();
-        if (!($cPage > 0 && $cPage <= $numPage)) {
-            $cPage = 1;
-        }
-
-        $mailUser = $userManager->mailAdmin($cPage);
-        $nbrMail = $userManager->nbrUserMail();
+//        $mailUser = $userManager->mailAdmin($cPage);
+//        $nbrMail = $userManager->nbrUserMail();
 
         require 'app/views/backend/emailView.php';
+
     }
 
     /*=========================== supprimer un mail ==================================*/
@@ -604,7 +614,7 @@ class ControllerAdmin
         $userManager = new \Projet\Models\UserManager();
         $deleteEmail = $userManager->deleteMailUser($idContact);
 
-        header('Location: indexAdmin.php?action=mail');
+        header('Location: indexAdmin.php?action=email');
     }
 
     /*========================= lire text homeview ========================================================*/
@@ -677,7 +687,7 @@ class ControllerAdmin
                         }
                     }
                 } else {
-                    header('Location: indexAdmin.php');
+                    throw new \Exception('Ce fichier n\'est pas une image.');
                     $uploadOk = 0;
                 }
             }
@@ -716,7 +726,7 @@ class ControllerAdmin
 
         $target_dir = "app/public/img/profile"; //spécifie le répertoire où le fichier va être placé
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);// spécifie le chemin du fichier à télécharger
-        if ($target_file === $target_dir){
+        if ($target_file === $target_dir) {
             $target_file = null;
         }
         $uploadOk = 1; // n'est pas encore utilisé (sera utilisé plus tard)
@@ -758,7 +768,7 @@ class ControllerAdmin
                     $newCreatPublication = $userManager->creatPublication($title, $content, $target_file);
 
                     header('Location: indexAdmin.php?action=publication');
-
+                    $uploadOk = 0;
                 }
             }
         } catch (Exception $e) {
@@ -770,7 +780,8 @@ class ControllerAdmin
 
     /*======================================= delete publication =============================================*/
 
-    function deletePublis($idPublication){
+    function deletePublis($idPublication)
+    {
 
         $userManager = new \Projet\Models\UserManager();
         $deleteP = $userManager->deletePublication($idPublication);
@@ -779,16 +790,6 @@ class ControllerAdmin
     }
 
     /*==================================== modif img publication ===============================================*/
-
-    function modifImgPublis($idPublication)
-    {
-
-        $userManager = new \Projet\Models\UserManager();
-        $ImgPublis = $userManager->ImgPublis($idPublication);
-
-        require 'app/views/backend/publicationImg.php';
-
-    }
 
     function newImgPublis($idPublication)
     {
@@ -820,9 +821,9 @@ class ControllerAdmin
                         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
                             $userManager = new \Projet\Models\UserManager();
-                            $ImgPublis = $userManager->ImgPublis($idPublication, $target_file);
+                            $ImgPublis = $userManager->newImgPublis($idPublication, $target_file);
 
-                            header('Location: indexAdmin.php?action=modifImgPublis&idPublication=' . $idPublication);
+                            header('Location: indexAdmin.php?action=publication');
 
                         } else {
                             throw new \Exception('Désolé, une erreur est survenue dans l\'envoi de votre fichier.');
@@ -859,5 +860,17 @@ class ControllerAdmin
 
         header('Location: indexAdmin.php?action=publication');
 
+    }
+
+    /*=============================== email json ajax ==============================================*/
+
+    function email_json()
+    {
+        $userManager = new \Projet\Models\UserManager();
+        $mailUser = $userManager->mailAdmin2();
+
+        header('Content-Type: application/json');
+        $mailUser = $mailUser->fetchAll();
+        echo json_encode($mailUser);
     }
 }

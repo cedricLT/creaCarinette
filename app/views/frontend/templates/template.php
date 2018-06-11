@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+    <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-slow.min.css">
+
 </head>
 <body>
 <div class="container">
@@ -56,13 +59,15 @@
                                 <li class="tricot"><a href="index.php?action=tricots">Tricots</a></li>
                             </ul>
                         </li>
-                        <li class="hoverMenu"><a href="index.php?action=book">Livre d'or</a></li>
                         <li class="hoverMenu"><a href="index.php?action=publicationUsers">Publications</a></li>
+                        <li class="hoverMenu"><a href="index.php?action=book">Livre d'or</a></li>
                         <li class="hoverMenu"><a href="index.php?action=contact">Contact</a></li>
                     </ul>
                 </div>
             </nav>
         </div>
+
+
 
     </div>
     <?= $content ?>
@@ -100,6 +105,8 @@
         </div>
     </footer>
 </div>
+
+<script src="app/public/js/ajax.js"></script>
 <script src="app/public/js/uploadImg.js"></script>
 <script src="app/public/js/img.js"></script>
 <script src="app/public/js/errorChecking.js"></script>

@@ -113,7 +113,7 @@
                 <ul>
                     <?php $mail = $nbrMail->fetch() ?>
                     <li>
-                       <a href="indexAdmin.php?action=mail"><button><?= $mail[0] ?> E-mail</button></a>
+                       <a href="indexAdmin.php?action=email"><button><?= $mail[0] ?> E-mail</button></a>
                     </li>
                 </ul>
 

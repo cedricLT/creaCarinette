@@ -18,12 +18,12 @@
         <br><br>
         <div class="imgPublication">
             Selectionner une image :
-            <input type="file" name="fileToUpload" id="fileToUpload"<br><br>
+            <input type="file" name="fileToUpload" id="fileToUpload" accept='image/*' onchange='openFile(event)'><br><br>
 
             <div class="img">
                 <img id="blah" src="#" alt="image"/>
             </div>
-
+            <img id='output'>
             <br><br>
             <textarea id="elm1" name="area"></textarea>
         </div>

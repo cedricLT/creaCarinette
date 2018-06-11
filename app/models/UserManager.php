@@ -35,7 +35,7 @@ class UserManager extends Manager
     public function commentItemC($idItem)
     {
         $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPost, content, post.idItem, firstname, idParent, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ?');
+        $req = $bdd->prepare('SELECT idPost, content, post.idItem, firstname, idParent, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM post INNER JOIN users ON users.idUsers = post.idUsers  WHERE idItem = ? ORDER BY idPost DESC ');
         $req->execute(array($idItem));
         return $req;
 
@@ -75,7 +75,7 @@ class UserManager extends Manager
     {
         $this->cPage = $cPage;
         $bdd = $this->dbConnect();
-        $req = $bdd->query("SELECT idPost, content, DATE_FORMAT(dates, '%d/%m/%Y') AS date_fr, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem ORDER BY idUsers DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
+        $req = $bdd->query("SELECT idPost, content, title, DATE_FORMAT(dates, '%d/%m/%Y') AS date_fr, post.idItem, firstname, idParent, categorie, users.idUsers FROM post INNER JOIN users ON users.idUsers = post.idUsers INNER JOIN item ON item.idItem = post.idItem ORDER BY idUsers DESC LIMIT " . $this->perPage . " OFFSET " . ($this->cPage - 1) * $this->perPage);
 
         return $req;
     }
@@ -222,6 +222,21 @@ class UserManager extends Manager
         return $req;
     }
 
+    public function deleteUserParent($idParent)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('DELETE FROM post  WHERE idParent = ?');
+        $req->execute(array($idParent));
+        return $req;
+    }
+
+    public function  getUserParent($idPost)
+    {
+        $bdd = $this->dbConnect();
+        $req = $bdd->prepare('SELECT idUsers FROM post WHERE idParent = ?');
+        $req->execute(array($idPost));
+        return $req;
+    }
 
     public function deleteUser($idUsers)
     {
@@ -491,15 +506,7 @@ class UserManager extends Manager
         return $req;
     }
 
-    /*==============================================================================================*/
-
-    public function ImgPublis($idPublication)
-    {
-        $bdd = $this->dbConnect();
-        $req = $bdd->prepare('SELECT idPublication, title, content, img, DATE_FORMAT(dates, \'%d/%m/%Y\') AS dates_fr FROM publication WHERE idPublication = ?');
-        $req->execute(array($idPublication));
-        return $req;
-    }
+    /*=========================================== modif img publication =====================================*/
 
     public function newImgPublis($idPublication, $target_file)
     {
@@ -527,6 +534,14 @@ class UserManager extends Manager
         $bdd = $this->dbConnect();
         $req = $bdd->prepare('UPDATE publication SET title = ?, content = ? WHERE idPublication = ?');
         $req->execute(array($title, $content, $idPublication));
+        return $req;
+    }
+    public function mailAdmin2()
+    {
+
+        $bdd = $this->dbConnect();
+        $req = $bdd->query("SELECT idContact, lastname, firstname, mail, content, DATE_FORMAT(dates, '%d/%m/%Y') AS date_fr FROM contact ORDER BY idContact ");
+
         return $req;
     }
 

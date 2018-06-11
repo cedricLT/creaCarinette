@@ -89,6 +89,10 @@ hr {
     background: hotpink;
 }
 
+.btn-primary {
+    background-color: red !important;
+}
+
 /******************************* tableau de bord *************************************************/
 .deconnexion {
     margin-top: 10px;
@@ -219,7 +223,7 @@ hr {
 }
 
 .modifText {
-    margin-top: 75px;
+    margin-top: 20px;
     margin-bottom: 15px;
 }
 
@@ -252,6 +256,14 @@ hr {
 .btnItem {
     display: flex;
     flex-direction: column;
+}
+
+.imgModal img {
+    width: 160px;
+}
+
+.subBtn{
+    display: none;
 }
 
 /************************ page création nouvel item *************************/
@@ -310,6 +322,22 @@ hr {
     padding-bottom: 15px;
 }
 
+.modifItem button, .modifContent button {
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px 16px;
+    margin-top: 20px;
+    background-color: dodgerblue;
+}
+
+.modifItem a, .modifContent a {
+    color: white !important;
+}
+
+.publicationText {
+    margin-bottom: 40px;
+}
+
 /****************** livre d'or ********************************/
 
 .contentVisitorBook {
@@ -318,6 +346,10 @@ hr {
     margin-top: 45px;
 }
 
+/********************** publications *******************************************/
+.btnImgPublication{
+    text-align: center;
+}
 /***************** page E-mail **********************************************/
 .mailAdmin {
     background: linear-gradient(pink, white, pink);
@@ -449,6 +481,10 @@ hr {
         width: 280px !important;
     }
 
+    #output {
+        width: 260px;
+    }
+
     /******************** creation nouvel item *************************/
     .creationTitre {
         zoom: 1.2;
@@ -463,6 +499,10 @@ hr {
     /********************* page publication **************************/
     .publicationAdmin img {
         width: 300px;
+    }
+
+    .btnItem {
+        width: 280px !important;
     }
 
     /************************ message livre d'or ***********************/
@@ -553,6 +593,10 @@ hr {
         margin-right: 5%;
     }
 
+    #output {
+        width: 360px;
+    }
+
     /*********************  page publication ********************************/
     .publicationAdmin {
         margin-left: 10%;
@@ -572,8 +616,7 @@ hr {
     border: 1px solid black;
     background: white;
     padding: 50px;
-    margin-top: -550px
-;
+    margin-top: -550px;
 }
 
 .delete_btn {

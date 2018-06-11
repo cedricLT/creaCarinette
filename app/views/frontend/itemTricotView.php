@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-
+<?php require 'templates/logo.php'; ?>
 <h1 class="h1Title">Créations Tricot</h1>
 
 <?php $donner = $lookItem ?>
@@ -55,12 +55,12 @@
     <?php
 
 
-    function displayChildren($idParent, $orderedComment){
+    function displayChildren($idParent, $orderedComment, $offset){
     if (array_key_exists($idParent, $orderedComment)){
     foreach ($orderedComment [$idParent]['children'] as $child) {
 
     ?>
-    <div class="commentCrochet">
+    <div class="commentCrochet child<?= $offset ?>">
         <div class="commentItemCrochet">
             <div class="commentDates"  id="ancre<?= $child['idPost'] ?>">
                 <p><?= $child['dates'] ?></p>
@@ -80,10 +80,15 @@
         <div class="row">
             <div class="tbn col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-                <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModal<?= $child['idPost'] ?>">
-                    Répondre
-                </button>
+                <?php if ($child['idParent'] <= 0){ ?>
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModal<?= $child['idPost'] ?>">
+                        Répondre
+                    </button>
+                <?php
+                } ?>
+
+
 
 
                 <div class="report">
@@ -117,7 +122,7 @@
                             <input required type="text" name="repPrenom" class="repPseudo"/>
                             <br><br>
                             <label for="message">Commentaire :</label>
-                            <textarea required name="content" class="comment"></textarea>
+                            <textarea required name="content" class="comments"></textarea>
 
                             <div class="btnRep">
                                 <input type="submit" class="submit_btn" value="Envoyer"/>
@@ -134,13 +139,14 @@
     </div>
 </div>
 <?php
-displayChildren($child['idPost'], $orderedComment);
+displayChildren($child['idPost'], $orderedComment, $offset+1);
 }
 
 }
 }
+$offset = 0;
 $root = 0;
-displayChildren($root, $orderedComment);
+displayChildren($root, $orderedComment, $offset);
 ?>
 </div>
 
