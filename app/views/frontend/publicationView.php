@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-<?php require 'templates/logo.php'; ?>
     <h1 class="h1Title">Publications</h1>
 
 

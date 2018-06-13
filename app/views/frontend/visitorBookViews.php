@@ -1,10 +1,9 @@
 <?php ob_start(); ?>
-<?php require 'templates/logo.php';?>
 <h1 class="h1Title titleBook">Livre D'Or</h1>
 
 <div class="textBook">
     <h3>
-        <p>Ici vous pouvez exprimer votre avie général sur toutes mes créations. <br>
+        <p>Ici vous pouvez exprimer votre avis général sur toutes mes créations. <br>
             Alors n ' hésitez pas à écrire un commentaire! <br>
             Merci.
         </p>

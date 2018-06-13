@@ -1,32 +1,39 @@
 <?php ob_start(); ?>
-<?php require 'templates/logo.php'; ?>
-    <h1 class="titleCrochet">Creations Crochet</h1>
+
+    <h1 class="titleCrochet">Créations Crochet</h1>
+
+    <hr class=" hrTitle">
 
     <div class="itemTotal">
-        <div class="itemCreation">
-            <?php
-            while ($donner = $recCrochets->fetch()) {
-                ?>
-                <hr class="hrCrochet">
 
-                <div class="blockCrochet">
+        <div class="row">
+            <div class="itemCreation col-md-12 col-lg-12">
+                <?php
+                while ($donner = $recCrochets->fetch()) {
+                    ?>
+                    <hr class="hrCrochet">
 
-                    <h3><?= htmlspecialchars($donner['title']) ?></h3>
-                    <div class="creationIMG">
-                        <div class="shake-slow">
-                            <a href="index.php?action=itemCrochet&idItem=<?= $donner['idItem'] ?>"><img
-                                        src="<?= htmlspecialchars($donner['img']) ?>"
-                                        alt="Créa-carinette crochet tricot"></a>
+                    <div class="blockItemImg  col-md-6 col-lg-4">
+                        <div class="blockCrochet ">
+
+                            <h3><?= htmlspecialchars($donner['title']) ?></h3>
+                            <div class="creationIMG">
+                                <div class="shake-slow">
+                                    <a href="index.php?action=itemCrochet&idItem=<?= $donner['idItem'] ?>"><img
+                                                src="<?= htmlspecialchars($donner['img']) ?>"
+                                                alt="Créa-carinette crochet tricot"></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <?php
+                    <?php
 
-            }
-            $recCrochets->closeCursor();
-            ?>
+                }
+                $recCrochets->closeCursor();
+                ?>
+            </div>
         </div>
     </div>
     <p id="numberPages">Pages : <?php

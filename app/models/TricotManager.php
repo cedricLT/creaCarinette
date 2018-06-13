@@ -5,7 +5,7 @@ namespace Projet\Models;
 class TricotManager extends Manager
 {
 
-    private $perPage = 5;
+    private $perPage = 6;
     private $cPage = 1;
 
     public function nbPage()

@@ -5,7 +5,10 @@
 body, html{height:100%;}
 
 body {
-    background: #FFB6C1 !important;
+    /*background: #FFB6C1 !important;*/
+    /*background: #f4dff5 !important;*/
+    background: url("../../public/img/home/rose8.jpg")  no-repeat center fixed;
+    padding-top: 70px;
 }
 
 a {
@@ -36,6 +39,10 @@ ul {
     src: url("../polices/echei.ttf");
 }
 
+@font-face {
+    font-family: gv;
+    src: url("../polices/GV.otf");
+}
 
 h1 {
     text-align: center;
@@ -209,8 +216,8 @@ hr {
 .presentation p {
     margin: 52px 5% 50px 5%;
     width: 90%;
-    font-family: echei;
-    font-size: 28px;
+    font-family: gv;
+    font-size: 30px;
     background: linear-gradient(pink, white, pink);
     box-shadow: 8px 6px 42px -17px;
     padding: 12px;
@@ -218,6 +225,10 @@ hr {
     animation-duration: 2.5s;
     -webkit-animation-name: bounceInDown;
     animation-name: bounceInDown;
+}
+
+.presentation {
+    margin-top: 10px;
 }
 
 /*********************** derniere realisation ******************************/
@@ -263,6 +274,10 @@ hr {
 /***************************** PAGE CrochetView.PHP tricotView.php********************************************/
 .hrCrochet {
     margin-bottom: -35px;
+}
+
+.hrTitle{
+    display: none;
 }
 
 .titleCrochet {
@@ -357,9 +372,16 @@ hr {
     margin-bottom: 20px;
 }
 
-.child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12 {
+.child1 {
     position: relative;
     background-color: Cornsilk !important;
+}
+
+.child1 button{
+    margin-bottom: 4px;
+
+
+
 }
 
 /*==== commentaires ===========*/
@@ -391,7 +413,7 @@ hr {
 }
 
 @media all and (min-width: 400px){
-    .child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12{
+    .child1{
         left: 70px !important;
     }
 }
@@ -755,7 +777,7 @@ textarea {
     .commentCrochet{
         width: 50%;
     }
-    .child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12{
+    .child1{
         left: 100px !important;
     }
 
@@ -847,6 +869,16 @@ textarea {
 /*****************************************/
 
 @media all and (min-width: 992px){
+
+    /****************** crochet tricot views ****************************/
+
+    .hrCrochet{
+        display: none;
+    }
+
+    .hrTitle{
+        display: block;
+    }
 
     /*********************** page item *******************************************/
     .creationIMGItemC img{
@@ -990,7 +1022,7 @@ textarea {
         zoom: 1.2;
     }
 
-    .child1, .child2,.child2, .child3, .child4, .child5, .child6, .child7, .child8, .child9, .child10, .child11, .child12{
+    .child1{
         left: 150px !important;
     }
 

@@ -34,7 +34,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="navbar navbar-default navbar-inverse" role="navigation">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="navbar-header">
 
             <button type="button" class="navbar-toggle">

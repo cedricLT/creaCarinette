@@ -1,5 +1,4 @@
 <?php ob_start(); ?>
-<?php require 'templates/logo.php'; ?>
 <h1 class="h1Title">Créations Tricot</h1>
 
 <?php $donner = $lookItem ?>
@@ -87,9 +86,6 @@
                     </button>
                 <?php
                 } ?>
-
-
-
 
                 <div class="report">
                     <button>
