@@ -8,9 +8,7 @@ $controleurAdmin = new \Projet\Controllers\ControllerAdmin(); //objet controler
 /*====================== api page emails ============================================*/
 if (isset($_GET['api']) && ($_GET['api'] == 'emails')) {
     $controleurAdmin->email_json();
-}
-
-else {
+} else {
     try {
 
 
@@ -28,129 +26,59 @@ else {
                 }
             } /*====================== affiche tous les items crochets =============================*/
 
-            elseif ($_GET['action'] == 'crochetAdmin') {
+            elseif ($_GET['action'] == 'creationAdmin') {
                 isConnect();
                 if (isset($_GET['p'])) {
                     $cPage = $_GET['p'];
                 } else {
                     $cPage = 1;
                 }
-                $controleurAdmin->crochetsAdmin($cPage);
-            } /*======================= page itemCrochet ==============================================*/
+                $type = $_GET['type'];
+                $controleurAdmin->creationAdmin($cPage, $type);
+            }
 
-            elseif ($_GET['action'] == 'nouveauCrochet') {
-                isConnect();
-                $controleurAdmin->nouveauCrochet();
-            } /*======================= création d'un item crochet=====================================*/
+            /*======================= page modification d'un article crochet =====================================*/
 
-            elseif ($_GET['action'] == 'creatItemCrochet') {
-                isConnect();
-                $title = htmlspecialchars($_POST['title']);
-                $content = $_POST['area'];
-
-                if (!empty($title) && !empty($content)) {
-                    $controleurAdmin->creatItemCrochet($title, $content);
-                } else {
-
-                    throw new Exception('Tous les champs ne sont pas remplis');
-                }
-
-            } /*====================== affichage de tous les items tricot===========================*/
-
-            elseif ($_GET['action'] == 'tricotAdmin') {
-                isConnect();
-                if (isset($_GET['p'])) {
-                    $cPage = $_GET['p'];
-                } else {
-                    $cPage = 1;
-                }
-
-                $controleurAdmin->tricotAdmin($cPage);
-            } /*======================= page item tricot ================================================*/
-
-            elseif ($_GET['action'] == 'nouveauTricot') {
-                isConnect();
-                $controleurAdmin->nouveauTricot();
-            } /*========================= création d'un item crochet =============================*/
-
-            elseif ($_GET['action'] == 'creatItemTricot') {
-                isConnect();
-                $title = htmlspecialchars($_POST['title']);
-                $content = $_POST['area'];
-
-                if (!empty($title) && !empty($content)) {
-                    $controleurAdmin->creatItemTricot($title, $content);
-                } else {
-
-                    throw new Exception('Tous les champs ne sont pas remplis');
-                }
-
-            } /*======================= page modification d'un article crochet =====================================*/
-
-            elseif ($_GET['action'] == 'viewItemCrochet') {
+            elseif ($_GET['action'] == 'viewItemCreation') {
                 isConnect();
                 $idItem = $_GET['idItem'];
-                $controleurAdmin->viewItemCrochet($idItem);
-            } /*========================= modifier le texte d'un article crochet =====================================*/
+                $controleurAdmin->viewItemCreation($idItem);
+            }
 
-            elseif ($_GET['action'] == 'modifItemCrochet') {
+            /*========================= modifier le texte d'un article crochet =====================================*/
+
+            elseif ($_GET['action'] == 'modifItem') {
                 isConnect();
                 $idItem = $_GET['idItem'];
+                $type = $_GET['type'];
                 $title = htmlspecialchars($_POST['title']);
                 $content = $_POST['area'];
 
                 if (!empty($title) && !empty($content)) {
-                    $controleurAdmin->modifItemCrochet($idItem, $title, $content);
+                    $controleurAdmin->modifItem($idItem, $title, $content, $type);
                 } else {
 
                     throw new Exception('Tous les champs ne sont pas remplis');
                 }
-            } /*========================= modifier le texte d'un article tricot =====================================*/
+            }
 
-            elseif ($_GET['action'] == 'modifItemTricot') {
-                isConnect();
-                $idItem = $_GET['idItem'];
-                $title = htmlspecialchars($_POST['title']);
-                $content = $_POST['area'];
-
-                if (!empty($title) && !empty($content)) {
-                    $controleurAdmin->modifItemTricot($idItem, $title, $content);
-                } else {
-
-                    throw new Exception('Tous les champs ne sont pas remplis');
-                }
-            } /*======================= modifier une image item crochet ===========================================*/
+            /*======================= modifier une image item crochet ===========================================*/
 
             elseif ($_GET['action'] == 'modifImg') {
                 isConnect();
                 $idItem = $_GET['idItem'];
+                $type = $_GET['type'];
 
-                $controleurAdmin->modifImg($idItem);
-            } /*======================== page modification d'un article tricot ======================================*/
+                $controleurAdmin->modifImg($idItem, $type);
+            }
 
-            elseif ($_GET['action'] == 'viewItemTricot') {
+            /*========================== supprimer un article  ======================================*/
+
+            elseif ($_GET['action'] == 'deleteItem') {
                 isConnect();
                 $idItem = $_GET['idItem'];
-                $controleurAdmin->viewItemTricot($idItem);
-            } /*========================== supprimer un article crochet ======================================*/
-
-            elseif ($_GET['action'] == 'deleteItemCrochet') {
-                isConnect();
-                $idItem = $_GET['idItem'];
-                $controleurAdmin->deleteItemCrochet($idItem);
-            } /*========================== supprimer un article tricot ======================================*/
-
-            elseif ($_GET['action'] == 'deleteItemTricot') {
-                isConnect();
-                $idItem = $_GET['idItem'];
-                $controleurAdmin->deleteItemTricot($idItem);
-            } /*=========================== modifier une image tricot======================================*/
-
-            elseif ($_GET['action'] == 'modifImgTricot') {
-                isConnect();
-                $idItem = $_GET['idItem'];
-
-                $controleurAdmin->modifImgTricot($idItem);
+                $type = $_GET['type'];
+                $controleurAdmin->deleteItem($idItem, $type);
             } /*=========================== affichage des commentaires du livre d'or ==================*/
 
             elseif ($_GET['action'] == 'visitorBook') {
@@ -246,6 +174,7 @@ else {
             } /*================= retour tableau de bord =====================================*/
 
             elseif ($_GET['action'] == 'tdbAdmin') {
+                isConnect();
                 $controleurAdmin->tdbAdmin();
             } /*====================== changer de nom Admin =================================================================*/
 
@@ -282,18 +211,7 @@ else {
                 } else {
                     throw new \Exception('tous les champs ne sont pas remplis');
                 }
-            } /*========================== page EmailView ====================================================*/
-
-//        elseif ($_GET['action'] == 'mail') {
-//            isConnect();
-//            if (isset($_GET['p'])) {
-//                $cPage = $_GET['p'];
-//            } else {
-//                $cPage = 1;
-//            }
-//            $controleurAdmin->mail($cPage);
-//        } /*============================== ajax mail =====================================*/
-
+            }
 
             /*=========================== supprimer un mail de la page emailView.php ==========================*/
             elseif ($_GET['action'] == 'deleteMail') {
@@ -309,7 +227,7 @@ else {
 
             elseif ($_GET['action'] == 'newTextHome') {
                 isConnect();
-                $content = htmlspecialchars($_POST['area']);
+                $content = $_POST['area'];
                 $controleurAdmin->newtextHome($content);
             } /*========================= photo home =====================================*/
 
@@ -322,61 +240,70 @@ else {
                 isConnect();
                 $controleurAdmin->newImgHome();
             } /*================================= publication ==========================================*/
+//
+//            elseif ($_GET['action'] == 'publication') {
+//                isConnect();
+//                if (isset($_GET['p'])) {
+//                    $cPage = $_GET['p'];
+//                } else {
+//                    $cPage = 1;
+//                }
+//                $controleurAdmin->publication($cPage);
+//            } /*============================= delete publication ===========================================*/
 
-            elseif ($_GET['action'] == 'publication') {
+//            elseif ($_GET['action'] == 'deletePublis') {
+//                isConnect();
+//                $idPublication = $_GET['idPublication'];
+//                $controleurAdmin->deletePublis($idPublication);
+//            } //            /*=============================== new img publication ===========================*/
+//
+//            elseif ($_GET['action'] == 'newImgPublis') {
+//                isConnect();
+//                $idPublication = $_GET['idPublication'];
+//                $controleurAdmin->newImgPublis($idPublication);
+//            } /*============================== modification text publication ===========================================*/
+//
+//            elseif ($_GET['action'] == 'modifTextPublis') {
+//                isConnect();
+//                $idPublication = $_GET['idPublication'];
+//                $controleurAdmin->modifTextPublis($idPublication);
+//            } /*===================== enregistrement modif text publication ==========================================*/
+//
+//            elseif ($_GET['action'] == 'newModifPublication') {
+//                isConnect();
+//                $idPublication = $_GET['idPublication'];
+//                $title = $_POST['title'];
+//                $content = $_POST['area'];
+//
+//                $controleurAdmin->newModifPublication($idPublication, $title, $content);
+//            } /*===================== page new article =======================================*/
+
+            elseif ($_GET['action'] == 'newArticle') {
                 isConnect();
-                if (isset($_GET['p'])) {
-                    $cPage = $_GET['p'];
+                $controleurAdmin->pageNewArticle();
+            } /*=================== new article tricot crochet ou publication ===========================*/
+
+            elseif ($_GET['action'] == 'postArticle') {
+                if (!(empty($_POST['title'])) || !(empty($_POST['content']))) {
+                    isConnect();
+                    $title = htmlspecialchars($_POST['title']);
+                    $content = $_POST['area'];
+                    $article = $_POST['article'];
+
+
+                    $controleurAdmin->newItem($title, $content, $article);
                 } else {
-                    $cPage = 1;
+                    throw new Exception('tous les champs ne sont pas remplis');
                 }
-                $controleurAdmin->publication($cPage);
-            } /*================================= new publication ==========================================*/
 
-            elseif ($_GET['action'] == 'newPublication') {
-                isConnect();
-                $controleurAdmin->newPublication();
-            } /*========================== create publication ===========================================*/
 
-            elseif ($_GET['action'] == 'creatPublication') {
-                isConnect();
-                $title = htmlspecialchars($_POST['title']);
-                $content = $_POST['area'];
-
-                $controleurAdmin->creatPublication($title, $content);
-            } /*============================= delete publication ===========================================*/
-
-            elseif ($_GET['action'] == 'deletePublis') {
-                isConnect();
-                $idPublication = $_GET['idPublication'];
-                $controleurAdmin->deletePublis($idPublication);
             }
-//            /*=============================== new img publication ===========================*/
 
-            elseif ($_GET['action'] == 'newImgPublis') {
-                isConnect();
-                $idPublication = $_GET['idPublication'];
-                $controleurAdmin->newImgPublis($idPublication);
-            } /*============================== modification text publication ===========================================*/
-
-            elseif ($_GET['action'] == 'modifTextPublis') {
-                isConnect();
-                $idPublication = $_GET['idPublication'];
-                $controleurAdmin->modifTextPublis($idPublication);
-            } /*===================== enregistrement modif text publication ==========================================*/
-
-            elseif ($_GET['action'] == 'newModifPublication') {
-                isConnect();
-                $idPublication = $_GET['idPublication'];
-                $title = $_POST['title'];
-                $content = $_POST['area'];
-
-                $controleurAdmin->newModifPublication($idPublication, $title, $content);
-            }
+            /*================================================================================*/
 
 
         } else {
-            $controleurAdmin->tableauDeBord();
+            $controleurAdmin->connexion();
 
         }
 

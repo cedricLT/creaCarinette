@@ -3,16 +3,18 @@
 
 
 <?php $donner = $getCrochet ?>
-<div class="row">
-    <div class="blockCrochetItemC col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="titleItemC col-xs-12 col-sm-12">
-            <h3><?= $donner['title'] ?></h3>
-        </div>
-        <div class="creationIMGItemC col-xs-12 col-sm-4 col-md-6">
-            <a href="<?= $donner['img'] ?>"><img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot"></a>
-        </div>
-        <div class="creationTextItemC col-xs-12 col-sm-8 col-md-5">
-            <P><?= $donner['contents'] ?></P>
+<div class="blockItem">
+    <div class="row">
+        <div class="blockCrochetItemC col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="titleItemC col-xs-12 col-sm-12">
+                <h3><?= $donner['title'] ?></h3>
+            </div>
+            <div class="creationIMGItemC col-xs-12 col-sm-4 col-md-6">
+                <a href="<?= $donner['img'] ?>"><img src="<?= $donner['img'] ?>" alt="Titoune&laine crochet tricot"></a>
+            </div>
+            <div class="creationTextItemC col-xs-12 col-sm-8 col-md-5">
+                <P><?= $donner['contents'] ?></P>
+            </div>
         </div>
     </div>
 </div>
@@ -88,13 +90,14 @@
             <div class="tbn col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 
-                <?php if ( $child['idParent'] <= 0) { ?>
+                <?php if ($child['idParent'] <= 0) { ?>
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $child['idPost'] ?>">
+                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                            data-target="#exampleModal<?= $child['idPost'] ?>">
                         Répondre
                     </button>
 
-                <?php
+                    <?php
                 }
                 ?>
 
@@ -148,7 +151,7 @@
     </div>
 </div>
 <?php
-displayChildren($child['idPost'], $orderedComment, $offset+1);
+displayChildren($child['idPost'], $orderedComment, $offset + 1);
 }
 
 }
