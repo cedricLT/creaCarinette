@@ -5,12 +5,12 @@
 if($_GET['type'] == 'crochet'){
 ?>
 
-    <h1 class="titleCrochet">Créations Crochet</h1>
+    <h1 class="h1Title">Créations Crochet</h1>
 <?php
 }
     else{
     ?>
-    <h1 class="titleCrochet">Créations Tricot</h1>
+    <h1 class="h1Title">Créations Tricot</h1>
 <?php
 }
 ?>

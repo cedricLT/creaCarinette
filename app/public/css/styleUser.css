@@ -34,16 +34,6 @@ ul {
     src: url("../polices/arisona.ttf");
 }
 
-@font-face {
-    font-family: echei;
-    src: url("../polices/echei.ttf");
-}
-
-@font-face {
-    font-family: gv;
-    src: url("../polices/GV.otf");
-}
-
 h1 {
     text-align: center;
     font-family: arisona;
@@ -51,7 +41,6 @@ h1 {
 
 hr {
     width: 85%;
-    border-top: 1px solid deeppink !important;
     margin: auto;
 }
 
@@ -79,11 +68,13 @@ hr {
 }
 
 .navbar-inverse {
-    background: linear-gradient(white, pink, white);
+    background: linear-gradient(white, white, white, pink);
     border-color: hotpink !important;
     margin-left: -15px;
     margin-right: -15px;
     border-radius: 0 !important;
+    box-shadow: 0px 7px 27px -12px;
+    opacity: 0.9;
 }
 
 .navbar-inverse .navbar-nav > .active > a {
@@ -108,7 +99,7 @@ hr {
 }
 
 .dropdown-menu {
-    background: linear-gradient(white, pink, white) !important;
+    background: linear-gradient(white, white, pink ) !important;
 }
 
 .dropdown-menu li a:hover {
@@ -183,6 +174,7 @@ hr {
     font-family: arisona;
     font-size: 55px;
     font-weight: bold;
+    color: #862b53;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-name: bounceInRight;
@@ -216,11 +208,10 @@ hr {
 .presentation p {
     margin: 52px 5% 50px 5%;
     width: 90%;
-    font-family: gv;
-    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
     background: linear-gradient(pink, white, pink);
     box-shadow: 8px 6px 42px -17px;
-    padding: 12px;
+    padding: 40px;
     -webkit-animation-duration: 2.5s;
     animation-duration: 2.5s;
     -webkit-animation-name: bounceInDown;
@@ -233,24 +224,30 @@ hr {
 
 /*********************** derniere realisation ******************************/
 
+.titleLastItem{
+    text-align: center;
+}
+
 .titleItem {
     text-align: center;
     margin-bottom: 35px;
     font-family: arisona;
     font-size: 34px;;
     font-weight: bold;
+    color: #862b53;
 }
 
-.titleImg {
-    border-bottom: 1px solid hotpink;
-    width: 158px;
-}
+/*.titleImg {*/
+    /*border-bottom: 1px solid hotpink;*/
+    /*width: 158px;*/
+/*}*/
 
 .lastItemT {
     margin-top: 45px;
 }
 
 .contenueItem {
+    margin: auto;
     margin-top: 25px;
     text-align: center;
     background: linear-gradient(pink, white, pink);
@@ -280,23 +277,8 @@ hr {
     display: none;
 }
 
-.titleCrochet {
-    font-family: arisona;
-    font-weight: bold;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    font-size: 45px;
-    -webkit-animation-duration: 2.5s;
-    animation-duration: 2.5s;
-    -webkit-animation-name: bounceInDown;
-    animation-name: bounceInDown;
-}
-
 .blockCrochet {
     margin: auto;
-    font-family: arisona;
-
-    font-weight: bold;
     max-width: 350px;
     margin-top: 60px;
     margin-bottom: 25px;
@@ -310,7 +292,6 @@ hr {
 
 .blockCrochet h3 {
     text-align: center;
-    font-size: 28px;
     padding-top: 10px;
 }
 
@@ -335,6 +316,7 @@ hr {
 
 .blockCrochetItemC {
     margin-top: 60px;
+    box-shadow: 5px 5px 38px -9px;
     -webkit-animation-duration: 2.5s;
     animation-duration: 2.5s;
     -webkit-animation-name: bounceInLeft;
@@ -347,11 +329,6 @@ hr {
 
 }
 
-.titleItemC h3{
-    font-size: 30px;
-    font-family: arisona;
-    font-weight: bold;
-}
 
 .creationIMGItemC {
     margin-top: 25px;
@@ -496,7 +473,6 @@ textarea {
     margin: auto;
     background: linear-gradient(pink, white, pink);
     padding: 2px;
-    border-radius: 8px;
     box-shadow: 5px 3px 21px -7px;
     -webkit-animation-duration: 2.5s;
     animation-duration: 2.5s;
@@ -698,34 +674,8 @@ textarea {
     margin-right: -15px;
 }
 
-
-.liensMenu a {
-    color: white;
-}
-
-.liensMenu a:hover{
-    color: hotpink;
-}
-
-.liensMenu {
-    font-size: 15px;
-}
-
-.icons{
-    border-right: 1px solid white;
-}
-
 .accueil{
     margin-bottom: 12px;
-}
-
-.copyright {
-    margin-top: 35px;
-}
-
-.copyright p {
-    color: white;
-    font-size: 12px;
 }
 
 
@@ -756,19 +706,9 @@ textarea {
         width: 350px !important;
     }
 
-    /*************** page crochet et tricot views***********************/
-
-    .blockCrochet h3{
-        font-size: 35px;
-    }
-
     /**************** item page *****************************/
     .creationTextItemC{
         margin-top: 9px;
-    }
-
-    .titleItemC h3 {
-        font-size: 40px;
     }
 
     .creationIMGItemC{
@@ -957,7 +897,7 @@ textarea {
     }
 
     .presentation p{
-        font-size: 30px;
+        font-size: 18px;
     }
 
 
@@ -990,14 +930,6 @@ textarea {
 
     /*================= crochet et tricot View =============================*/
 
-    .titleCrochet{
-        font-size: 90px;
-    }
-
-    .blockCrochet h3{
-        font-size: 44px;
-    }
-
     .blockCrochet{
         max-width: 448px;
         height: 284px;
@@ -1009,11 +941,6 @@ textarea {
     }
 
     /*********************** page item *******************************************/
-
-    .titleItemC h3{
-        font-size: 50px;
-
-    }
 
     .titleItemC{
         margin-bottom: 50px;

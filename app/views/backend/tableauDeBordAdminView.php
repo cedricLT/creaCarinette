@@ -140,7 +140,7 @@
 
             <hr class="hrTdb">
 
-            <div class="emailTdb col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            <div class="emailTdb col-xs-12 col-sm-4 col-md-3 col-lg-3 ">
                 <h2>E-mail</h2>
                 <br>
                 <div class="email">
@@ -159,7 +159,7 @@
             <hr class="hrTdb">
 
             <div class="parametreTdb col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                <h2>Vos Paramètres</h2>
+                <h2>  Vos Paramètres</h2>
                 <br>
                 <div class="parametre">
                     <ul>

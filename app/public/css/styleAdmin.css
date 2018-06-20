@@ -182,6 +182,10 @@ hr {
     font-size: 18px;
 }
 
+.numbArticleDates h4{
+    padding: 15px;
+}
+
 .createArticle {
     margin-bottom: 45px;
 }

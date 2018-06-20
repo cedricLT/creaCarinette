@@ -26,7 +26,6 @@
     <div class="blockCrochet">
 
         <div class="numbArticleDates">
-            <h4>Article numero : <?= $donner['idItem'] ?></h4></p>
             <h4>Créé le :<?= $donner['dates_fr'] ?></h4>
         </div>
 
@@ -45,7 +44,6 @@
             </div>
         </div>
         <div class="gererArticle">
-
             <div class="modifText">
                 <a href="indexAdmin.php?action=viewItemCreation&idItem=<?= $donner['idItem'] ?>">
                     <button>Modifier le
@@ -54,7 +52,7 @@
                 </a>
             </div>
             <div class="btnItem">
-                <!-- Trigger the modal with a button -->
+                <!-- bouton modifier l image -->
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal"
                         data-target="#myModal<?= $donner['idItem'] ?>">
                     Modifier
@@ -94,6 +92,7 @@
                     </div>
                 </div>
 
+                <!-- bouton de suppression -->
                 <button type="button" class="btn btn-primary" data-toggle="modal"
                         data-target="#exampleModal<?= $donner['idItem'] ?>">
                     supprimer cet article

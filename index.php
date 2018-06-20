@@ -18,7 +18,7 @@ try {
             }
             
             $type = $_GET['type'];
-            $controleurUser->crochets($cPage, $type);
+            $controleurUser->items($cPage, $type);
 
         }
 

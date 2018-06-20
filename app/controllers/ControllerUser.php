@@ -8,7 +8,7 @@ class ControllerUser
 
     /*=========================== recuperation des items titres et textes ========================================*/
 
-    function crochets($cPage, $type)
+    function items($cPage, $type)
     {
         $ItemsManager = new \Projet\Models\ItemsManager(); // Création d'un objet
 
@@ -91,7 +91,7 @@ class ControllerUser
     }
 
 
-    /*======================== commentaires par items ========================================================*/
+    /*======================== enregistrement des commentaires par items ========================================================*/
 
 
     function commentItem($idItem, $firstname, $content)
