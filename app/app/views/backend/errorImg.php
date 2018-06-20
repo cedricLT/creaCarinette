@@ -1,1 +1,0 @@
-<p>ce ne si n'est pas une image.</p>

@@ -25,7 +25,7 @@
 
 <div class="lastItem">
     <div class="titleLastItem">
-        <h3 class="titleItem">Mes dèrnières réalisations</h3>
+        <h3 class="titleItem">Mes dernières réalisations</h3>
     </div>
     <hr>
     <div class="row">

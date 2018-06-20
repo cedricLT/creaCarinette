@@ -3,26 +3,284 @@
   <component name="ChangeListManager">
     <list default="true" id="97bf48d5-6e5c-40d7-8d50-ba5648190cb3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Controllers/ControllerAdmin.php" afterPath="$PROJECT_DIR$/app/Controllers/ControllerAdmin.php" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ControllerUser.php" afterPath="$PROJECT_DIR$/app/controllers/ControllerUser.php" />
-      <change beforePath="$PROJECT_DIR$/app/models/UserManager.php" afterPath="$PROJECT_DIR$/app/models/UserManager.php" />
-      <change beforePath="$PROJECT_DIR$/app/public/css/styleAdmin.css" afterPath="$PROJECT_DIR$/app/public/css/styleAdmin.css" />
-      <change beforePath="$PROJECT_DIR$/app/public/css/styleUser.css" afterPath="$PROJECT_DIR$/app/public/css/styleUser.css" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/ajax.js" afterPath="$PROJECT_DIR$/app/public/js/ajax.js" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/errorChecking.js" afterPath="$PROJECT_DIR$/app/public/js/errorChecking.js" />
-      <change beforePath="$PROJECT_DIR$/app/public/js/img.js" afterPath="$PROJECT_DIR$/app/public/js/img.js" />
-      <change beforePath="$PROJECT_DIR$/app/views/backend/publicationAdminViews.php" afterPath="$PROJECT_DIR$/app/views/backend/publicationAdminViews.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/backend/tableauDeBordAdminView.php" afterPath="$PROJECT_DIR$/app/views/backend/tableauDeBordAdminView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/backend/textHomeView.php" afterPath="$PROJECT_DIR$/app/views/backend/textHomeView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/frontend/errorLoading.php" afterPath="$PROJECT_DIR$/app/views/frontend/errorLoading.php" />
+      <change beforePath="$PROJECT_DIR$/app/app/Controllers/ControllerAdmin.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/Controllers/ControllerUser.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/Models/ItemsManager.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/Models/Manager.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/Models/UserManager.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/css/animate.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/css/normalize.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/css/styleAdmin.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/css/styleUser.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/HELP-US-OUT.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/css/font-awesome.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/css/font-awesome.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/fonts/FontAwesome.otf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/fonts/fontawesome-webfont.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/fonts/fontawesome-webfont.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/fonts/fontawesome-webfont.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/fonts/fontawesome-webfont.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/fonts/fontawesome-webfont.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/animated.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/bordered-pulled.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/core.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/fixed-width.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/font-awesome.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/icons.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/larger.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/list.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/mixins.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/path.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/rotated-flipped.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/screen-reader.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/stacked.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/less/variables.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_animated.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_bordered-pulled.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_core.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_fixed-width.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_icons.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_larger.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_list.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_mixins.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_path.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_rotated-flipped.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_screen-reader.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_stacked.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/_variables.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/fontAwesome/scss/font-awesome.scss" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/20180614_120005.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/Carte-de-Visite-finalisé.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/Logo Final Blanc avec bordure.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/Titoune&amp;laine.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/bracelet.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/braceletMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/carine.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/carine1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chaussonEnfant.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chaussonEnfantMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chaussonFemme.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chaussonFemmeMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chaussonRose.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chaussonRoseMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chauve-sourie-mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/chauve-sourie.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/coeur.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/coeurMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/coeur_l_amour.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/coeur_l_amour_mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/doudouLapin.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/doudouLapin1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/doudouLapin1Mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/doudouLapin2Mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/doudouLapinMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/dragon-mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/dragon.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/gilet.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/gilet1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/gilet1Mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/giletMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/groot-mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/groot2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/grootMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/home/Titoune&amp;laine.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/home/rose6.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/home/rose8.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/imageC.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/japan.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/knitting-2190492_1920.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/lapinRouBleuMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/licorneMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/mini_groot.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/mini_groot_mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/poncho.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/porteClef.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/porteMonnaie.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/porteMonnaie2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/porteMonnaie2Mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/porteMonnaie3.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/porteMonnaieMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profile20180614_120005.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profile34095120_2060058320983290_8854586366495817728_o.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profileCarte-de-Visite-finalisé.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilebracelet.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilecarine.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilecarine1.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilechaussonEnfant.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilechaussonFemmeMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilechaussonRose.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilechaussonRoseMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilechauve-sourie-mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilechauve-sourie.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilecoeur.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilecoeurMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilecoeur_l_amour.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilecoeur_l_amour_mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profiledoudouLapin.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profiledoudouLapin2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profiledoudouLapin2Mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profiledoudouLapinMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilegroot-mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilegroot2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilegrootMini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profileimageC.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilelapinRouBleu.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilelicorne.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/profilesacAmain.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/publicationimageC.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/sacAmain.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/tasse-mini.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/tasse.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/trousse.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/img/trousse2.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/js/ajax.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/js/errorChecking.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/js/img.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/js/menu.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/polices/GV.otf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/polices/arisona.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/polices/echei.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/LICENSE.TXT" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/changelog.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/langs/fr.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/langs/fr_FR.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/langs/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/license.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/advlist/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/anchor/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/autolink/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/autoresize/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/autosave/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/bbcode/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/charmap/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/code/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/colorpicker/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/contextmenu/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/directionality/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-cool.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-cry.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-embarassed.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-foot-in-mouth.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-frown.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-innocent.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-kiss.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-laughing.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-money-mouth.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-sealed.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-smile.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-surprised.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-tongue-out.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-undecided.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-wink.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/img/smiley-yell.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/emoticons/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/example/dialog.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/example/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/example_dependency/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/fullpage/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/fullscreen/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/hr/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/image/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/importcss/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/insertdatetime/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/layer/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/legacyoutput/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/link/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/lists/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/media/moxieplayer.swf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/media/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/nonbreaking/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/noneditable/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/pagebreak/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/paste/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/preview/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/print/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/save/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/searchreplace/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/spellchecker/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/tabfocus/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/table/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/template/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/textcolor/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/textpattern/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/visualblocks/css/visualblocks.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/visualblocks/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/visualchars/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/plugins/wordcount/plugin.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/content.inline.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/content.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/readme.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce-small.dev.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce-small.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce-small.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce-small.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce-small.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce.dev.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/fonts/tinymce.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/img/anchor.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/img/loader.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/img/object.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/img/trans.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/skin.ie7.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/skins/lightgray/skin.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/themes/modern/theme.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/public/tinymce/js/tinymce/tinymce.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/commentUsersView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/connexionAdminView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/creationAdminView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/emailView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/errorImg.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/messageMdp.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/modifItemView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/newArticle.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/newImgHomeView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/newMdpView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/newNameAdmin.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/newTextPublication.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/passwordAdminViews.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/publicationAdminViews.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/reportCommentView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/reportVisitorBook.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/secure.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/tableauDeBordAdminView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/template/templateAdmin.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/textHomeView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/backend/visitorBookAdminView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/confirmMailContactView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/contactView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/creationsView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/errorLoading.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/homeView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/itemsCreationsView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/publicationView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/templates/template.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/app/views/frontend/visitorBookViews.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/img/groot.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/img/lapinRouBleu.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/img/licorne.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/js/annimat.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/js/delete.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/js/reponseComment.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/js/sliderHome.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/js/uploadImg.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/sauv/img.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/public/sauv/publicationImg.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/crochetAdminView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/modifCrochetView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/modifTricotView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/newPublicationAdminView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/nouveauCrochetView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/nouveauTricotView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/backend/tricotAdminView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontend/crochetsView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontend/errorUseurView.php" afterPath="" />
       <change beforePath="$PROJECT_DIR$/app/views/frontend/homeView.php" afterPath="$PROJECT_DIR$/app/views/frontend/homeView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" afterPath="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" afterPath="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/frontend/publicationView.php" afterPath="$PROJECT_DIR$/app/views/frontend/publicationView.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/frontend/templates/template.php" afterPath="$PROJECT_DIR$/app/views/frontend/templates/template.php" />
-      <change beforePath="$PROJECT_DIR$/app/views/frontend/visitorBookViews.php" afterPath="$PROJECT_DIR$/app/views/frontend/visitorBookViews.php" />
-      <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/indexAdmin.php" afterPath="$PROJECT_DIR$/indexAdmin.php" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontend/itemCrochetView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontend/itemTricotView.php" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/app/views/frontend/tricotView.php" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +297,28 @@
     <favorites_list name="creaCarinette" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="indexAdmin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/indexAdmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4075">
+              <caret line="305" column="28" lean-forward="false" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -195,7 +474,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,15 +481,11 @@
               <item name="creaCarinette" type="b2602c69:ProjectViewProjectNode" />
               <item name="creaCarinette" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="creaCarinette" type="b2602c69:ProjectViewProjectNode" />
-              <item name="creaCarinette" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -223,17 +497,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\creaCarinette\app\public\img\home" />
-      <recent name="C:\xampp\htdocs\creaCarinette\app\views\backend" />
-      <recent name="C:\xampp\htdocs\creaCarinette\app\views\frontend" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\creaCarinette\app\public\sauv" />
       <recent name="C:\xampp\htdocs\creaCarinette\app\views\frontend\templates" />
       <recent name="C:\xampp\htdocs\creaCarinette\app\views\frontend" />
       <recent name="C:\xampp\htdocs\creaCarinette\app\views\backend" />
       <recent name="C:\xampp\htdocs\creaCarinette\app\public\css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\creaCarinette\app\public\img\home" />
+      <recent name="C:\xampp\htdocs\creaCarinette\app\views\backend" />
+      <recent name="C:\xampp\htdocs\creaCarinette\app\views\frontend" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -355,12 +629,13 @@
       <workItem from="1529418381141" duration="1353000" />
       <workItem from="1529426249413" duration="1182000" />
       <workItem from="1529434640715" duration="1293000" />
-      <workItem from="1529436479939" duration="3339000" />
+      <workItem from="1529436479939" duration="3590000" />
+      <workItem from="1529479109283" duration="589000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="855556000" />
+    <option name="totallyTimeSpent" value="856396000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,17 +649,17 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2322239" sideWeight="0.49337748" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23600605" sideWeight="0.49337748" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294702" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23524962" sideWeight="0.5066225" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23524962" sideWeight="0.5066225" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -597,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/backend/errorImg.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -699,7 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="520" column="12" lean-forward="false" selection-start-line="520" selection-start-column="12" selection-end-line="520" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,15 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
           <caret line="26" column="31" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/indexAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="305" column="28" lean-forward="false" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -724,7 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="215" column="13" lean-forward="false" selection-start-line="215" selection-start-column="1" selection-end-line="215" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,7 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -740,7 +996,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="472" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="672" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -748,7 +1003,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,17 +1010,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding>
-            <marker date="1528836994392" expanded="true" signature="227:289" ph="SELECT COUNT... item" />
-            <marker date="1528836994392" expanded="true" signature="586:780" ph="SELECT idIte... item" />
-            <marker date="1528836994392" expanded="true" signature="964:1077" ph="SELECT idIte... item" />
-            <marker date="1528836994392" expanded="true" signature="1296:1389" ph="INSERT INTO item... " />
-            <marker date="1528836994392" expanded="true" signature="1614:1670" ph="UPDATE item... " />
-            <marker date="1528836994392" expanded="true" signature="1889:1929" ph="UPDATE item... " />
-            <marker date="1528836994392" expanded="true" signature="2128:2162" ph="DELETE FROM item... " />
-            <marker date="1528836994392" expanded="true" signature="2450:2601" ph="SELECT idIte... item" />
-            <marker date="1528836994392" expanded="true" signature="2890:2953" ph="SELECT COUNT... item" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indexAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4075">
+          <caret line="305" column="28" lean-forward="false" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
