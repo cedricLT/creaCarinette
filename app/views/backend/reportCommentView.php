@@ -48,8 +48,8 @@ while ($report = $reportCom->fetch()) {
                     </div>
                     <div class="modal-body">
                         <div class="suppre">
-                            <a href="indexAdmin.php?action=deleteReportComment&idPost=<?= $report['idPost'] ?>&idUsers=<?= $report['idUsers'] ?>">Supprimer
-                                ce commentaire</a>
+                            <a href="indexAdmin.php?action=deleteCommentUsers&idPost=<?= $report['idPost'] ?>&idUsers=<?= $report['idUsers'] ?>">Supprimer ce commentaire</a>
+
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -107,14 +107,7 @@ if (isset($_GET['api']) && ($_GET['api'] == 'emails')) {
                     $cPage = 1;
                 }
                 $controleurAdmin->reportComment($cPage);
-            } /*============================ supprimer un commentaire signalé ===============================*/
-
-            elseif ($_GET['action'] == 'deleteReportComment') {
-                isConnect();
-                $idPost = $_GET['idPost'];
-                $idUsers = $_GET["idUsers"];
-                $controleurAdmin->deleteReportComment($idPost, $idUsers);
-            } /*============================= page livre d'or messages signalés ==============================*/
+            }  /*============================= page livre d'or messages signalés ==============================*/
 
             elseif ($_GET['action'] == 'reportVisitorBook') {
                 isConnect();
@@ -149,8 +142,7 @@ if (isset($_GET['api']) && ($_GET['api'] == 'emails')) {
                 isConnect();
                 $idPost = $_GET['idPost'];
                 $idUsers = $_GET["idUsers"];
-                $idParent = $_GET['idParent'];
-                $controleurAdmin->deleteCommentUsers($idPost, $idUsers, $idParent);
+                $controleurAdmin->deleteCommentUsers($idPost, $idUsers);
             } /*========================== creation mot de passe admin ========================*/
 
             elseif ($_GET['action'] == 'creatAdmin') {
@@ -239,49 +231,14 @@ if (isset($_GET['api']) && ($_GET['api'] == 'emails')) {
             elseif ($_GET['action'] == 'newImgHome') {
                 isConnect();
                 $controleurAdmin->newImgHome();
-            } /*================================= publication ==========================================*/
-//
-//            elseif ($_GET['action'] == 'publication') {
-//                isConnect();
-//                if (isset($_GET['p'])) {
-//                    $cPage = $_GET['p'];
-//                } else {
-//                    $cPage = 1;
-//                }
-//                $controleurAdmin->publication($cPage);
-//            } /*============================= delete publication ===========================================*/
-
-//            elseif ($_GET['action'] == 'deletePublis') {
-//                isConnect();
-//                $idPublication = $_GET['idPublication'];
-//                $controleurAdmin->deletePublis($idPublication);
-//            } //            /*=============================== new img publication ===========================*/
-//
-//            elseif ($_GET['action'] == 'newImgPublis') {
-//                isConnect();
-//                $idPublication = $_GET['idPublication'];
-//                $controleurAdmin->newImgPublis($idPublication);
-//            } /*============================== modification text publication ===========================================*/
-//
-//            elseif ($_GET['action'] == 'modifTextPublis') {
-//                isConnect();
-//                $idPublication = $_GET['idPublication'];
-//                $controleurAdmin->modifTextPublis($idPublication);
-//            } /*===================== enregistrement modif text publication ==========================================*/
-//
-//            elseif ($_GET['action'] == 'newModifPublication') {
-//                isConnect();
-//                $idPublication = $_GET['idPublication'];
-//                $title = $_POST['title'];
-//                $content = $_POST['area'];
-//
-//                $controleurAdmin->newModifPublication($idPublication, $title, $content);
-//            } /*===================== page new article =======================================*/
+            }
+            /*===================== page new article =======================================*/
 
             elseif ($_GET['action'] == 'newArticle') {
                 isConnect();
                 $controleurAdmin->pageNewArticle();
-            } /*=================== new article tricot crochet ou publication ===========================*/
+            }
+            /*=================== new article tricot crochet ou publication ===========================*/
 
             elseif ($_GET['action'] == 'postArticle') {
                 if (!(empty($_POST['title'])) || !(empty($_POST['content']))) {
@@ -309,6 +266,6 @@ if (isset($_GET['api']) && ($_GET['api'] == 'emails')) {
 
 
     } catch (Exception $e) {
-        die('Erreur : ' . $e->getMessage()); // faire page erreur !!!!
+        require 'app/views/backend/errorAdmin.php';
     }
 }

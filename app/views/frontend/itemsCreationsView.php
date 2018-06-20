@@ -146,7 +146,9 @@ if ($donner['categorie'] === 'crochet'){ ?>
                               method="post">
 
                             <label for="pseudo">Pseudo :</label>
+                            <br>
                             <input required type="text" name="repPrenom" class="repPseudo" placeholder="Votre pseudo">
+                            <br><br>
                             <label for="message">Commentaire :</label>
                             <textarea required name="content" class="comments">
 

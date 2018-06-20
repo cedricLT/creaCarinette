@@ -210,7 +210,7 @@ class UserManager extends Manager
         return $req;
     }
 
-    /*============================ supprimer un commentaire signalé =========================*/
+    /*============================ supprimer commentaire admin parents et enfants signaler ou non =========================*/
 
     public function deleteUserComment($idPost)
     {
@@ -494,37 +494,7 @@ class UserManager extends Manager
         return $req;
     }
 
-    /*=========================================== modif img publication =====================================*/
-
-//    public function newImgPublis($idPublication, $target_file)
-//    {
-//        $bdd = $this->dbConnect();
-//        $req = $bdd->prepare('UPDATE publication SET img = ? WHERE idPublication =?');
-//        $req->execute(array($target_file, $idPublication));
-//        return $req;
-//    }
-
-    /*====================================== modif text publication ============================================*/
-
-//    public function modifTextPublis($idPublication)
-//    {
-//
-//        $bdd = $this->dbConnect();
-//        $req = $bdd->prepare("SELECT idPublication, title, content, DATE_FORMAT(dates, '%d/%m/%Y') AS dates_fr FROM publication WHERE idPublication = ?");
-//        $req->execute(array($idPublication));
-//        return $req;
-//    }
-//
-//    /*===================== enregistrement modif text publication ==========================================*/
-//
-//    public function changeTextPublication($idPublication, $title, $content)
-//    {
-//        $bdd = $this->dbConnect();
-//        $req = $bdd->prepare('UPDATE publication SET title = ?, content = ? WHERE idPublication = ?');
-//        $req->execute(array($title, $content, $idPublication));
-//        return $req;
-//    }
-
+    /*=============================== email json ajax ==============================================*/
 
     public function mailAdmin2()
     {

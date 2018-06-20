@@ -185,19 +185,6 @@ class ControllerAdmin
         require 'app/views/backend/reportCommentView.php';
     }
 
-    /*============================ suppréssion d'un commentaire signaler  ========================*/
-
-    function deleteReportComment($idPost, $idUsers)
-    {
-        $userManager = new \Projet\Models\UserManager();
-
-        $deleteCommentUser = $userManager->deleteUserComment($idPost);
-
-        $deleteUser = $userManager->deleteUser($idUsers);
-
-        header('Location: indexAdmin.php?action=reportComment');
-    }
-
     /*================================= message signalé livre d'or ===========================================*/
 
     function reportVisitorBook($cPage)
@@ -246,7 +233,7 @@ class ControllerAdmin
         require 'app/views/backend/commentUsersView.php';
     }
 
-    /*============================ supprimer commentaire admin ================================================*/
+    /*==================== supprimer commentaire admin parents et enfants signaler ou non =============================*/
 
     function deleteCommentUsers($idPost, $idUsers)
     {
@@ -265,7 +252,7 @@ class ControllerAdmin
             $newSingleUser = $singleUser[0];
             $deleteUserParent = $userManager->deleteUser($newSingleUser);
         }
-        header('Location: indexAdmin.php?action=deleteComment');
+        header('Location: indexAdmin.php?action=tdbAdmin');
     }
 
     /*=========================== connexion admin sur la  page tableau de bord ===============================================*/
